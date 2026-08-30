@@ -14,6 +14,26 @@ Cada cliente tem repositório e site próprios (o AMV JR Tour, por exemplo, vive
 do projeto, na seção de portfólio. Nunca replique, recrie ou embuta o código de um
 site de cliente dentro da Genesis — ela deve continuar sendo uma única página comercial.
 
+## A equipe (agentes)
+
+Cinco agentes em `.claude/agents/`, invocáveis pelo nome:
+
+| Agente | Cuida de |
+|---|---|
+| `vendas` | Atendimento, qualificação, objeção, proposta |
+| `midia-social` | Instagram @genesis.ia.pro, post, Reels, calendário |
+| `design` | Visual das páginas, capas, identidade, responsividade |
+| `google-ads` | Campanha, palavra-chave, anúncio, acompanhamento de verba |
+| `entrega` | Produção do site do cliente, publicação, atualização do portfólio |
+
+Dois limites valem para todos: nenhum deles anuncia como entregue um projeto que
+não foi, e `google-ads` planeja mas nunca executa alteração de verba sem aprovação
+explícita do dono.
+
+**Este repositório é público.** As definições dos agentes são só instruções e não
+têm dado sensível. No dia que entrar nome de cliente, valor cobrado ou proposta,
+torne o repositório privado antes — ou guarde isso num repositório privado à parte.
+
 ## Comandos
 
 Não há build, testes nem linter. Para trabalhar:
