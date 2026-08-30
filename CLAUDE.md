@@ -142,6 +142,19 @@ Unsplash permite uso comercial sem atribuição obrigatória.
 nome de arquivo.** Se trocar o vídeo em `assets/video/`, use nome novo — ele tem
 cache de um ano.
 
+## Medição de contatos
+
+`assets/js/analytics.v1.js` conta cliques nos botões de WhatsApp, marcando de qual
+seção o clique veio (`hero`, `planos`, `contato`, `botao-flutuante`, `cabecalho`,
+`rodape`). Serve para descobrir o que traz contato, não só quantos vieram.
+
+Ele nasce **desligado**: enquanto `GA4_ID`, `ADS_ID` e `ADS_LABEL` estiverem vazios
+no topo do arquivo, nada é carregado, nenhum cookie é criado e nenhuma requisição
+sai. Para ligar, basta preencher os identificadores — não mexa no resto.
+
+Quando for ligado, a página passa a usar cookie do Google Analytics. Vale colocar
+uma linha sobre isso no rodapé para ficar em dia com a LGPD.
+
 ## Contato e SEO
 
 O WhatsApp `5521996816846` aparece em ~9 links, cada um com mensagem pré-preenchida
