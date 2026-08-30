@@ -30,9 +30,15 @@ Dois limites valem para todos: nenhum deles anuncia como entregue um projeto que
 não foi, e `google-ads` planeja mas nunca executa alteração de verba sem aprovação
 explícita do dono.
 
-**Este repositório é público.** As definições dos agentes são só instruções e não
-têm dado sensível. No dia que entrar nome de cliente, valor cobrado ou proposta,
-torne o repositório privado antes — ou guarde isso num repositório privado à parte.
+**Dado de cliente não entra neste repositório.** Este repositório é público, e a
+decisão do dono é que ele continue assim: nome, telefone, valor cobrado, proposta e
+histórico de negociação ficam no WhatsApp e no e-mail dele, fora do controle de
+versão. Os agentes redigem a mensagem; quem fala com o cliente e guarda os dados é
+o dono.
+
+Na prática isso significa: nunca crie arquivo de CRM, planilha de clientes, lista de
+leads ou pasta `clientes/` aqui. Se uma tarefa parecer exigir isso, entregue o texto
+pronto na conversa em vez de gravar em arquivo.
 
 ## Comandos
 
