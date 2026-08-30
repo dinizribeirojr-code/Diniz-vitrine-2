@@ -426,11 +426,6 @@ p{ margin: 0; }
 .feature-card p{ font-size: 14.5px; color: var(--muted); }
 
 /* ===== Examples ===== */
-.grid-examples{
-  display: grid;
-  gap: 24px;
-  grid-template-columns: 1fr;
-}
 .example-card{
   background: rgba(255,255,255,.03);
   border: 1px solid var(--line);
@@ -440,7 +435,6 @@ p{ margin: 0; }
   transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
 }
 .example-card:hover{ transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--accent-1); }
-.example-card .mock-browser{ border: none; border-radius: 0; box-shadow: none; border-bottom: 1px solid var(--line); background: #131217; }
 .example-info{ padding: 20px 22px 24px; }
 .example-tag{
   display: inline-block;
@@ -457,16 +451,60 @@ p{ margin: 0; }
 .example-info h3{ font-size: 17px; font-weight: 700; margin-bottom: 6px; }
 .example-info p{ font-size: 14px; color: var(--muted); }
 
-.example-card[data-theme="advocacia"] .mock-hero-title{ background: linear-gradient(135deg,#3a4a72,#5c72a8); opacity: 1; }
-.example-card[data-theme="advocacia"] .mock-btn{ background: #4a5c8c; }
-.example-card[data-theme="manicure"] .mock-hero-title{ background: linear-gradient(135deg,#e8779c,#f0a6c0); opacity: 1; }
-.example-card[data-theme="manicure"] .mock-btn{ background: #e8779c; }
-.example-card[data-theme="barbearia"] .mock-hero-title{ background: linear-gradient(135deg,#8a6a3c,#c9a35a); opacity: 1; }
-.example-card[data-theme="barbearia"] .mock-btn{ background: #a9793f; }
-.example-card[data-theme="peixaria"] .mock-hero-title{ background: linear-gradient(135deg,#1573a6,#38b6c9); opacity: 1; }
-.example-card[data-theme="peixaria"] .mock-btn{ background: #1c94b8; }
-.example-card[data-theme="comercio"] .mock-hero-title{ background: linear-gradient(135deg,#d97b2b,#f0a94e); opacity: 1; }
-.example-card[data-theme="comercio"] .mock-btn{ background: #d97b2b; }
+/* Card de projeto real (foto) */
+.grid-examples-single{ max-width: 420px; margin-inline: auto; }
+.example-shot{
+  position: relative;
+  display: block;
+  background: #131217;
+  border-bottom: 1px solid var(--line);
+}
+.example-shot img{
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  object-position: top;
+}
+.example-tags{ display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.example-tags .example-tag{ margin-bottom: 0; }
+.example-real-badge{
+  display: inline-block;
+  background: var(--accent-grad);
+  color: var(--on-gold);
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+.example-info .btn{ margin-top: 14px; }
+
+/* Gráfico de benefícios */
+.benefits{ margin-top: 64px; }
+.benefits-title{
+  text-align: center;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin-bottom: 28px;
+}
+.benefits-grid{
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+.benefit-card{
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 24px 22px;
+  text-align: center;
+}
+.benefit-card .feature-icon{ margin: 0 auto 16px; }
+.benefit-card h3{ font-size: 15.5px; font-weight: 700; margin-bottom: 6px; }
+.benefit-card p{ font-size: 13.5px; color: var(--muted); }
 
 /* ===== Steps ===== */
 .steps{
@@ -612,8 +650,8 @@ p{ margin: 0; }
    =========================================================== */
 @media (min-width: 640px){
   .grid-features{ grid-template-columns: repeat(2, 1fr); }
-  .grid-examples{ grid-template-columns: repeat(2, 1fr); }
   .steps{ grid-template-columns: repeat(2, 1fr); }
+  .benefits-grid{ grid-template-columns: repeat(2, 1fr); }
   .footer-inner{ grid-template-columns: 1.2fr 1fr 1fr; }
 }
 
@@ -631,6 +669,6 @@ p{ margin: 0; }
 
 @media (min-width: 1024px){
   .grid-features{ grid-template-columns: repeat(4, 1fr); }
-  .grid-examples{ grid-template-columns: repeat(3, 1fr); }
   .steps{ grid-template-columns: repeat(4, 1fr); }
+  .benefits-grid{ grid-template-columns: repeat(4, 1fr); }
 }
