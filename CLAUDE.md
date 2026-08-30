@@ -86,9 +86,19 @@ nasce invisível — o observer também respeita `prefers-reduced-motion`.
 **Cards de projeto** (`.project-card`) são o ponto que mais muda. Para atualizar um:
 trocar o `src` da capa, trocar o `href` do botão e trocar a classe de status
 (`is-done` / `is-soon`). Um card sem link real **não deve ter** o botão "Ver projeto".
-Os cards ainda sem capa usam `.project-cover-empty`, um espaço reservado tracejado —
-nunca invente uma imagem para preenchê-lo. Há um comentário no HTML acima da seção
-com esses passos.
+Há um comentário no HTML acima da seção com esses passos.
+
+Há dois tipos de capa, e a distinção importa:
+
+- **Screenshot de site real** (ex.: `amv-tour.jpg`) — recebe um véu escuro e
+  `brightness(.82)` para não estourar em branco no tema escuro; ambos abrem no hover.
+- **Arte de capa** gerada para projetos ainda não entregues (`capa-*.jpg`) — leva a
+  classe extra `.is-art`, que dispensa véu e escurecimento porque a imagem já nasce
+  escura. Sem essa classe ela fica escurecida duas vezes e o ícone some.
+
+Arte de capa é permitida para representar um segmento, mas **nunca** fabrique um
+screenshot de site que não existe, e nunca marque como `is-done` um projeto que não
+foi entregue — o status é o que separa portfólio de propaganda enganosa.
 
 **Capas de projeto revalidam no cache justamente porque são trocadas mantendo o mesmo
 nome de arquivo.** Se trocar o vídeo em `assets/video/`, use nome novo — ele tem

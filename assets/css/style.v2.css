@@ -437,6 +437,11 @@ p{ margin: 0; }
 .project-card:hover .project-cover img{ transform: scale(1.06); filter: none; }
 .project-card:hover .project-cover::after{ opacity: .3; }
 
+/* Capa de arte (ja nasce escura, no tema da pagina): dispensa o veu e o
+   escurecimento, que existem para integrar screenshot claro de site real. */
+.project-cover.is-art img{ filter: none; }
+.project-cover.is-art::after{ display: none; }
+
 /* espaco reservado para a capa que sera adicionada depois */
 .project-cover-empty{
   display: grid;
