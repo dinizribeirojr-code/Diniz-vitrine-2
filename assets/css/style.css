@@ -162,6 +162,7 @@ p{ margin: 0; }
   font-size: 16px;
   flex: none;
 }
+.brand-name{ white-space: nowrap; }
 .brand-name strong{ font-weight: 800; }
 
 .main-nav{
@@ -235,7 +236,7 @@ p{ margin: 0; }
 
 /* ===== Hero ===== */
 .hero{
-  padding: 64px 0 80px;
+  padding: 72px 0 56px;
   position: relative;
   overflow: hidden;
 }
@@ -258,7 +259,9 @@ p{ margin: 0; }
   display: grid;
   gap: 48px;
   align-items: center;
+  text-align: center;
 }
+.hero-copy{ max-width: 760px; margin-inline: auto; }
 .eyebrow{
   display: inline-block;
   font-size: 13px;
@@ -275,23 +278,26 @@ p{ margin: 0; }
   font-size: clamp(2.1rem, 5.4vw, 3.4rem);
   font-weight: 800;
   letter-spacing: -.02em;
-  max-width: 15ch;
+  margin-inline: auto;
 }
 .hero-sub{
   margin-top: 20px;
   font-size: 17px;
   color: var(--muted);
-  max-width: 46ch;
+  max-width: 52ch;
+  margin-inline: auto;
 }
 .hero-actions{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 14px;
   margin-top: 32px;
 }
 .hero-trust{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 10px 22px;
   margin-top: 30px;
   font-size: 13.5px;
@@ -305,82 +311,6 @@ p{ margin: 0; }
   background: var(--accent-2);
   flex: none;
 }
-
-/* Hero mock browser visual */
-.hero-visual{ position: relative; }
-.mock-browser{
-  background: #15141a;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow-lg);
-  overflow: hidden;
-}
-.mock-hero{ transform: rotate(-1.2deg); }
-.mock-bar{
-  display: flex;
-  gap: 6px;
-  padding: 14px 16px;
-  background: #1b1a20;
-  border-bottom: 1px solid var(--line);
-}
-.mock-bar span{
-  width: 9px; height: 9px;
-  border-radius: 50%;
-  background: rgba(255,255,255,.22);
-}
-.mock-body{ padding: 26px 24px 30px; }
-.mock-hero-title{
-  height: 16px;
-  width: 70%;
-  border-radius: 6px;
-  background: var(--accent-grad);
-  opacity: .9;
-  margin-bottom: 14px;
-}
-.mock-line{
-  height: 9px;
-  border-radius: 5px;
-  background: rgba(255,255,255,.1);
-  margin-bottom: 9px;
-}
-.mock-line.w-80{ width: 80%; }
-.mock-line.w-70{ width: 70%; }
-.mock-line.w-60{ width: 55%; }
-.mock-btn{
-  width: 132px;
-  height: 34px;
-  border-radius: 999px;
-  background: var(--whatsapp);
-  margin-top: 16px;
-  opacity: .92;
-}
-.mock-cards{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-top: 26px;
-}
-.mock-card{
-  height: 54px;
-  border-radius: 10px;
-  background: rgba(255,255,255,.04);
-  border: 1px solid var(--line);
-}
-
-.mock-float{
-  position: absolute;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  box-shadow: var(--shadow-md);
-}
-.mock-float-whats{
-  width: 56px; height: 56px;
-  background: var(--whatsapp);
-  bottom: 6%;
-  left: -6%;
-}
-.mock-float-whats svg{ width: 26px; height: 26px; fill: #fff; }
 
 /* ===== Sections ===== */
 .section{ padding: 84px 0; }
@@ -451,8 +381,13 @@ p{ margin: 0; }
 .example-info h3{ font-size: 17px; font-weight: 700; margin-bottom: 6px; }
 .example-info p{ font-size: 14px; color: var(--muted); }
 
-/* Card de projeto real (foto) */
-.grid-examples-single{ max-width: 420px; margin-inline: auto; }
+/* Grade de exemplos */
+.grid-examples{
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+.example-card{ display: flex; flex-direction: column; }
 .example-shot{
   position: relative;
   display: block;
@@ -461,10 +396,33 @@ p{ margin: 0; }
 }
 .example-shot img{
   width: 100%;
-  height: 230px;
+  height: 132px;
   object-fit: cover;
   object-position: top;
+  filter: brightness(.72) saturate(.9);
+  transition: filter .25s ease;
 }
+.example-card:hover .example-shot img{ filter: none; }
+.example-shot-empty{
+  height: 132px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,.02);
+  color: var(--muted-light);
+}
+.example-shot-empty svg{ width: 40px; height: 40px; opacity: .7; }
+.example-soon-badge{
+  display: inline-block;
+  background: rgba(255,255,255,.06);
+  color: var(--muted);
+  border: 1px solid var(--line);
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 3px 11px;
+  border-radius: 999px;
+}
+.example-info{ display: flex; flex-direction: column; flex: 1; }
+.example-info .btn{ align-self: flex-start; margin-top: auto; }
 .example-tags{ display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
 .example-tags .example-tag{ margin-bottom: 0; }
 .example-real-badge{
@@ -476,7 +434,7 @@ p{ margin: 0; }
   padding: 4px 12px;
   border-radius: 999px;
 }
-.example-info .btn{ margin-top: 14px; }
+.example-info p{ margin-bottom: 14px; }
 
 /* Gráfico de benefícios */
 .benefits{ margin-top: 64px; }
@@ -772,6 +730,7 @@ p{ margin: 0; }
   .benefits-grid{ grid-template-columns: repeat(2, 1fr); }
   .footer-inner{ grid-template-columns: 1.2fr 1fr 1fr; }
   .compare-grid{ grid-template-columns: repeat(2, 1fr); }
+  .grid-examples{ grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (min-width: 860px){
@@ -782,7 +741,6 @@ p{ margin: 0; }
 }
 
 @media (min-width: 900px){
-  .hero-grid{ grid-template-columns: 1.05fr .95fr; }
   .diferencial-grid{ grid-template-columns: 1.1fr .9fr; }
   .grid-plans{ grid-template-columns: repeat(3, 1fr); }
 }
@@ -792,4 +750,5 @@ p{ margin: 0; }
   .steps{ grid-template-columns: repeat(4, 1fr); }
   .benefits-grid{ grid-template-columns: repeat(4, 1fr); }
   .compare-grid{ grid-template-columns: repeat(3, 1fr); }
+  .grid-examples{ grid-template-columns: repeat(4, 1fr); }
 }
