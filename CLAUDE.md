@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## O que este repositório é
 
-A landing page comercial da **Genesis AI**, empresa que vende criação de landing pages
+A landing page comercial da **Genesis Landing Pages**, empresa que vende criação de landing pages
 para pequenos negócios. É uma única página estática (`index.html`), sem build, sem
 dependências, sem framework.
 

@@ -177,6 +177,12 @@ p{ margin: 0; }
 .main-nav a:hover{ color: var(--accent-2); }
 
 .header-actions{ display: flex; align-items: center; gap: 10px; }
+/* No celular o WhatsApp do cabecalho e redundante com o botao flutuante, e o
+   nome completo da marca nao cabe ao lado dele. Some abaixo de 640px. */
+.header-actions .btn-whatsapp{ display: none; }
+@media (min-width: 640px){
+  .header-actions .btn-whatsapp{ display: inline-flex; }
+}
 
 .nav-toggle{
   display: inline-flex;
