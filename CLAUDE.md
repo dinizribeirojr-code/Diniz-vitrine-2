@@ -100,6 +100,18 @@ Arte de capa é permitida para representar um segmento, mas **nunca** fabrique u
 screenshot de site que não existe, e nunca marque como `is-done` um projeto que não
 foi entregue — o status é o que separa portfólio de propaganda enganosa.
 
+**Fotos da Unsplash (via conector):** o `images.unsplash.com` é bloqueado pelo proxy
+do sandbox, então as URLs `raw`/`full`/`regular` da busca não baixam. O que funciona
+é o campo `small_s3`, que aponta para outro host:
+
+```
+https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/<photo-id>
+```
+
+Só o caminho `/small/` responde (os demais dão 403), e ele entrega **400px de
+largura** — suficiente para o card, mas não para uso em tela cheia. A licença da
+Unsplash permite uso comercial sem atribuição obrigatória.
+
 **Capas de projeto revalidam no cache justamente porque são trocadas mantendo o mesmo
 nome de arquivo.** Se trocar o vídeo em `assets/video/`, use nome novo — ele tem
 cache de um ano.
