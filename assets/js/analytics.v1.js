@@ -18,7 +18,7 @@
   "use strict";
 
   /* ===== PREENCHA AQUI ===== */
-  var GA4_ID    = "";   // ex.: "G-XXXXXXXXXX"
+  var GA4_ID    = "G-2WZ0XBKV4J";   // Google Analytics da Genesis Landing Pages
   var ADS_ID    = "";   // ex.: "AW-123456789"
   var ADS_LABEL = "";   // ex.: "AbC-D_efGhIjKl"
   /* ========================= */
