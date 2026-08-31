@@ -67,7 +67,11 @@ document.querySelectorAll('[data-reveal]').forEach(e => e.classList.add('is-visi
 ## Deploy e a regra de cache
 
 Netlify, ligado ao branch `main` deste repositório, com `publish = "."`. Todo merge em
-`main` publica automaticamente.
+`main` publica automaticamente em **https://genesis-websites.netlify.app/**.
+
+Esse endereço já esteve errado no `canonical` e no `og:url` (apontava para
+`genesis-webpage`, que não existe). Ao mudar o site de lugar, corrija os três
+pontos: `canonical`, `og:url` e a `url` do JSON-LD.
 
 **CSS e JS nunca podem receber `Cache-Control: immutable`.** Os nomes dos arquivos não
 têm hash de conteúdo, então um cabeçalho imutável faz o navegador servir HTML novo com
