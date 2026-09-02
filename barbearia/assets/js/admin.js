@@ -363,8 +363,6 @@
     if (!a) return;
     const svc = DB.get('services', a.serviceId);
     const barber = DB.get('barbers', a.barberId);
-    const canManageStatus = session.role === 'admin' ||
-      ['confirmado', 'concluido', 'nao_compareceu', 'solicitado'].length; // barbeiro também muda status dos seus
 
     drawer(`
       <div class="drawer-header">
