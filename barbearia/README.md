@@ -1,4 +1,4 @@
-# 💈 Barbearia Navalha — Sistema de Agendamento (demonstração)
+# 💈 Barbearia Demonstração — Sistema de Agendamento (modelo)
 
 Aplicação web **responsiva, moderna e funcional** para gestão e agendamento de
 serviços de uma barbearia. Clientes agendam horários online; barbeiros e
