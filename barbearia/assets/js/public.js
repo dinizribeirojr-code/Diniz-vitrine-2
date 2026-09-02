@@ -50,7 +50,8 @@
     const grid = $('#servicesGrid');
     const services = DB.query('services', (s) => s.active);
     grid.innerHTML = services.map((s) => `
-      <article class="service-card">
+      <article class="service-card ${s.popular ? 'is-popular' : ''}">
+        ${s.popular ? '<span class="svc-flag">Mais pedido</span>' : ''}
         <div class="svc-top">
           <h3>${Utils.escapeHtml(s.name)}</h3>
           <span class="price">${Utils.brl(s.priceCents)}</span>
