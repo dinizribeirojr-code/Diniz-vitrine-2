@@ -175,5 +175,38 @@ Por ser estático, publica em qualquer hospedagem de arquivos:
 
 ---
 
+## ♻️ Replicar para outro cliente (este é um modelo reutilizável)
+
+Esta pasta foi feita para servir de **template**: cada nova barbearia é uma
+cópia com a marca trocada. Para produzir o site de um cliente novo, siga o
+roteiro — **sem tocar no código de lógica** (`scheduling.js`, `db.js` API,
+`admin.js`, `public.js`):
+
+1. **Copie a pasta** `barbearia/` para o repositório próprio do cliente
+   (cada cliente tem repositório e site próprios — não misture com a Genesis).
+2. **Marca e contatos** → `assets/js/config.js` (`brand`): nome, logo, endereço,
+   telefone, `whatsapp`, Instagram, Maps, foto principal e `timezone`.
+3. **Regras da agenda** → `assets/js/config.js` (`scheduling`): antecedência,
+   prazo de cancelamento, granularidade e janela de dias.
+4. **Serviços, barbeiros e horários iniciais** → `assets/js/db.js` (função
+   `seed()`), ou cadastre tudo pelo painel depois de publicar.
+5. **Paleta e tipografia** → variáveis no `:root` de `assets/css/style.css`
+   (troque dourado/cobre pela identidade do cliente).
+6. **Senhas de demonstração** → `assets/js/config.js` (`demoAuth`). Em produção,
+   troque pela autenticação real no backend.
+7. **Integrações** (WhatsApp/e-mail) → `config.js` + `.env` no backend do cliente,
+   quando for ligar o envio real.
+
+Checklist rápido antes de entregar: nome/telefone/WhatsApp trocados em todos os
+lugares (inclusive `db.js`), serviços e preços do cliente, horário de
+funcionamento real, e teste do fluxo completo (agendar → horário some → painel
+confirma/cancela → horário volta).
+
+> Como isso é um **modelo**, mantenha `barbearia/` genérico e versionado aqui.
+> **Dados reais de cliente não entram neste repositório** — vão para o
+> repositório próprio do cliente.
+
+---
+
 Feito para demonstração comercial. Ajuste marca, serviços e contatos e a
 barbearia já sai agendando.
