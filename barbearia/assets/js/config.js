@@ -15,8 +15,8 @@ window.APP_CONFIG = {
     // Troque o emoji/logo por um caminho de imagem se preferir: logoImg: 'assets/img/logo.png'
     logoText: 'BN',
     address: 'Rua das Tesouras, 128 — Centro, Rio de Janeiro/RJ',
-    phone: '(21) 99681-6846',
-    whatsapp: '5521996816846', // apenas dígitos, com DDI
+    phone: '(21) 99999-0000', // PLACEHOLDER — troque pelo número do cliente
+    whatsapp: '5521999990000', // PLACEHOLDER (só dígitos, com DDI). Nunca use seu número pessoal na demo.
     instagram: 'https://instagram.com/',
     maps: 'https://maps.google.com/?q=Rua+das+Tesouras+128+Rio+de+Janeiro',
     heroImage:
@@ -36,9 +36,15 @@ window.APP_CONFIG = {
   // Preencha no ambiente real. NUNCA exponha segredos reais no frontend em
   // produção — o front deve chamar um backend que guarda as chaves.
   integrations: {
+    // >>> NO MODELO DE DEMONSTRAÇÃO, MANTENHA TUDO `false`. <<<
+    // Envio real só deve ser ligado no repositório do CLIENTE, com o número e
+    // a conta WhatsApp Business do PRÓPRIO cliente — nunca com o seu número na
+    // demo (senão sua conta fica amarrada a uma barbearia que não existe).
+    // Com `false`: nada é enviado, nada é cobrado e nada fica vinculado à sua
+    // conta. Os botões wa.me apenas abrem uma conversa com o número acima.
     whatsapp: {
-      enabled: false, // liga o envio real via API (backend)
-      apiEndpoint: '', // ex.: '/api/notify/whatsapp' (seu backend)
+      enabled: false, // liga o envio real via API (backend do cliente)
+      apiEndpoint: '', // ex.: '/.netlify/functions/notify-whatsapp' (backend do cliente)
     },
     email: {
       enabled: false,

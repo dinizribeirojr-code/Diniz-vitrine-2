@@ -54,6 +54,13 @@ não é ligada, as mensagens são **registradas** (visíveis em *Configurações
 Notificações*) mas **não são enviadas**. Há botões de WhatsApp com mensagem
 pré-preenchida em vários pontos.
 
+> **No modelo de demonstração, o WhatsApp fica desligado de propósito.** Nada é
+> enviado automaticamente e **nada é vinculado à sua conta** WhatsApp Business.
+> Os botões `wa.me` só abrem uma conversa com o número do `config.js`, que aqui é
+> um **placeholder** (`(21) 99999-0000`). Ative o envio real apenas no
+> repositório de um cliente de verdade, com o número e a conta **do cliente** —
+> nunca com o seu número na demo.
+
 ---
 
 ## 🚀 Como executar
