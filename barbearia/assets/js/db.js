@@ -118,8 +118,8 @@ const DB = (() => {
       name: 'Barbearia Navalha',
       tagline: 'Corte clássico, atitude moderna',
       address: 'Rua das Tesouras, 128 — Centro, Rio de Janeiro/RJ',
-      phone: '(21) 99681-6846',
-      whatsapp: '5521996816846',
+      phone: '(21) 99999-0000',       // PLACEHOLDER — troque pelo número do cliente
+      whatsapp: '5521999990000',      // PLACEHOLDER (só dígitos, com DDI)
       timezone: 'America/Sao_Paulo',
       createdAt: new Date().toISOString(),
     }];
