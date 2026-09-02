@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barbearia Navalha — Agende seu horário</title>
+  <meta name="description" content="Barbearia Navalha: corte, barba e combos com hora marcada. Agende online em segundos." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- ======================= CABEÇALHO ======================= -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="#top" aria-label="Página inicial">
+        <span class="brand-logo" id="brandLogo">BN</span>
+        <span>
+          <span class="brand-name" id="brandName">Barbearia Navalha</span>
+          <span class="brand-sub" id="brandSub">Corte clássico, atitude moderna</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a class="navlink" href="#servicos">Serviços</a>
+        <a class="navlink" href="#equipe">Equipe</a>
+        <a class="navlink" href="#contato">Contato</a>
+        <a class="navlink" href="admin.html">Painel</a>
+        <button class="btn btn-primary btn-sm" data-open-booking>Agendar horário</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ======================= HERO ======================= -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Barbearia premium · hora marcada</span>
+          <h1>Seu melhor visual começa com <span class="gold-text">hora marcada</span>.</h1>
+          <p class="lead">Escolha o serviço, o profissional e o horário. Sem fila, sem espera — a cadeira já fica reservada pra você.</p>
+          <div class="hero-cta">
+            <button class="btn btn-primary" data-open-booking>✂️ Agendar horário</button>
+            <a class="btn btn-ghost" href="#servicos">Ver serviços</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img id="heroImg" alt="Ambiente da barbearia" loading="eager" />
+          <div class="hero-badge">Aberto hoje · <b id="heroHours">—</b></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= SERVIÇOS ======================= -->
+    <section class="section" id="servicos">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">O que fazemos</span>
+          <h2>Serviços & preços</h2>
+          <p>Do corte rápido ao combo completo. Cada serviço já mostra a duração para o agendamento encaixar certinho.</p>
+        </div>
+        <div class="services-grid" id="servicesGrid"><!-- render via JS --></div>
+      </div>
+    </section>
+
+    <!-- ======================= EQUIPE ======================= -->
+    <section class="section section-alt" id="equipe">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Quem cuida de você</span>
+          <h2>Nossos barbeiros</h2>
+          <p>Profissionais com especialidades próprias. Escolha o seu ou deixe com "qualquer profissional".</p>
+        </div>
+        <div class="barbers-grid" id="barbersGrid"><!-- render via JS --></div>
+      </div>
+    </section>
+
+    <!-- ======================= AVALIAÇÕES ======================= -->
+    <section class="section" id="avaliacoes">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">O que dizem</span>
+          <h2>Avaliações de clientes</h2>
+        </div>
+        <div class="reviews-grid" id="reviewsGrid"><!-- render via JS --></div>
+      </div>
+    </section>
+
+    <!-- ======================= CONTATO / INFO ======================= -->
+    <section class="section section-alt" id="contato">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Onde nos encontrar</span>
+          <h2>Contato & funcionamento</h2>
+        </div>
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Endereço</h3>
+            <p id="infoAddress">—</p>
+            <p style="margin-top:12px"><a class="tag" id="mapsLink" target="_blank" rel="noopener">📍 Ver no Google Maps</a></p>
+          </div>
+          <div class="info-card">
+            <h3>Fale com a gente</h3>
+            <p id="infoPhone">—</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+              <a class="btn btn-whatsapp btn-sm" id="waContato" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="btn btn-ghost btn-sm" id="igLink" target="_blank" rel="noopener">Instagram</a>
+            </div>
+          </div>
+          <div class="info-card">
+            <h3>Horário de funcionamento</h3>
+            <ul class="hours-list" id="hoursList"><!-- render via JS --></ul>
+          </div>
+        </div>
+        <div style="margin-top:28px;text-align:center">
+          <button class="btn btn-primary" data-open-booking>Agendar meu horário</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================= RODAPÉ ======================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div>© <span id="year"></span> <span id="footBrand">Barbearia Navalha</span>. Feito para demonstração.</div>
+      <div class="footer-links">
+        <a href="#servicos">Serviços</a>
+        <a href="#equipe">Equipe</a>
+        <a href="admin.html">Painel administrativo</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botão flutuante do WhatsApp -->
+  <a class="wa-float" id="waFloat" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.45-.15-.64.15s-.74.94-.9 1.13c-.17.2-.33.22-.62.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3 0-.45.13-.6.13-.13.3-.33.44-.5.15-.16.2-.28.3-.47.1-.2.05-.37-.02-.52-.08-.15-.64-1.54-.88-2.1-.23-.56-.47-.48-.64-.49h-.55c-.2 0-.5.07-.76.37s-1 .98-1 2.38 1.02 2.76 1.17 2.95c.15.2 2.02 3.08 4.9 4.32.68.3 1.22.47 1.63.6.69.22 1.31.19 1.8.11.55-.08 1.7-.7 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34z"/><path d="M12 2a10 10 0 0 0-8.6 15.06L2 22l5.06-1.33A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3 .79.8-2.92-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+  </a>
+
+  <!-- Container do modal de agendamento (preenchido via JS) -->
+  <div id="bookingRoot"></div>
+  <div class="toast-wrap" id="toastWrap"></div>
+
+  <!-- ======================= SCRIPTS ======================= -->
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/scheduling.js"></script>
+  <script src="assets/js/integrations.js"></script>
+  <script src="assets/js/calendar.js"></script>
+  <script src="assets/js/public.js"></script>
+</body>
+</html>
