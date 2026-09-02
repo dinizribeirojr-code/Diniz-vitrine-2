@@ -152,7 +152,7 @@ const DB = (() => {
     const services = [
       { id: 'svc_corte', shopId, name: 'Corte masculino', description: 'Corte na tesoura ou máquina, lavagem e finalização.', durationMin: 45, priceCents: 4500, active: true },
       { id: 'svc_barba', shopId, name: 'Barba', description: 'Toalha quente, navalha e hidratação.', durationMin: 30, priceCents: 3000, active: true },
-      { id: 'svc_corte_barba', shopId, name: 'Corte + barba', description: 'O combo mais pedido: corte completo e barba desenhada.', durationMin: 75, priceCents: 7000, active: true },
+      { id: 'svc_corte_barba', shopId, name: 'Corte + barba', description: 'O combo mais pedido: corte completo e barba desenhada.', durationMin: 75, priceCents: 7000, active: true, popular: true },
       { id: 'svc_sobrancelha', shopId, name: 'Sobrancelha', description: 'Alinhamento na navalha ou pinça.', durationMin: 15, priceCents: 2000, active: true },
       { id: 'svc_infantil', shopId, name: 'Corte infantil', description: 'Corte para crianças até 10 anos, com paciência de sobra.', durationMin: 40, priceCents: 4000, active: true },
       { id: 'svc_premium', shopId, name: 'Combo premium', description: 'Corte, barba, sobrancelha e tratamento. A experiência completa.', durationMin: 90, priceCents: 9500, active: true },

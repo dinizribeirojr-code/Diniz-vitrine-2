@@ -175,6 +175,10 @@ h1, h2, h3, .display {
   border: 1px solid var(--line-strong);
   box-shadow: var(--shadow);
   aspect-ratio: 4 / 5;
+  /* Placeholder com gradiente: se a foto não carregar, não fica "quebrado" */
+  background:
+    radial-gradient(120% 90% at 70% 10%, rgba(217, 178, 107, 0.18), transparent 55%),
+    linear-gradient(160deg, var(--surface-2), var(--bg));
 }
 .hero-media::after {
   content: '';
@@ -236,8 +240,16 @@ h1, h2, h3, .display {
   border-radius: var(--radius);
   overflow: hidden;
 }
-.barber-photo { aspect-ratio: 1 / 1; overflow: hidden; background: var(--surface-2); }
-.barber-photo img { width: 100%; height: 100%; object-fit: cover; }
+.barber-photo {
+  position: relative;
+  aspect-ratio: 1 / 1; overflow: hidden;
+  background:
+    radial-gradient(90% 80% at 50% 20%, rgba(217, 178, 107, 0.16), transparent 60%),
+    linear-gradient(160deg, var(--surface-2), var(--bg));
+  display: grid; place-items: center;
+}
+.barber-photo::before { content: '💈'; font-size: 2.4rem; opacity: 0.5; }
+.barber-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .barber-body { padding: 16px 18px 20px; }
 .barber-body h3 { font-size: 1.4rem; }
 .barber-body .spec { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
@@ -445,6 +457,42 @@ h1, h2, h3, .display {
 .badge.concluido { color: var(--st-concluido); }
 .badge.cancelado { color: var(--st-cancelado); }
 .badge.nao_compareceu { color: var(--st-nao); }
+
+/* ---- Como funciona (3 passos) --------------------------------------------- */
+.steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+.step-card {
+  position: relative;
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 26px 22px 22px;
+}
+.step-card .step-num {
+  position: absolute; top: -18px; left: 22px;
+  width: 40px; height: 40px; border-radius: 50%;
+  display: grid; place-items: center;
+  font-family: var(--font-head); font-size: 1.35rem; color: #201a10;
+  background: linear-gradient(120deg, var(--gold-1), var(--gold-2));
+  box-shadow: 0 8px 20px rgba(181, 133, 74, 0.3);
+}
+.step-card h3 { font-size: 1.35rem; margin: 6px 0 8px; }
+.step-card p { color: var(--muted); font-size: 0.92rem; }
+
+/* ---- Selo "Mais pedido" no card de serviço -------------------------------- */
+.service-card { position: relative; }
+.service-card.is-popular { border-color: var(--line-strong); }
+.svc-flag {
+  position: absolute; top: -10px; right: 16px;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+  color: #201a10; background: linear-gradient(120deg, var(--gold-1), var(--gold-2));
+  padding: 4px 10px; border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(181, 133, 74, 0.3);
+}
+
+/* ---- Animação de entrada (só ativa quando o JS liga `reveal-on`) ----------- */
+.reveal-on [data-reveal] {
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-on [data-reveal].is-visible { opacity: 1; transform: none; }
 
 /* Acessibilidade: foco visível */
 :focus-visible { outline: 2px solid var(--gold-1); outline-offset: 2px; }
