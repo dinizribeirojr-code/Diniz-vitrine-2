@@ -22,7 +22,7 @@
  * ========================================================================== */
 
 const DB = (() => {
-  const KEY = 'barbearia_navalha_db_v1';
+  const KEY = 'barbearia_demo_db_v2';
   const ENTITIES = [
     'users', 'barbershops', 'barbers', 'services',
     'customers', 'appointments', 'business_hours', 'blocked_slots', 'notifications',
@@ -115,8 +115,8 @@ const DB = (() => {
 
     const barbershops = [{
       id: shopId,
-      name: 'Barbearia Navalha',
-      tagline: 'Corte clássico, atitude moderna',
+      name: 'Barbearia Demonstração',
+      tagline: 'Modelo de vitrine — corte, barba e hora marcada',
       address: 'Rua das Tesouras, 128 — Centro, Rio de Janeiro/RJ',
       phone: '(21) 99999-0000',       // PLACEHOLDER — troque pelo número do cliente
       whatsapp: '5521999990000',      // PLACEHOLDER (só dígitos, com DDI)
@@ -124,27 +124,27 @@ const DB = (() => {
       createdAt: new Date().toISOString(),
     }];
 
-    // Barbeiros (o campo `photo` pode ser trocado por foto real)
+    // Barbeiros — nomes inventados para o modelo (troque `photo` por foto real)
     const barbers = [
       {
-        id: 'barber_rafael', shopId, name: 'Rafael Andrade', userRef: 'rafael',
+        id: 'barber_caio', shopId, name: 'Caio Belmonte', userRef: 'caio',
         photo: 'https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1500648767791-00dcc994a43e',
         specialties: ['Corte masculino', 'Barba', 'Navalhado'],
-        bio: 'Especialista em degradê e barba desenhada. 8 anos de cadeira.',
+        bio: 'Degradê milimétrico e barba desenhada na navalha. 9 anos de cadeira.',
         active: true,
       },
       {
-        id: 'barber_bruno', shopId, name: 'Bruno Teixeira', userRef: 'bruno',
-        photo: 'https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1506794778202-cad84cf45f1d',
-        specialties: ['Corte infantil', 'Sobrancelha', 'Combo premium'],
-        bio: 'Paciência com a criançada e mão leve no acabamento.',
-        active: true,
-      },
-      {
-        id: 'barber_diego', shopId, name: 'Diego Martins', userRef: 'diego',
+        id: 'barber_theo', shopId, name: 'Théo Ramires', userRef: 'theo',
         photo: 'https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1519085360753-af0119f7cbe7',
         specialties: ['Corte + barba', 'Combo premium', 'Pigmentação'],
-        bio: 'Referência em combos e tratamentos. Atendimento premium.',
+        bio: 'Referência em combos e acabamento premium. Mão firme no contorno.',
+        active: true,
+      },
+      {
+        id: 'barber_igor', shopId, name: 'Ígor Fontana', userRef: 'igor',
+        photo: 'https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1506794778202-cad84cf45f1d',
+        specialties: ['Corte infantil', 'Sobrancelha', 'Corte masculino'],
+        bio: 'Paciência com a criançada e olho de artista na sobrancelha.',
         active: true,
       },
     ];
@@ -164,62 +164,100 @@ const DB = (() => {
 
     // Usuários (autenticação DEMO). Senhas ficam em config.js; aqui só o papel.
     const users = [
-      { id: 'user_admin', shopId, username: 'admin', role: 'admin', name: 'Administrador', email: 'admin@barbearianavalha.com.br' },
-      { id: 'user_rafael', shopId, username: 'rafael', role: 'barber', name: 'Rafael Andrade', barberId: 'barber_rafael' },
-      { id: 'user_bruno', shopId, username: 'bruno', role: 'barber', name: 'Bruno Teixeira', barberId: 'barber_bruno' },
-      { id: 'user_diego', shopId, username: 'diego', role: 'barber', name: 'Diego Martins', barberId: 'barber_diego' },
+      { id: 'user_admin', shopId, username: 'admin', role: 'admin', name: 'Administrador', email: 'admin@barbeariademo.com.br' },
+      { id: 'user_caio', shopId, username: 'caio', role: 'barber', name: 'Caio Belmonte', barberId: 'barber_caio' },
+      { id: 'user_theo', shopId, username: 'theo', role: 'barber', name: 'Théo Ramires', barberId: 'barber_theo' },
+      { id: 'user_igor', shopId, username: 'igor', role: 'barber', name: 'Ígor Fontana', barberId: 'barber_igor' },
     ];
 
     const customers = [
-      { id: 'cust_1', shopId, name: 'Marcos Vinícius', phone: '(21) 98888-1122', email: 'marcos@email.com', notes: '' },
-      { id: 'cust_2', shopId, name: 'André Souza', phone: '(21) 97777-3344', email: '', notes: 'Prefere máquina 2.' },
-      { id: 'cust_3', shopId, name: 'Felipe Nogueira', phone: '(21) 96666-5566', email: 'felipe@email.com', notes: '' },
+      { id: 'cust_1', shopId, name: 'Marcelo Aragão', phone: '(21) 98123-4567', email: 'marcelo@email.com', notes: '' },
+      { id: 'cust_2', shopId, name: 'Rodrigo Pires', phone: '(21) 99234-5678', email: '', notes: 'Prefere máquina 2.' },
+      { id: 'cust_3', shopId, name: 'Vitor Hugo Lima', phone: '(21) 98345-6789', email: 'vitorhugo@email.com', notes: '' },
+      { id: 'cust_4', shopId, name: 'Sérgio Bastos', phone: '(21) 99456-7890', email: '', notes: '' },
+      { id: 'cust_5', shopId, name: 'Paulo Renato', phone: '(21) 98567-8901', email: 'paulo@email.com', notes: '' },
+      { id: 'cust_6', shopId, name: 'Anderson Rocha', phone: '(21) 99678-9012', email: '', notes: 'Costuma atrasar 10min.' },
+      { id: 'cust_7', shopId, name: 'Lucas Ferraz', phone: '(21) 98789-0123', email: 'lucas@email.com', notes: '' },
     ];
 
-    // Agendamentos fictícios relativos a HOJE, para o painel nascer vivo.
+    // ---- Agendas fictícias -------------------------------------------------
+    // Gera agendamentos realistas para CADA barbeiro, distribuídos entre alguns
+    // dias passados e os próximos dias, sempre relativos a HOJE. Respeita o
+    // expediente, a pausa do almoço, a duração de cada serviço e não deixa dois
+    // agendamentos se sobreporem para o mesmo barbeiro — então a agenda parece
+    // cheia, mas ainda sobram horários livres para demonstrar o agendamento.
     const iso = (offsetDays) => {
       const d = new Date();
       d.setDate(d.getDate() + offsetDays);
       return Utils.toISODate(d);
     };
-    const appointments = [
+    const bhForWeekday = (wd) => business_hours.find((b) => b.weekday === wd);
+    const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
+    const collides = (s1, e1, s2, e2) => s1 < e2 && s2 < e1;
+
+    // Bloqueio manual de exemplo (compromisso pessoal de um barbeiro num dia).
+    // Definido ANTES da geração para a agenda não marcar sobre o bloqueio.
+    const blocked_slots = [
       {
-        id: 'appt_1', shopId, code: 'AG-DEMO-1001',
-        serviceId: 'svc_corte_barba', barberId: 'barber_rafael', customerId: 'cust_1',
-        customerName: 'Marcos Vinícius', customerPhone: '(21) 98888-1122', customerEmail: 'marcos@email.com',
-        date: iso(0), startMin: 10 * 60, durationMin: 75, priceCents: 7000,
-        status: 'confirmado', notes: '', createdAt: new Date().toISOString(),
-      },
-      {
-        id: 'appt_2', shopId, code: 'AG-DEMO-1002',
-        serviceId: 'svc_corte', barberId: 'barber_bruno', customerId: 'cust_2',
-        customerName: 'André Souza', customerPhone: '(21) 97777-3344', customerEmail: '',
-        date: iso(0), startMin: 14 * 60, durationMin: 45, priceCents: 4500,
-        status: 'solicitado', notes: 'Prefere máquina 2.', createdAt: new Date().toISOString(),
-      },
-      {
-        id: 'appt_3', shopId, code: 'AG-DEMO-1003',
-        serviceId: 'svc_premium', barberId: 'barber_diego', customerId: 'cust_3',
-        customerName: 'Felipe Nogueira', customerPhone: '(21) 96666-5566', customerEmail: 'felipe@email.com',
-        date: iso(1), startMin: 15 * 60, durationMin: 90, priceCents: 9500,
-        status: 'confirmado', notes: '', createdAt: new Date().toISOString(),
-      },
-      {
-        id: 'appt_4', shopId, code: 'AG-DEMO-1004',
-        serviceId: 'svc_barba', barberId: 'barber_rafael', customerId: 'cust_2',
-        customerName: 'André Souza', customerPhone: '(21) 97777-3344', customerEmail: '',
-        date: iso(-1), startMin: 16 * 60, durationMin: 30, priceCents: 3000,
-        status: 'concluido', notes: '', createdAt: new Date().toISOString(),
+        id: 'block_1', shopId, barberId: 'barber_theo', date: iso(2),
+        startMin: 13 * 60, endMin: 14 * 60 + 30, reason: 'Compromisso pessoal',
       },
     ];
 
-    // Bloqueio manual de exemplo (almoço estendido de um barbeiro num dia).
-    const blocked_slots = [
-      {
-        id: 'block_1', shopId, barberId: 'barber_diego', date: iso(2),
-        startMin: 13 * 60, endMin: 14 * 60, reason: 'Compromisso pessoal',
-      },
-    ];
+    const appointments = [];
+    let seq = 1001;
+    for (let off = -3; off <= 6; off++) {
+      const date = iso(off);
+      const bh = bhForWeekday(Utils.weekdayOf(date));
+      if (!bh || bh.closed) continue; // dia fechado não tem agenda
+
+      barbers.forEach((barber, bi) => {
+        // já reserva os horários bloqueados deste barbeiro neste dia
+        const taken = blocked_slots
+          .filter((b) => b.barberId === barber.id && b.date === date)
+          .map((b) => [b.startMin, b.endMin]);
+        const target = 2 + ((off + bi + 9) % 3); // 2 a 4 atendimentos no dia
+
+        // horários candidatos (de 15 em 15 min), embaralhados
+        const candidates = [];
+        for (let t = bh.open; t < bh.close; t += 15) candidates.push(t);
+        for (let i = candidates.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [candidates[i], candidates[j]] = [candidates[j], candidates[i]];
+        }
+
+        let placed = 0;
+        for (const start of candidates) {
+          if (placed >= target) break;
+          const svc = pick(services);
+          const end = start + svc.durationMin;
+          if (end > bh.close) continue;
+          if (bh.breakStart != null && collides(start, end, bh.breakStart, bh.breakEnd)) continue;
+          if (taken.some(([s, e]) => collides(start, end, s, e))) continue;
+
+          taken.push([start, end]);
+          placed++;
+          const cust = pick(customers);
+
+          let status;
+          if (off < 0) status = Math.random() < 0.15 ? 'nao_compareceu' : 'concluido';
+          else if (off === 0) {
+            status = end <= Utils.nowMinutes()
+              ? 'concluido'
+              : pick(['confirmado', 'confirmado', 'solicitado']);
+          } else status = pick(['confirmado', 'confirmado', 'solicitado']);
+
+          appointments.push({
+            id: 'appt_' + seq, shopId, code: 'AG-DEMO-' + seq,
+            serviceId: svc.id, barberId: barber.id, customerId: cust.id,
+            customerName: cust.name, customerPhone: cust.phone, customerEmail: cust.email,
+            date, startMin: start, durationMin: svc.durationMin, priceCents: svc.priceCents,
+            status, notes: cust.notes || '', source: 'demo', createdAt: new Date().toISOString(),
+          });
+          seq++;
+        }
+      });
+    }
 
     const notifications = [];
 

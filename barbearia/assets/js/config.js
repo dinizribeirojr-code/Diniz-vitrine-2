@@ -10,10 +10,10 @@
 window.APP_CONFIG = {
   // ---- Identidade da barbearia (edite livremente) -------------------------
   brand: {
-    name: 'Barbearia Navalha',
-    tagline: 'Corte clássico, atitude moderna',
+    name: 'Barbearia Demonstração',
+    tagline: 'Modelo de vitrine — corte, barba e hora marcada',
     // Troque o emoji/logo por um caminho de imagem se preferir: logoImg: 'assets/img/logo.png'
-    logoText: 'BN',
+    logoText: 'BD',
     address: 'Rua das Tesouras, 128 — Centro, Rio de Janeiro/RJ',
     phone: '(21) 99999-0000', // PLACEHOLDER — troque pelo número do cliente
     whatsapp: '5521999990000', // PLACEHOLDER (só dígitos, com DDI). Nunca use seu número pessoal na demo.

@@ -66,7 +66,7 @@
           <div class="login-hint">
             <b>Acesso de demonstração</b><br/>
             Administrador — usuário <b>admin</b>, senha <b>admin123</b><br/>
-            Barbeiro — usuário <b>rafael</b> / <b>bruno</b> / <b>diego</b>, senha <b>barbeiro123</b>
+            Barbeiro — usuário <b>caio</b> / <b>theo</b> / <b>igor</b>, senha <b>barbeiro123</b>
           </div>
           <div style="text-align:center;margin-top:16px"><a class="navlink" href="index.html" style="color:var(--muted);font-size:.85rem">← Voltar ao site</a></div>
         </form>

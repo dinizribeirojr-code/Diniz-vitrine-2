@@ -28,9 +28,9 @@ const CalendarICS = (() => {
     return [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
-      'PRODID:-//Barbearia Navalha//Agendamento//PT-BR',
+      'PRODID:-//Barbearia Demonstracao//Agendamento//PT-BR',
       'BEGIN:VEVENT',
-      `UID:${appointment.code}@barbearia-navalha`,
+      `UID:${appointment.code}@barbearia-demo`,
       `DTSTAMP:${fmt(Utils.todayISO(), Utils.nowMinutes())}`,
       `DTSTART:${fmt(appointment.date, appointment.startMin)}`,
       `DTEND:${fmt(appointment.date, appointment.startMin + appointment.durationMin)}`,

@@ -19,9 +19,9 @@
 
   // ---- Avaliações estáticas (demo) -----------------------------------------
   const REVIEWS = [
-    { stars: 5, text: 'Melhor degradê que já fiz. Marquei pelo site e nem esperei.', author: 'Marcos V.' },
-    { stars: 5, text: 'Atendimento no horário certinho, ambiente impecável.', author: 'André S.' },
-    { stars: 5, text: 'O combo premium vale cada centavo. Recomendo o Diego.', author: 'Felipe N.' },
+    { stars: 5, text: 'Melhor degradê que já fiz. Marquei pelo site e nem esperei.', author: 'Marcelo A.' },
+    { stars: 5, text: 'Atendimento no horário certinho, ambiente impecável.', author: 'Rodrigo P.' },
+    { stars: 5, text: 'O combo premium vale cada centavo. Recomendo o Théo.', author: 'Paulo R.' },
   ];
 
   // =========================================================================
