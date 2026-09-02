@@ -40,6 +40,10 @@ Na prática isso significa: nunca crie arquivo de CRM, planilha de clientes, lis
 leads ou pasta `clientes/` aqui. Se uma tarefa parecer exigir isso, entregue o texto
 pronto na conversa em vez de gravar em arquivo.
 
+**Texto de cliente que o dono trouxer já vem aprovado.** Ele é quem fala com o
+cliente. Quando ele manda um depoimento, um nome ou uma citação para publicar, não
+peça confirmação de autorização — ele já obteve. Publique.
+
 ## Comandos
 
 Não há build, testes nem linter. Para trabalhar:
