@@ -14,6 +14,11 @@
   Esse número está em ~9 pontos do site, no Instagram e nos dados estruturados.
   Perdê-lo por spam é perder o canal inteiro de vendas.
 - **Preços:** os três planos são **sob consulta**. Nenhum agente inventa valor.
+- **Orçamento: ZERO.** A operação roda inteira de graça — Netlify free, ferramentas
+  gratuitas (App WhatsApp Business, Google Meu Negócio, Meta Business Suite, Google
+  Agenda, Gmail) e os conectores já ligados. **Tráfego pago (Google/Meta Ads) é fase 2**,
+  quando um cliente pagante financiar o teste — nunca do próprio bolso no zero a zero.
+  Detalhe em `docs/stack-ferramentas.md`.
 - **Métrica que importa:** **conversa iniciada no WhatsApp** — não clique, não
   seguidor, não impressão. Tudo no plano é medido por quantas conversas gera.
 
@@ -120,8 +125,9 @@ argumento · fonte · verificado`, cada linha com argumento verdadeiro daquele n
 - **Nunca disparo em massa no WhatsApp** para quem nunca falou com o dono — derruba o
   número. Abordagem fria é na porta, por telefone ou por indicação.
 
-**Google Ads (pago, intenção).** Começa **pequeno e por busca**, não display. Quem
-digita "criar site para minha empresa" tem intenção; quem vê banner, não.
+**Google Ads (pago, intenção) — FASE 2, sem verba agora.** Fica pronto para ligar quando
+houver receita. Começa **pequeno e por busca**, não display. Quem digita "criar site
+para minha empresa" tem intenção; quem vê banner, não.
 - Comece pela **cauda longa local** ("site para manicure rj", "landing page pequeno
   negócio rio") — mais barata e converte melhor. Genérico caro ("criar site") fica
   para depois.
@@ -142,7 +148,7 @@ o link e você manda o quê?"). Nada de frase motivacional genérica. Legenda fo
 1ª linha, 8–12 hashtags misturando serviço + segmento + região, sempre terminando em
 ação (chamar no WhatsApp).
 
-**Meta Ads — Instagram/Facebook pago (novo).** Pega o dono certo que *ainda não procura*.
+**Meta Ads — Instagram/Facebook pago (novo) — FASE 2, sem verba agora.** Pega o dono certo que *ainda não procura*.
 Objetivo de mensagens/WhatsApp (nunca "engajamento"), segmentação por raio no Rio +
 interesse de pequeno empreendedor, e a criação puxada do que a mídia social já faz
 (antes-e-depois, Reels). Criação cansa rápido no feed — trocar o anúncio antes de mexer
@@ -221,8 +227,8 @@ preencher `GA4_ID`, `ADS_ID`, `ADS_LABEL` (e vale uma linha de LGPD no rodapé).
 | **Orçamentos reativados no follow-up / mês** | ? | ? | ? |
 | Fechamentos / mês | ? | ? | ? |
 | **Sites entregues (vira case)** | 1 | 3 | ? |
-| Custo por conversa (Google Ads) | — | ? | ? |
-| Custo por conversa (Meta Ads) | — | ? | ? |
+| Custo por conversa — Google Ads *(fase 2)* | — | — | ? |
+| Custo por conversa — Meta Ads *(fase 2)* | — | — | ? |
 
 ## 6. Cadência semanal (rituais)
 
@@ -275,8 +281,9 @@ O que precisa sair decidido:
 1. **Preço dos três planos** (faixa de referência para agilizar orçamento) — hoje
    tudo é chute caso a caso.
 2. **Metas numéricas** da tabela do §5 (agora com indicação, follow-up e Meta Ads).
-3. **Verba de mídia paga** — quanto/mês para Google Ads (cauda longa local) e para
-   Meta Ads (geo+interesse), e aprovação para conectar as contas no Windsor.ai.
+3. **Operação custo zero** — confirmar que anúncio pago fica para a fase 2 e que o topo
+   do funil roda nos canais grátis; montar o stack inicial de R$ 0 (App WhatsApp
+   Business + Google Meu Negócio + analytics sem cookie). Ver `docs/stack-ferramentas.md`.
 4. **Programa de indicação** — comissão/prêmio para quem indica, e os 3–5 primeiros
    parceiros a abordar (contador, gráfica, agência de turismo…).
 5. **Meta de prospecção** — quantos nomes reais/semana e de quais bairros/segmentos.

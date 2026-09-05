@@ -17,6 +17,39 @@
 
 ---
 
+## 💰 Orçamento é ZERO — o que fazer HOJE sem gastar nada
+
+As ferramentas open-source abaixo, na prática, custam dinheiro: self-hosted precisa de
+servidor (~US$5/mês pra cima) e a nuvem de cada uma é paga. **Com orçamento zero, elas
+ficam para a fase 2** (quando entrar receita, ou quando houver quem administre um
+servidor de graça). Enquanto isso, dá para operar como agência **sem pagar nada**, com
+o gratuito equivalente de cada função:
+
+| Função | Versão paga (fase 2) | **O que usar agora — grátis** |
+|---|---|---|
+| Atendimento / "CRM" | Chatwoot | **App WhatsApp Business** — etiquetas, respostas rápidas, catálogo, mensagem de ausência. É o mini-CRM grátis. |
+| Qualificar lead | Typebot | **Links `wa.me` com mensagem pré-preenchida** (já existem no site!) + **respostas rápidas** do WhatsApp Business com as 3 perguntas. |
+| Analytics sem cookie | Umami / Plausible | **Cloudflare Web Analytics** (grátis, sem cookie, resolve a LGPD) ou o **GA4** que já está pronto no repo (grátis). |
+| Agendar posts | Postiz | **Meta Business Suite** — agenda Instagram + Facebook nativo, de graça. |
+| Aparecer na busca | (—) | **Google Meu Negócio** — grátis, coloca a Genesis (e cada cliente) no mapa e na busca local do Rio. **Maior retorno por custo zero.** |
+| Agendamento | Cal.com | **Google Agenda — horários de atendimento** (appointment schedule), grátis. |
+| E-mail / follow-up | Listmonk | **Gmail** (já conectado) para follow-up manual em volume baixo. |
+| Automação | n8n | **Manual** — em volume baixo não precisa de automação. |
+| Contrato | Documenso | **Modelo de proposta** em PDF/Docs + confirmação por WhatsApp. |
+| Hospedar o site | (—) | **Netlify free** — já é o que a Genesis usa. |
+| Arte / vídeo | (assinaturas) | **Canva, Unsplash, ElevenLabs, Descript** — já conectados nesta sessão, sem custo extra pra você. |
+
+**Tráfego pago (Google Ads e Meta Ads) fica para depois.** Sem verba, o topo do funil
+roda 100% nos canais gratuitos — que já eram a prioridade da Genesis: prospecção
+(porta/telefone/indicação), **parcerias/indicação**, **Instagram orgânico**, **status de
+WhatsApp** e **Google Meu Negócio**. Anúncio pago entra quando um cliente pagante
+financiar o teste — nunca do próprio bolso no zero a zero.
+
+**Resumo:** dá para montar a operação inteira hoje por **R$ 0**. A lista open-source
+abaixo é o upgrade natural quando houver receita para bancar um servidor.
+
+---
+
 ## ⚠️ Aviso que vem antes de tudo: WhatsApp
 
 O número **(21) 99681-6846** é o canal de vendas inteiro da Genesis. Perdê-lo por
@@ -122,24 +155,30 @@ O case AMV é agendamento; oferecer "agende pelo site" é argumento de venda e u
 
 ---
 
-## Stack inicial recomendado (comece por estes 3)
+## Stack inicial — orçamento zero (montar esta semana, R$ 0)
 
 Casado com o gargalo de hoje — organizar o atendimento e converter o contato que já
-chega, antes de escalar tráfego:
+chega, sem gastar:
 
-1. **Chatwoot + WhatsApp Business API oficial** — uma caixa de entrada só, sem risco de
-   banir o número.
-2. **Typebot** — qualifica sozinho (as 3 perguntas) e entrega o lead pronto no WhatsApp.
-3. **Umami** (ou Plausible) — descobre de onde vem o contato, sem dor de LGPD.
+1. **App WhatsApp Business** — etiquetas (lead novo / orçamento enviado / cliente),
+   respostas rápidas com as 3 perguntas de qualificação, mensagem de ausência. É o
+   CRM-lite grátis e não corre risco de banir o número.
+2. **Google Meu Negócio** — ficha da Genesis no ar, grátis, aparecendo na busca local do
+   Rio. Maior retorno por custo zero, e vira serviço extra pra vender ao cliente.
+3. **Cloudflare Web Analytics** (ou o GA4 já pronto no repo) — medir de onde vem o
+   contato, sem cookie e sem dor de LGPD.
 
-**Fase 2, quando o volume justificar:** Postiz (escala social) · n8n (a cola) ·
-Cal.com (agendamento como feature/upsell) · Documenso (contrato no fechamento).
+**Fase 1,5 (ainda grátis):** Meta Business Suite para agendar post · Google Agenda para
+agendamento · Gmail para follow-up manual.
+
+**Fase 2, quando entrar receita ou houver servidor:** Chatwoot · Typebot · Umami ·
+Postiz · n8n · Cal.com · Documenso — e só então testar Google/Meta Ads, financiado por
+cliente pagante, nunca do próprio bolso.
 
 ## Duas verdades para não frustrar
 
-- **Self-hosted tem custo de manutenção.** Cada serviço é um servidor a cuidar. Se não
-  houver quem administre, use a **nuvem paga** de cada um — sai mais caro por mês, mas
-  não trava a operação. Decidir isso caso a caso.
+- **Zero de verba não trava a operação — trava só o tráfego pago.** Todos os canais que
+  já eram a prioridade da Genesis (indicação, prospecção, Instagram, status, Google Meu
+  Negócio) são de graça. O anúncio pago é acelerador, não fundação.
 - **Ferramenta não substitui prova social.** O gargalo nº 1 continua sendo transformar
-  os 3 projetos em preparação em case. O stack faz a Genesis parecer (e operar como) uma
-  agência de primeira; os cases fazem ela ser contratada como uma.
+  os 3 projetos em preparação em case. Cases também custam R$ 0 e são o que mais vende.
