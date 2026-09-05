@@ -278,12 +278,16 @@ conectado nesta sessão** e como cada um vira resultado:
 
 O que precisa sair decidido:
 
-1. **Preço dos três planos** (faixa de referência para agilizar orçamento) — hoje
-   tudo é chute caso a caso.
+1. **Preço dos três planos** — a decisão nº 1, hoje é chute caso a caso. Não precisa
+   sair perfeito; precisa sair um número. Use o **Anexo A** (guia rápido de preço) para
+   decidir na hora: preço de setup + mensalidade de manutenção + preço de lançamento
+   para os primeiros clientes.
 2. **Metas numéricas** da tabela do §5 (agora com indicação, follow-up e Meta Ads).
-3. **Operação custo zero** — confirmar que anúncio pago fica para a fase 2 e que o topo
-   do funil roda nos canais grátis; montar o stack inicial de R$ 0 (App WhatsApp
-   Business + Google Meu Negócio + analytics sem cookie). Ver `docs/stack-ferramentas.md`.
+3. **Orçamento: confirmar R$ 0 de fundação + o teste de R$ 50.** A operação roda de
+   graça (stack inicial: App WhatsApp Business + Google Meu Negócio + analytics sem
+   cookie — `docs/stack-ferramentas.md`). Os **R$ 50** que dá para juntar viram **um
+   teste único**, não campanha — ver **Anexo B** (o que R$ 50 faz e não faz). Anúncio
+   pago de verdade só quando um cliente pagante financiar.
 4. **Programa de indicação** — comissão/prêmio para quem indica, e os 3–5 primeiros
    parceiros a abordar (contador, gráfica, agência de turismo…).
 5. **Meta de prospecção** — quantos nomes reais/semana e de quais bairros/segmentos.
@@ -303,3 +307,55 @@ O que precisa sair decidido:
   com o dono, no WhatsApp/e-mail dele).
 - Não alterar verba/campanha real sem aprovação explícita do dono.
 - Não anunciar como entregue o que não foi.
+
+---
+
+## Anexo A — Guia rápido para decidir o preço (usar na reunião)
+
+Você não precisa acertar o preço perfeito amanhã. Precisa sair com **um número de
+partida** que dê para ajustar depois. Um método simples em três partes:
+
+**1. Preço de setup (uma vez).** O que o cliente paga para o site nascer. Pense em
+horas × quanto vale sua hora, com um piso que faça o trabalho valer a pena. Referência
+do mercado brasileiro para landing de uma página de pequeno negócio (freelancer/pequena
+operação, 2026), **só para discutir — a decisão é sua**:
+
+| Plano | Referência de mercado (setup) | Observação |
+|---|---|---|
+| Essencial | ~R$ 300 – 800 | Uma seção, WhatsApp, publicação |
+| Profissional | ~R$ 800 – 2.000 | Mais seções, SEO, redes |
+| Sob medida | R$ 2.000+ | Páginas extras, escopo específico |
+
+**2. Mensalidade de manutenção (recorrente) — não pule esta.** R$ 50 – 150/mês por
+hospedagem + pequenas alterações. É o que transforma trabalho avulso em **renda que se
+repete** — e é daí que sai, mês que vem, o dinheiro do anúncio, sem tirar do seu bolso.
+Ex.: 5 clientes × R$ 80 = R$ 400/mês de caixa.
+
+**3. Preço de lançamento para os 3–5 primeiros.** Como o gargalo é prova social, cobre
+**mais barato dos primeiros** (piso da faixa, ou um desconto claro de "cliente
+fundador") **em troca de depoimento + autorização de usar como case**. Não é dar de
+graça (o que é grátis não tem valor); é trocar preço por portfólio. Depois que os cases
+estiverem no ar, sobe o preço com segurança.
+
+**Regra que fecha o número:** o preço tem que caber no bolso do dono de pequeno negócio
+do Rio e ainda deixar margem. Se travar, não baixe o preço do mesmo escopo — reduza o
+escopo (Essencial).
+
+## Anexo B — Os R$ 50 de anúncio: o que fazem e o que não fazem
+
+R$ 50 **não é uma campanha**, é **uma aula paga**. Serve para aprender o mecanismo e dar
+um empurrão pequeno — não para encher a agenda. Expectativa honesta:
+
+- **O que R$ 50 conseguem:** criar a conta de anúncio, validar que o botão leva para o
+  WhatsApp, e impulsionar **um** post por ~5–7 dias para um público bem estreito
+  (bairro + interesse). Talvez algumas conversas. Trate cada resultado como aprendizado,
+  não como prova estatística.
+- **O que R$ 50 NÃO conseguem:** "aprender" de verdade o público (o algoritmo precisa de
+  mais volume), nem sustentar contato constante. Acabou os R$ 50, acabou o alcance.
+- **Como gastar bem os R$ 50:** no **Meta (Instagram/Facebook)**, formato *impulsionar
+  publicação*, no **melhor antes-e-depois do case AMV**, objetivo **mensagens no
+  WhatsApp**, público estreito no Rio, ~R$ 7/dia por 7 dias (dá para acompanhar dia a
+  dia). Um criativo só, uma mensagem só.
+- **A real:** os R$ 50 rendem mais como teste do que como aquisição. O que traz cliente
+  de graça continua sendo indicação, Google Meu Negócio, Instagram orgânico e status.
+  Anúncio que vale a pena vem depois, financiado por cliente pagante.
