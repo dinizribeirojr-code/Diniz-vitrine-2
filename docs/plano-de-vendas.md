@@ -61,32 +61,51 @@ Todos **sob consulta**. O preço de cada caso sai depois de qualificar (ver §5)
 
 ## 4. O funil — cada "skill de vendas" no seu lugar
 
-O ponto deste plano é que os quatro agentes deixam de trabalhar soltos e viram **um
-funil só**, que se realimenta a cada entrega:
+O ponto deste plano é que os agentes deixam de trabalhar soltos e viram **um funil só**,
+que se realimenta a cada entrega. Ao lado dos quatro que já existiam (`prospeccao`,
+`google-ads`, `midia-social`, `vendas`), o time ganhou **três vendedores novos** para
+tapar buracos que os próprios agentes já apontavam:
+
+- **`parcerias`** — motor de indicação (o canal mais quente e barato). `prospeccao` já
+  dizia que abordagem fria funciona "na porta, por telefone **ou por indicação**", mas
+  ninguém construía a rede de quem manda cliente (contador, gráfica, agência de turismo,
+  associação de bairro).
+- **`follow-up`** — recupera orçamento parado, lead que esfriou e cliente já entregue
+  (upgrade, manutenção). `midia-social` chamava a reativação de "canal mais barato **e o
+  mais esquecido**"; agora tem dono e cadência.
+- **`meta-ads`** — anúncio pago no Instagram/Facebook por geo+interesse, pegando o dono
+  certo que **ainda não procura**. Complementa o `google-ads`, que só pega quem procura.
 
 ```
         TOPO (frio — gerar 1º contato)
-  ┌─────────────────┬──────────────────┬─────────────────┐
-  │  PROSPECÇÃO      │   GOOGLE ADS     │   INSTAGRAM     │
-  │  porta/telefone/ │   busca, cauda   │  @genesis.ia.pro│
-  │  indicação       │   longa local    │  público frio   │
-  └────────┬─────────┴────────┬─────────┴────────┬────────┘
-           │                  │                   │
-           ▼                  ▼                   ▼
+  ┌──────────────┬─────────────┬─────────────┬──────────────┐
+  │ PROSPECÇÃO   │ GOOGLE ADS  │  META ADS   │  INSTAGRAM   │
+  │ porta/tel/   │ busca,cauda │ geo+interes-│ orgânico,    │
+  │ indicação    │ longa local │ se (RJ)     │ público frio │
+  └──────┬───────┴──────┬──────┴──────┬──────┴──────┬───────┘
+         │              │             │             │
+         │   ┌──────────┴─────────────┴──────┐      │
+         │   │ PARCERIAS: indicação = lead    │      │
+         │   │ QUENTE (confiança emprestada)  │      │
+         │   └──────────────┬─────────────────┘      │
+         ▼                  ▼                         ▼
         MEIO (morno — qualificar e nutrir)
-   ┌──────────────────────────┬───────────────────────────┐
-   │  VENDAS: qualifica 3 coisas (que negócio / o que quer │
-   │  que o cliente faça / o que já tem) → orçamento certo │
-   │  STATUS DE WHATSAPP: reativa orçamento parado         │
-   └──────────────────────────┬───────────────────────────┘
+   ┌───────────────────────────────────────────────────────┐
+   │ VENDAS: qualifica 3 coisas (que negócio / o que quer   │
+   │ que o cliente faça / o que já tem) → orçamento certo   │
+   │ FOLLOW-UP: cadência de retomada de orçamento parado    │
+   │ STATUS DE WHATSAPP (midia-social): reativa lead frio   │
+   └──────────────────────────┬────────────────────────────┘
                               ▼
         FUNDO (quente — fechar)
    ┌───────────────────────────────────────────────────────┐
-   │  VENDAS: proposta, objeção, negociação → ENTREGA       │
+   │ VENDAS: proposta, objeção, negociação → ENTREGA        │
    └──────────────────────────┬────────────────────────────┘
                               ▼
         LOOP: entrega vira case → portfólio, depoimento,
-        post antes/depois, status → alimenta o TOPO de novo
+        post antes/depois, status. E dispara PARCERIAS
+        (pedir indicação no auge) + FOLLOW-UP (upsell).
+        → alimenta o TOPO de novo
 ```
 
 ### Topo — gerar o primeiro contato
@@ -123,6 +142,20 @@ o link e você manda o quê?"). Nada de frase motivacional genérica. Legenda fo
 1ª linha, 8–12 hashtags misturando serviço + segmento + região, sempre terminando em
 ação (chamar no WhatsApp).
 
+**Meta Ads — Instagram/Facebook pago (novo).** Pega o dono certo que *ainda não procura*.
+Objetivo de mensagens/WhatsApp (nunca "engajamento"), segmentação por raio no Rio +
+interesse de pequeno empreendedor, e a criação puxada do que a mídia social já faz
+(antes-e-depois, Reels). Criação cansa rápido no feed — trocar o anúncio antes de mexer
+em lance. Mesma regra do google-ads: **verba só com aprovação do dono**, leitura de dado
+via Windsor.ai com a conta `facebook` conectada.
+
+**Parcerias — indicação (novo, o mais quente).** Indicação traz gente que já chega com
+confiança emprestada. Duas fontes: **cliente satisfeito** (pedir indicação no auge, logo
+após a entrega) e **parceiro que atende o mesmo dono** (contador, gráfica, agência de
+turismo, associação de bairro, fotógrafo). A troca é desenhada antes — comissão por
+indicação fechada, permuta ou co-oferta — e **o valor é sempre decisão do dono**. Vale a
+mesma regra: nada de disparo em massa; parceria se abre na conversa.
+
 ### Meio — qualificar e nutrir
 
 **Qualificação (vendas).** Antes de qualquer preço, descobrir três coisas:
@@ -141,7 +174,12 @@ indicações). Um orçamento parado há semanas costuma voltar vendo um status d
 nova. Formato: 9:16, até 30s, texto grande e com contraste. O Reels de 14s do AMV
 (`assets/video/genesis-reel-amv.mp4`) já serve.
 
-### Fundo — fechar
+**Follow-up (novo — recuperar o que quase fechou).** O maior vazamento não é para o
+concorrente, é para o silêncio. O agente `follow-up` é dono da cadência de retomada:
+~2–3 dias após o orçamento (novidade), ~1 semana (prova/objeção), ~2–3 semanas (última
+do ciclo curto). Duas mensagens sem resposta = parar e só voltar com novidade real. Ele
+escreve a mensagem e diz em que degrau da escada ela entra; **a lista de quem está em
+follow-up fica com o dono**, não em arquivo.
 
 **Objeção e negociação (vendas).** "Tá caro" quase nunca é sobre o valor — é não
 enxergar o retorno. Trazer o retorno: o site trabalha 24h, passa credibilidade antes
@@ -160,6 +198,10 @@ de antes/depois** e **status de WhatsApp**. É assim que a prova social cresce e
 do funil fica mais fácil no mês seguinte. Nunca marcar `is-done` um projeto que não foi
 entregue — status é o que separa portfólio de propaganda enganosa.
 
+A entrega também é o **gatilho de dois vendedores novos**: `parcerias` pede indicação no
+auge da satisfação (logo após o link no ar) e `follow-up` marca o cliente para futuro
+upgrade/manutenção. Case novo não é só prova social — é a hora certa de vender de novo.
+
 ## 5. Metas e métricas
 
 Medimos **conversa iniciada no WhatsApp**, marcando de qual origem/seção veio. O
@@ -173,10 +215,14 @@ preencher `GA4_ID`, `ADS_ID`, `ADS_LABEL` (e vale uma linha de LGPD no rodapé).
 |---|---|---|---|
 | Conversas no WhatsApp / semana | ? | ? | ? |
 | Prospecção: nomes reais verificados / semana | 0 | ? | ? |
+| **Indicações recebidas / mês** (parcerias) | ? | ? | ? |
+| Parceiros ativos (contador, gráfica…) | 0 | ? | ? |
 | Propostas enviadas / semana | ? | ? | ? |
+| **Orçamentos reativados no follow-up / mês** | ? | ? | ? |
 | Fechamentos / mês | ? | ? | ? |
 | **Sites entregues (vira case)** | 1 | 3 | ? |
 | Custo por conversa (Google Ads) | — | ? | ? |
+| Custo por conversa (Meta Ads) | — | ? | ? |
 
 ## 6. Cadência semanal (rituais)
 
@@ -184,27 +230,65 @@ preencher `GA4_ID`, `ADS_ID`, `ADS_LABEL` (e vale uma linha de LGPD no rodapé).
   orçamentos parados para reativar via status.
 - **Durante a semana:** vendas responde/qualifica; entrega toca os 3 em preparação.
 - **Toda entrega:** aciona o loop (portfólio + depoimento + post + status) na mesma
-  semana.
+  semana — e dispara `parcerias` (pedir indicação) + `follow-up` (marcar upsell).
+- **Follow-up:** revisar os orçamentos parados e disparar a retomada no degrau certo.
 - **Instagram:** 2–3 posts/semana (antes-depois, bastidor, dor do dono).
-- **Sexta:** olhar termos de busca do Google Ads e cortar desperdício (sem mexer em
-  verba se o dado for de poucos dias).
+- **Sexta:** olhar termos de busca do Google Ads e o custo por conversa do Meta Ads;
+  cortar desperdício (sem mexer em verba se o dado for de poucos dias).
 
-## 7. Pauta da reunião de amanhã (23h)
+## 7. Ferramentas e conectores
+
+"Contratar mais gente" não é só agente — é ter os canos ligados. O que **já está
+conectado nesta sessão** e como cada um vira resultado:
+
+- **Windsor.ai** — o principal. Lê dados reais de campanha e escreve nos canais.
+  - *Ler:* Google Ads (`google_ads`), Meta/Instagram (`facebook`, `instagram`), GA4 —
+    para os agentes de mídia paga pararem de planejar no escuro. **Precisa o dono
+    conectar cada conta** (é dado e verba dele).
+  - *Escrever (só com aprovação):* **Google Meu Negócio (`google_my_business`)** é o
+    mais subaproveitado — post, resposta a avaliação e ficha atualizada fazem a Genesis
+    (e cada cliente) aparecer na busca local do Rio. Vale como serviço extra a oferecer.
+- **Produção de conteúdo (alimenta Instagram, Meta Ads e status):**
+  - **Unsplash** — imagem para card e post (já usado no site).
+  - **Canva** — arte de post, capa de projeto, criativo de anúncio.
+  - **ElevenLabs / Descript / HyperFrames** — locução, edição e vídeo para escalar
+    Reels e antes-e-depois sem depender de um único arquivo pronto.
+- **Google Calendar** — cadência e rituais do §6 viram compromisso recorrente; lembrete
+  desta reunião.
+- **Gmail** — quando o dono opta por responder lead por e-mail, o agente `vendas`/
+  `follow-up` entrega o texto e ele envia. *Cuidado LGPD:* e-mail de cliente é dado
+  dele — nada disso vira arquivo no repositório.
+
+**Deixado de fora de propósito (decisão do dono):**
+
+- **Tally (formulário de captação/orçamento)** — tecnicamente daria para pôr um "peça
+  seu orçamento" que já faz as 3 perguntas de qualificação. Mas isso **coleta e guarda
+  dado de cliente**, e a decisão do dono é manter tudo no WhatsApp/e-mail dele, fora de
+  ferramenta. Fica como **[DECIDIR]**: só entra se o dono quiser abrir essa exceção.
+- Um agente falhou ao conectar nesta sessão (**Apify**) — não é falta de acesso, é
+  falha de conexão; se for útil um dia, é só reconectar.
+
+## 8. Pauta da reunião de amanhã (23h)
 
 O que precisa sair decidido:
 
 1. **Preço dos três planos** (faixa de referência para agilizar orçamento) — hoje
    tudo é chute caso a caso.
-2. **Metas numéricas** da tabela do §5.
-3. **Verba de Google Ads** — quanto/mês para começar pequeno na cauda longa local,
-   e aprovação para conectar a conta no Windsor.ai.
-4. **Meta de prospecção** — quantos nomes reais/semana e de quais bairros/segmentos.
-5. **Prioridade de entrega** — qual dos 3 em preparação fecha primeiro (vira case).
-6. **Ligar ou não o analytics** agora (e a linha de LGPD no rodapé).
-7. **Calendário de conteúdo** do Instagram + status de WhatsApp para as próximas 2
-   semanas.
+2. **Metas numéricas** da tabela do §5 (agora com indicação, follow-up e Meta Ads).
+3. **Verba de mídia paga** — quanto/mês para Google Ads (cauda longa local) e para
+   Meta Ads (geo+interesse), e aprovação para conectar as contas no Windsor.ai.
+4. **Programa de indicação** — comissão/prêmio para quem indica, e os 3–5 primeiros
+   parceiros a abordar (contador, gráfica, agência de turismo…).
+5. **Meta de prospecção** — quantos nomes reais/semana e de quais bairros/segmentos.
+6. **Prioridade de entrega** — qual dos 3 em preparação fecha primeiro (vira case).
+7. **Google Meu Negócio** — ativar a ficha da Genesis (e oferecer como serviço extra).
+8. **Ligar ou não o analytics** agora (e a linha de LGPD no rodapé).
+9. **Formulário Tally sim ou não** — abrir a exceção de coletar dado, ou seguir só no
+   WhatsApp/e-mail.
+10. **Calendário de conteúdo** do Instagram + status de WhatsApp para as próximas 2
+    semanas.
 
-## 8. Limites que o plano nunca cruza
+## 9. Limites que o plano nunca cruza
 
 - Não inventar preço, prazo, telefone, endereço ou case.
 - Não fazer disparo em massa no WhatsApp (derruba o número).

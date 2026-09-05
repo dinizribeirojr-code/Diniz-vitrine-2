@@ -16,19 +16,27 @@ site de cliente dentro da Genesis — ela deve continuar sendo uma única págin
 
 ## A equipe (agentes)
 
-Cinco agentes em `.claude/agents/`, invocáveis pelo nome:
+Nove agentes em `.claude/agents/`, invocáveis pelo nome:
 
 | Agente | Cuida de |
 |---|---|
 | `vendas` | Atendimento, qualificação, objeção, proposta |
-| `midia-social` | Instagram @genesis.ia.pro, post, Reels, calendário |
+| `prospeccao` | Lista de negócios candidatos a landing page (só dados verificados) |
+| `parcerias` | Indicação e parceria — quem manda cliente (contador, gráfica, agência) |
+| `follow-up` | Orçamento parado, lead frio, upsell e manutenção de cliente entregue |
+| `google-ads` | Campanha de busca, palavra-chave, anúncio, acompanhamento de verba |
+| `meta-ads` | Anúncio pago no Instagram/Facebook por geo+interesse |
+| `midia-social` | Instagram @genesis.ia.pro, post, Reels, calendário, status |
 | `design` | Visual das páginas, capas, identidade, responsividade |
-| `google-ads` | Campanha, palavra-chave, anúncio, acompanhamento de verba |
 | `entrega` | Produção do site do cliente, publicação, atualização do portfólio |
 
-Dois limites valem para todos: nenhum deles anuncia como entregue um projeto que
-não foi, e `google-ads` planeja mas nunca executa alteração de verba sem aprovação
-explícita do dono.
+O plano que costura os agentes de venda num funil só está em `docs/plano-de-vendas.md`.
+
+Três limites valem para todos: nenhum deles anuncia como entregue um projeto que não
+foi; `google-ads` e `meta-ads` planejam mas nunca executam alteração de verba sem
+aprovação explícita do dono; e nenhum faz disparo em massa no WhatsApp (`prospeccao`,
+`parcerias` e `follow-up` só abordam quem já falou com o dono ou por porta/telefone/
+indicação — disparo frio derruba o número).
 
 **Dado de cliente não entra neste repositório.** Este repositório é público, e a
 decisão do dono é que ele continue assim: nome, telefone, valor cobrado, proposta e
