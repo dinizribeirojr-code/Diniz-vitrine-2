@@ -16,21 +16,25 @@ site de cliente dentro da Genesis — ela deve continuar sendo uma única págin
 
 ## A equipe (agentes)
 
-Nove agentes em `.claude/agents/`, invocáveis pelo nome:
+Dez agentes em `.claude/agents/`, invocáveis pelo nome. Cada um tem um nome de
+pessoa; o dono fala com o **gerente**, que aciona o time.
 
-| Agente | Cuida de |
-|---|---|
-| `vendas` | Atendimento, qualificação, objeção, proposta |
-| `prospeccao` | Lista de negócios candidatos a landing page (só dados verificados) |
-| `parcerias` | Indicação e parceria — quem manda cliente (contador, gráfica, agência) |
-| `follow-up` | Orçamento parado, lead frio, upsell e manutenção de cliente entregue |
-| `google-ads` | Campanha de busca, palavra-chave, anúncio, acompanhamento de verba |
-| `meta-ads` | Anúncio pago no Instagram/Facebook por geo+interesse |
-| `midia-social` | Instagram @genesis.ia.pro, post, Reels, calendário, status |
-| `design` | Visual das páginas, capas, identidade, responsividade |
-| `entrega` | Produção do site do cliente, publicação, atualização do portfólio |
+| Nome | Agente | Cuida de |
+|---|---|---|
+| **Rafael Prado** | `gerente` | Ponto de contato único do dono — roteia o pedido ao time e devolve pronto |
+| **Camila Rocha** | `vendas` | Atendimento, qualificação, objeção, proposta |
+| **Diego Martins** | `prospeccao` | Lista de negócios candidatos a landing page (só dados verificados) |
+| **Renata Alves** | `parcerias` | Indicação e parceria — quem manda cliente (contador, gráfica, agência) |
+| **Letícia Souza** | `follow-up` | Orçamento parado, lead frio, upsell e manutenção de cliente entregue |
+| **Thiago Nunes** | `google-ads` | Campanha de busca, palavra-chave, anúncio, acompanhamento de verba |
+| **Marina Dias** | `meta-ads` | Anúncio pago no Instagram/Facebook por geo+interesse |
+| **Bia Ferraz** | `midia-social` | Instagram @genesis.ia.pro, post, Reels, calendário, status |
+| **Gabriel Lima** | `design` | Visual das páginas, capas, identidade, responsividade |
+| **Lucas Moreira** | `entrega` | Produção do site do cliente, publicação, atualização do portfólio |
 
-O plano que costura os agentes de venda num funil só está em `docs/plano-de-vendas.md`.
+O gerente **Rafael Prado** (`gerente`) é com quem o dono fala direto quando não quer
+escolher o especialista. O plano que costura os agentes de venda num funil só está em
+`docs/plano-de-vendas.md`.
 
 Três limites valem para todos: nenhum deles anuncia como entregue um projeto que não
 foi; `google-ads` e `meta-ads` planejam mas nunca executam alteração de verba sem
