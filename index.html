@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Genesis Landing Pages | Sites para Pequenos Negócios</title>
-<meta name="description" content="A Genesis Landing Pages cria landing pages profissionais, rápidas e responsivas para pequenos negócios, com botão de WhatsApp, publicação e manutenção inclusas. Peça a sua agora.">
+<title>Genesis | Sites que vendem pelo WhatsApp</title>
+<meta name="description" content="A Genesis cria landing pages profissionais, rápidas e responsivas para pequenos negócios, com botão de WhatsApp, publicação e manutenção inclusas. Monte uma prévia da sua página agora, de graça.">
 <meta name="keywords" content="criação de landing page, landing page para pequenos negócios, criação de site profissional, site para pequenas empresas, landing page WhatsApp">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://genesis-websites.netlify.app/">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:site_name" content="Genesis Landing Pages">
-<meta property="og:title" content="Genesis Landing Pages | Sites para Pequenos Negócios">
-<meta property="og:description" content="Landing pages profissionais, modernas e responsivas para pequenos negócios, com foco em gerar contatos pelo WhatsApp.">
+<meta property="og:site_name" content="Genesis">
+<meta property="og:title" content="Genesis | Sites que vendem pelo WhatsApp">
+<meta property="og:description" content="Monte uma prévia da sua página em 20 segundos: escolha o segmento, digite o nome do seu negócio e veja o site nascer no celular. Gostou? A gente faz a de verdade.">
 <meta property="og:url" content="https://genesis-websites.netlify.app/">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Genesis Landing Pages | Sites para Pequenos Negócios">
-<meta name="twitter:description" content="Landing pages profissionais, modernas e responsivas para pequenos negócios, com foco em gerar contatos pelo WhatsApp.">
+<meta name="twitter:title" content="Genesis | Sites que vendem pelo WhatsApp">
+<meta name="twitter:description" content="Monte uma prévia da sua página em 20 segundos e veja o site do seu negócio nascer no celular. Gostou? A gente faz a de verdade.">
 
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@
   "serviceType": "Criação de landing pages",
   "provider": {
     "@type": "Organization",
-    "name": "Genesis Landing Pages",
+    "name": "Genesis",
     "url": "https://genesis-websites.netlify.app/",
     "sameAs": ["https://www.instagram.com/genesis.ia.pro"],
     "contactPoint": {
@@ -91,12 +91,13 @@
 
 <header class="site-header" id="topo">
   <div class="wrap header-inner">
-    <a href="#topo" class="brand" aria-label="Genesis Landing Pages — página inicial">
+    <a href="#topo" class="brand" aria-label="Genesis — página inicial">
       <span class="brand-mark" aria-hidden="true">G</span>
-      <span class="brand-name">Genesis <strong>Landing Pages</strong></span>
+      <span class="brand-name"><strong>Genesis</strong></span>
     </a>
 
     <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+      <a href="#experimente">Experimente</a>
       <a href="#servico">Serviço</a>
       <a href="#projetos">Projetos</a>
       <a href="#planos">Planos</a>
@@ -141,6 +142,58 @@
         </ul>
       </div>
 
+    </div>
+  </section>
+
+  <!-- =========================================================
+       EXPERIMENTE — prévia ao vivo ("brinque com a sua página")
+       O visitante escolhe segmento + nome e vê o site nascer no
+       celular. Toda a lógica está em assets/js/builder.v1.js.
+       O estado mora no hash da URL: o link é a divulgação — quem
+       monta a prévia da própria pousada pode compartilhá-la pronta.
+       Nada é gravado em servidor (ver CLAUDE.md).
+       ========================================================= -->
+  <section class="section section-alt builder" id="experimente">
+    <div class="wrap">
+      <div class="section-head section-head-center" data-reveal>
+        <p class="eyebrow">Experimente agora · de graça</p>
+        <h2>Monte a sua página em 20 segundos</h2>
+        <p class="section-sub">Escolha o seu segmento, digite o nome do negócio e veja a página ganhar vida no celular, ao vivo. Gostou? A gente faz a de verdade.</p>
+      </div>
+
+      <div class="builder-grid" data-reveal>
+        <div class="builder-controls">
+          <div class="bfield">
+            <span class="blabel">1 · Seu segmento</span>
+            <div class="seg-chips" id="seg-chips" role="group" aria-label="Escolha o segmento do seu negócio"></div>
+          </div>
+          <div class="bfield">
+            <label class="blabel" for="b-nome">2 · Nome do negócio</label>
+            <input id="b-nome" class="binput" type="text" maxlength="32" placeholder="Ex.: Pousada Maré Alta" autocomplete="off" spellcheck="false">
+          </div>
+          <div class="bfield">
+            <label class="blabel" for="b-cidade">3 · Cidade <span class="bopt">(opcional)</span></label>
+            <input id="b-cidade" class="binput" type="text" maxlength="28" placeholder="Ex.: Búzios, RJ" autocomplete="off" spellcheck="false">
+          </div>
+          <div class="bfield">
+            <span class="blabel">4 · Estilo</span>
+            <div class="style-swatches" id="style-swatches" role="group" aria-label="Escolha o estilo de cores"></div>
+          </div>
+
+          <div class="builder-actions">
+            <a id="b-whats" class="btn btn-primary" href="https://wa.me/5521996816846?text=Ol%C3%A1!%20Montei%20uma%20pr%C3%A9via%20no%20site%20da%20Genesis%20e%20quero%20a%20p%C3%A1gina%20de%20verdade." target="_blank" rel="noopener">Quero essa página de verdade</a>
+            <button id="b-share" class="btn btn-ghost" type="button">Copiar link da prévia</button>
+          </div>
+          <p class="builder-nota">Prévia ilustrativa e gratuita — a página final é feita à mão pela Genesis, com as suas fotos e os seus textos. Nada aqui é salvo: a sua prévia vive só no link, pronta para você mandar pra quem quiser.</p>
+        </div>
+
+        <div class="builder-preview">
+          <div class="demo-fone builder-fone">
+            <div class="pv-screen" id="pv-screen"></div>
+          </div>
+          <p class="demo-nota" id="pv-hint">Escolha um segmento e comece a digitar</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -590,14 +643,15 @@
 <footer class="site-footer">
   <div class="wrap footer-inner">
     <div class="footer-brand">
-      <a href="#topo" class="brand" aria-label="Genesis Landing Pages — página inicial">
+      <a href="#topo" class="brand" aria-label="Genesis — página inicial">
         <span class="brand-mark" aria-hidden="true">G</span>
-        <span class="brand-name">Genesis <strong>Landing Pages</strong></span>
+        <span class="brand-name"><strong>Genesis</strong></span>
       </a>
       <p>Criação de landing pages profissionais para pequenos negócios.</p>
     </div>
 
     <nav class="footer-nav" aria-label="Links do rodapé">
+      <a href="#experimente">Experimente</a>
       <a href="#servico">Serviço</a>
       <a href="#projetos">Projetos</a>
       <a href="#planos">Planos</a>
@@ -614,7 +668,7 @@
     </div>
   </div>
   <div class="wrap footer-bottom">
-    <p>&copy; <span id="year">2026</span> Genesis Landing Pages. Todos os direitos reservados.</p>
+    <p>&copy; <span id="year">2026</span> Genesis. Todos os direitos reservados.</p>
     <p class="footer-privacidade">Este site usa cookies do Google Analytics para medir visitas e entender como as pessoas chegam até aqui. Nenhum dado é vendido ou compartilhado com terceiros.</p>
   </div>
 </footer>
@@ -624,6 +678,7 @@
 </a>
 
 <script src="assets/js/main.v2.js"></script>
+<script src="assets/js/builder.v1.js"></script>
 <script src="assets/js/analytics.v1.js"></script>
 </body>
 </html>
