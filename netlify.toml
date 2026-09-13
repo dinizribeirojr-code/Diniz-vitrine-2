@@ -8,7 +8,29 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
+# CSS e JS nao tem hash no nome, entao nunca podem ser imutaveis:
+# o navegador revalida a cada visita e a CDN responde 304 quando nada
+# mudou. Assim uma atualizacao do site aparece na hora para todo mundo.
 [[headers]]
-  for = "/assets/*"
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Imagens tambem revalidam, porque as capas dos projetos sao trocadas
+# mantendo o mesmo nome de arquivo.
+[[headers]]
+  for = "/assets/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Video e grande e nao muda. Se precisar trocar, suba com um nome novo
+# em vez de sobrescrever este arquivo.
+[[headers]]
+  for = "/assets/video/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
