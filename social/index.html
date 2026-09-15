@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Genesis AI · Kit de 10 Posts para Instagram</title>
+<meta name="description" content="10 posts prontos (arte 1080×1080 + legenda) para o Instagram da Genesis AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12121a; --ink-soft:#2a2a38; --paper:#faf8f5; --paper-alt:#f1eee7;
+    --line:#e6e2d8; --muted:#6b6a72;
+    --accent-1:#6d5bff; --accent-2:#4a6cf7; --grad:linear-gradient(135deg,#6d5bff,#4a6cf7);
+    --whatsapp:#25d366;
+    --head:"Plus Jakarta Sans","Inter",system-ui,sans-serif;
+    --body:"Inter",system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:var(--body);color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+  .page-head{padding:56px 0 28px;text-align:center}
+  .page-head .kicker{font-family:var(--head);font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
+    background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin:0 0 12px}
+  .page-head h1{font-family:var(--head);font-weight:800;font-size:clamp(1.8rem,4vw,2.7rem);margin:0 0 14px;line-height:1.12}
+  .page-head p{color:var(--muted);max-width:620px;margin:0 auto;font-size:1.02rem}
+  .meta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+  .meta a{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:.9rem;padding:9px 15px;border-radius:999px;
+    border:1px solid var(--line);background:#fff;text-decoration:none}
+  .meta a.wa{background:var(--whatsapp);color:#fff;border-color:transparent}
+  .hint{text-align:center;color:var(--muted);font-size:.85rem;margin:26px auto 0;max-width:640px}
+
+  .grid{display:grid;grid-template-columns:1fr;gap:38px;padding:34px 0 70px}
+  @media(min-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+  .post{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 18px 44px -26px rgba(18,18,26,.35)}
+  .post-head{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--line);
+    font-size:.82rem;color:var(--muted)}
+  .post-head b{font-family:var(--head);color:var(--ink)}
+  .post-head .num{font-family:var(--head);font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* Square art 1080x1080 */
+  .art{position:relative;width:100%;aspect-ratio:1/1;overflow:hidden;padding:8.5%;display:flex;flex-direction:column;justify-content:space-between}
+  .art .brand{display:flex;align-items:center;gap:10px;font-family:var(--head);font-weight:700}
+  .art .brand .mark{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;font-weight:800;font-size:1.1rem}
+  .art .eyebrow{font-family:var(--head);font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;opacity:.85;margin-bottom:14px}
+  .art h2{font-family:var(--head);font-weight:800;line-height:1.08;margin:0;font-size:clamp(1.5rem,4.6vw,2.25rem)}
+  .art .sub{margin:14px 0 0;font-size:.98rem;line-height:1.45;opacity:.9;max-width:88%}
+  .art .foot{display:flex;align-items:center;justify-content:space-between;font-size:.82rem;font-weight:600}
+  .art .foot .wa{display:inline-flex;align-items:center;gap:7px}
+  .art .cta{display:inline-block;font-family:var(--head);font-weight:700;font-size:.9rem;padding:11px 18px;border-radius:999px;align-self:flex-start}
+
+  /* Style variants */
+  .art.grad{background:var(--grad);color:#fff}
+  .art.grad .mark{background:rgba(255,255,255,.16);color:#fff}
+  .art.grad .cta{background:#fff;color:var(--accent-1)}
+  .art.dark{background:#12121a;color:#fff}
+  .art.dark .mark{background:var(--grad);color:#fff}
+  .art.dark h2 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .art.dark .cta{background:var(--grad);color:#fff}
+  .art.light{background:var(--paper);color:var(--ink)}
+  .art.light .mark{background:var(--grad);color:#fff}
+  .art.light .eyebrow{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:1}
+  .art.light h2 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .art.light .sub{color:var(--muted);opacity:1}
+  .art.light .cta{background:var(--grad);color:#fff}
+  .art .blob{position:absolute;border-radius:50%;filter:blur(6px);opacity:.5;pointer-events:none}
+  .art.grad .blob{background:rgba(255,255,255,.18)}
+  .art.dark .blob{background:radial-gradient(circle,#6d5bff,transparent 70%);opacity:.55;filter:blur(20px)}
+  .art.light .blob{background:radial-gradient(circle,#6d5bff33,transparent 70%);filter:blur(24px)}
+
+  .steps{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:9px}
+  .steps li{display:flex;gap:11px;align-items:flex-start;font-size:.95rem;font-weight:600}
+  .steps li span{flex:none;width:24px;height:24px;border-radius:7px;display:grid;place-items:center;font-family:var(--head);font-weight:800;font-size:.8rem}
+  .art.dark .steps li span{background:var(--grad);color:#fff}
+  .art.light .steps li span{background:var(--grad);color:#fff}
+
+  .ba{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+  .ba div{border-radius:14px;padding:16px;font-size:.9rem;line-height:1.35}
+  .ba .before{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18)}
+  .ba .after{background:#fff;color:var(--ink)}
+  .ba .after b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .ba .tag{display:block;font-family:var(--head);font-weight:800;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px;opacity:.85}
+
+  .legenda{padding:18px}
+  .legenda .lbl{display:flex;align-items:center;justify-content:space-between;font-family:var(--head);font-weight:700;font-size:.82rem;
+    text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:9px}
+  .legenda .copy{border:1px solid var(--line);background:var(--paper);color:var(--ink);font-family:var(--head);font-weight:700;
+    font-size:.74rem;padding:6px 12px;border-radius:999px;cursor:pointer}
+  .legenda .copy:hover{background:var(--paper-alt)}
+  .legenda pre{margin:0;white-space:pre-wrap;font-family:var(--body);font-size:.93rem;line-height:1.55;color:var(--ink-soft)}
+  .legenda .tags{margin-top:10px;font-size:.85rem;color:var(--accent-2);font-weight:600}
+  .foot-note{text-align:center;color:var(--muted);font-size:.82rem;padding:0 0 50px}
+</style>
+</head>
+<body>
+<header class="page-head">
+  <div class="wrap">
+    <p class="kicker">Genesis AI · Kit de conteúdo</p>
+    <h1>10 posts prontos para o Instagram</h1>
+    <p>Arte 1080×1080 + legenda para cada publicação. Tire um print de cada card (ou exporte em PNG) e use a legenda com um clique.</p>
+    <div class="meta">
+      <a href="https://www.instagram.com/genesis.ia.pro" target="_blank" rel="noopener">@genesis.ia.pro</a>
+      <a class="wa" href="https://wa.me/5521996816846" target="_blank" rel="noopener">WhatsApp · (21) 99681-6846</a>
+      <a href="https://genesis-webpage.netlify.app/" target="_blank" rel="noopener">genesis-webpage.netlify.app</a>
+    </div>
+    <p class="hint">Dica: cada card acima da legenda é quadrado (proporção de feed). Clique em “Copiar legenda” para levar o texto direto pro Instagram.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="grid" id="grid"></div>
+  <p class="foot-note">Genesis AI — Criação de landing pages para pequenos negócios · @genesis.ia.pro</p>
+</main>
+
+<script>
+const WA = 'https://wa.me/5521996816846';
+const brand = variant => `
+  <div class="brand"><span class="mark">G</span><span>Genesis AI</span></div>`;
+const foot = `<div class="foot"><span>@genesis.ia.pro</span><span class="wa">💬 wa.me/5521996816846</span></div>`;
+
+const posts = [
+  {
+    n:1, tema:'Apresentação da marca', variant:'grad',
+    art:`${brand()}
+      <div><p class="eyebrow">Presença profissional online</p>
+      <h2>Seu negócio merece uma presença profissional na internet.</h2>
+      <p class="sub">Landing pages rápidas, responsivas e feitas para gerar clientes pelo WhatsApp.</p></div>
+      ${foot}`,
+    legenda:`Seu cliente procura por você no celular. Será que ele te encontra? 📲
+A Genesis AI cria landing pages profissionais, rápidas e responsivas para pequenos negócios — com botão de WhatsApp, publicação e manutenção inclusas.
+Chega de depender só do "manda no direct". Tenha uma página que trabalha por você 24 horas por dia.
+👉 Chame no WhatsApp e peça a sua: link na bio.`,
+    tags:'#landingpage #pequenosnegocios #presençadigital #marketingdigital #sitewhatsapp #genesisai'
+  },
+  {
+    n:2, tema:'A dor — sem página você perde cliente', variant:'dark',
+    art:`${brand()}
+      <div><p class="eyebrow">Sem página = venda perdida</p>
+      <h2>Ainda manda o cliente só pro seu <em>perfil</em>?</h2>
+      <p class="sub">Sem uma página profissional, o cliente se perde — e vai pro concorrente.</p></div>
+      ${foot}`,
+    legenda:`Um perfil bonito ajuda — mas não vende sozinho. 😬
+Sem uma página profissional, o cliente se perde, não acha seus preços, não sabe como falar com você… e vai pro concorrente.
+A Genesis AI cria uma landing page que apresenta seu negócio e leva o cliente direto pro WhatsApp, em um clique.
+👉 Peça a sua hoje: link na bio.`,
+    tags:'#landingpage #instagramparanegocios #vendaspelowhatsapp #empreendedorismo #pequenoempreendedor #genesisai'
+  },
+  {
+    n:3, tema:'Benefício — botão de WhatsApp', variant:'light',
+    art:`${brand()}
+      <div><p class="eyebrow">Do clique à conversa</p>
+      <h2>Seu cliente fala com você <em>na hora</em>.</h2>
+      <p class="sub">Botão de WhatsApp em destaque em toda página: o visitante toca e já cai na sua conversa.</p></div>
+      ${foot}`,
+    legenda:`De que adianta visita na página se o cliente não consegue te chamar? 🤔
+Toda landing page da Genesis AI tem botão de WhatsApp em destaque: o visitante toca e já cai na sua conversa, com a mensagem pronta.
+Menos etapa, mais contato, mais venda. 🚀
+👉 Quero minha página com botão de WhatsApp: link na bio.`,
+    tags:'#botaowhatsapp #conversao #landingpage #marketingdigital #vendasonline #genesisai'
+  },
+  {
+    n:4, tema:'Nicho — manicure / estúdio de unhas', variant:'grad',
+    art:`${brand()}
+      <div><p class="eyebrow">Para estúdios de unhas 💅</p>
+      <h2>Sua cliente agenda a unha direto pela sua página.</h2>
+      <p class="sub">Serviços, valores e agendamento pelo WhatsApp — com cara de profissional.</p></div>
+      <a class="cta">Quero a página do meu estúdio</a>
+      ${foot}`,
+    legenda:`Manicure, essa é pra você! 💅
+Imagine sua cliente entrando numa página linda, vendo seus serviços, os valores e agendando o horário na hora, direto pelo WhatsApp.
+A Genesis AI cria a página do seu estúdio de unhas com cara de profissional — e você foca no que faz de melhor.
+👉 Peça a página do seu estúdio: link na bio.`,
+    tags:'#manicure #estudiodeunhas #nailart #agendamentoonline #manicureprofissional #genesisai'
+  },
+  {
+    n:5, tema:'Nicho — barbearia', variant:'dark',
+    art:`${brand()}
+      <div><p class="eyebrow">Para barbearias 💈</p>
+      <h2>Uma página à altura do seu <em>corte</em>.</h2>
+      <p class="sub">Visual forte, serviços em destaque, localização e agendamento pelo WhatsApp.</p></div>
+      <a class="cta">Colocar minha barbearia no ar</a>
+      ${foot}`,
+    legenda:`Barbeiro, seu trabalho é premium — sua presença online também tem que ser. 💈
+A Genesis AI cria a landing page da sua barbearia com visual forte, serviços em destaque, localização e contato direto pelo WhatsApp.
+Cliente novo te acha, vê o preço e já marca o horário.
+👉 Bora deixar sua barbearia no ar? Link na bio.`,
+    tags:'#barbearia #barbershop #barbeiro #cortemasculino #landingpage #genesisai'
+  },
+  {
+    n:6, tema:'Nicho — advocacia', variant:'light',
+    art:`${brand()}
+      <div><p class="eyebrow">Para escritórios de advocacia ⚖️</p>
+      <h2>Uma página que transmite <em>confiança</em>.</h2>
+      <p class="sub">Áreas de atuação, apresentação profissional e contato direto — a seriedade que o cliente espera.</p></div>
+      ${foot}`,
+    legenda:`No Direito, credibilidade é tudo. ⚖️
+A Genesis AI cria a página do seu escritório com áreas de atuação, apresentação profissional e contato direto — passando a seriedade que o cliente espera antes mesmo da primeira conversa.
+Uma presença online sólida abre portas.
+👉 Fale com a gente: link na bio.`,
+    tags:'#advocacia #advogado #escritoriodeadvocacia #direito #presençadigital #genesisai'
+  },
+  {
+    n:7, tema:'Como funciona (4 passos)', variant:'dark',
+    art:`${brand()}
+      <div><p class="eyebrow">Como funciona</p>
+      <h2>Sua página no ar em <em>4 passos</em>.</h2>
+      <ul class="steps">
+        <li><span>1</span>Você conta sobre o seu negócio</li>
+        <li><span>2</span>A gente cria o design e o conteúdo</li>
+        <li><span>3</span>Você revisa e aprova</li>
+        <li><span>4</span>Publicamos e entregamos o link</li>
+      </ul></div>
+      ${foot}`,
+    legenda:`Ter um site pronto é mais fácil do que você imagina. ✨
+1️⃣ Você conta sobre o seu negócio
+2️⃣ A gente cria o design e o conteúdo
+3️⃣ Você revisa e aprova
+4️⃣ Publicamos e te entregamos o link
+Sem burocracia, sem enrolação. Em poucos dias sua página está no ar. ⏱️
+👉 Comece agora: link na bio.`,
+    tags:'#comofunciona #landingpage #criacaodesite #pequenosnegocios #passoapasso #genesisai'
+  },
+  {
+    n:8, tema:'Objeção — "não entendo de tecnologia"', variant:'grad',
+    art:`${brand()}
+      <div><p class="eyebrow">Sem complicação técnica</p>
+      <h2>Você não precisa entender nada de tecnologia.</h2>
+      <p class="sub">Sem programação, sem hospedagem. A gente cuida de tudo — você só aprova e recebe o link.</p></div>
+      ${foot}`,
+    legenda:`"Mas eu não entendo nada de site…" 😅 E não precisa mesmo!
+Sem programação, sem hospedagem, sem complicação. A Genesis AI cuida de toda a parte técnica — você só aprova e recebe o link da sua página pronta pra usar.
+Precisou mudar um texto, foto ou preço depois? A gente atualiza pra você.
+👉 Chame no WhatsApp e tire suas dúvidas: link na bio.`,
+    tags:'#semcomplicacao #tecnologia #pequenosnegocios #landingpage #suporte #genesisai'
+  },
+  {
+    n:9, tema:'Antes x Depois', variant:'dark',
+    art:`${brand()}
+      <div><p class="eyebrow">Antes &times; Depois</p>
+      <h2>Do perfil parado à página que <em>converte</em>.</h2>
+      <div class="ba">
+        <div class="before"><span class="tag">Antes</span>Cliente via um perfil, ficava na dúvida e desistia.</div>
+        <div class="after"><span class="tag" style="color:var(--accent-1)">Depois</span>Entra na página, entende o serviço, vê o valor e <b>chama no WhatsApp</b>.</div>
+      </div></div>
+      ${foot}`,
+    legenda:`ANTES ➡️ o cliente via um perfil, ficava com dúvida e desistia.
+DEPOIS ➡️ ele entra na sua página, entende seu serviço, vê os valores e te chama no WhatsApp. ✅
+Essa é a diferença de ter uma landing page profissional da Genesis AI.
+👉 Faça o upgrade do seu negócio: link na bio.`,
+    tags:'#antesedepois #upgrade #landingpage #presençadigital #marketingparanegocios #genesisai'
+  },
+  {
+    n:10, tema:'Chamada final / oferta', variant:'grad',
+    art:`${brand()}
+      <div><p class="eyebrow">Bora pra internet?</p>
+      <h2>Quer colocar seu negócio na internet? Peça sua página hoje.</h2>
+      <p class="sub">Design profissional, entrega rápida e preço justo para quem está começando.</p></div>
+      <a class="cta">Chamar no WhatsApp 🚀</a>
+      ${foot}`,
+    legenda:`Seu concorrente já está online. E você? 👀
+A Genesis AI coloca seu pequeno negócio na internet com uma landing page profissional, responsiva e pronta pra gerar clientes pelo WhatsApp.
+Design profissional, entrega rápida e preço justo para quem está começando.
+👉 Me chama no WhatsApp agora e peça a sua: link na bio. 🚀`,
+    tags:'#coloquenegocioonline #landingpage #pequenosnegocios #empreendedorismo #marketingdigital #genesisai'
+  }
+];
+
+const blobs = {
+  grad:'<span class="blob" style="width:220px;height:220px;top:-60px;right:-50px"></span>',
+  dark:'<span class="blob" style="width:260px;height:260px;bottom:-90px;left:-70px"></span>',
+  light:'<span class="blob" style="width:280px;height:280px;top:-90px;right:-90px"></span>'
+};
+
+const grid = document.getElementById('grid');
+grid.innerHTML = posts.map(p => `
+  <article class="post">
+    <div class="post-head"><span class="num">Post ${p.n}</span><b>${p.tema}</b></div>
+    <div class="art ${p.variant}">${blobs[p.variant]||''}${p.art}</div>
+    <div class="legenda">
+      <div class="lbl"><span>Legenda</span><button class="copy" data-i="${p.n-1}">Copiar legenda</button></div>
+      <pre>${p.legenda}</pre>
+      <p class="tags">${p.tags}</p>
+    </div>
+  </article>`).join('');
+
+grid.addEventListener('click', e => {
+  const btn = e.target.closest('.copy'); if(!btn) return;
+  const p = posts[+btn.dataset.i];
+  const text = p.legenda + '\n\n' + p.tags;
+  navigator.clipboard?.writeText(text).then(()=>{
+    const old = btn.textContent; btn.textContent = 'Copiado ✓';
+    setTimeout(()=>btn.textContent = old, 1600);
+  }).catch(()=>{ btn.textContent = 'Copie manualmente'; });
+});
+</script>
+</body>
+</html>
