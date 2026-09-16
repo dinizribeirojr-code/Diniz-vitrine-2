@@ -141,6 +141,54 @@
   #controls button:hover{background:rgba(255,255,255,.26);}
   #controls svg{width:20px;height:20px;fill:#fff;}
   body.recording #controls{display:none;}
+
+  /* ===================== MODO RETRATO (celular 1080x1920) ===================== */
+  #stage.portrait #brand{top:40px;left:44px;gap:12px;}
+  #stage.portrait #brand img{width:64px;height:64px;}
+  #stage.portrait #brand .bt{font-size:24px;}
+  #stage.portrait #brand .bs{font-size:12px;}
+
+  #stage.portrait .scene{padding:150px 80px 300px;justify-content:center;}
+  #stage.portrait .kick{font-size:20px;margin-bottom:22px;}
+  #stage.portrait .kick::before{width:38px;height:5px;}
+  #stage.portrait .scene h1{font-size:78px;max-width:15ch;}
+  #stage.portrait .scene h2{font-size:64px;max-width:15ch;}
+  #stage.portrait .lead{font-size:34px;max-width:24ch;margin-top:28px;}
+  #stage.portrait .lead.big{font-size:38px;max-width:22ch;}
+
+  #stage.portrait .pills{gap:18px;margin-top:38px;}
+  #stage.portrait .pill{font-size:30px;padding:18px 30px;}
+
+  #stage.portrait .cards{grid-template-columns:repeat(2,1fr);gap:26px;margin-top:46px;max-width:none;}
+  #stage.portrait .card{padding:34px 30px;border-radius:24px;}
+  #stage.portrait .card .ic{width:86px;height:86px;border-radius:22px;margin-bottom:22px;}
+  #stage.portrait .card .ic svg{width:50px;height:50px;}
+  #stage.portrait .card h3{font-size:34px;}
+  #stage.portrait .card p{font-size:24px;}
+
+  #stage.portrait .trio{grid-template-columns:1fr;gap:26px;margin-top:46px;max-width:none;}
+  #stage.portrait .stone{padding:40px 44px;display:flex;align-items:center;gap:34px;text-align:left;}
+  #stage.portrait .stone .ic{width:120px;height:120px;margin:0;flex:none;}
+  #stage.portrait .stone .ic svg{width:64px;height:64px;}
+  #stage.portrait .stone h3{font-size:44px;margin-bottom:6px;}
+  #stage.portrait .stone p{font-size:26px;}
+  #stage.portrait .stone .txt{flex:1;}
+
+  #stage.portrait .maproute{flex-direction:column;align-items:flex-start;gap:6px;margin-top:44px;}
+  #stage.portrait .stop{flex-direction:row;align-items:center;gap:26px;}
+  #stage.portrait .stop .mk{width:96px;height:96px;}
+  #stage.portrait .stop span{font-size:40px;}
+  #stage.portrait .dash{flex:none;width:8px;height:46px;min-width:0;margin:0 0 0 44px;
+    background:repeating-linear-gradient(180deg,var(--blue-500) 0 24px,transparent 24px 42px);}
+
+  #stage.portrait .bigmark{width:340px;height:340px;border-radius:60px;}
+  #stage.portrait .intro-title{font-size:96px;}
+  #stage.portrait .tag{font-size:38px;max-width:20ch;}
+  #stage.portrait .chiprow{margin-top:20px;}
+  #stage.portrait .chip{font-size:28px;padding:16px 28px;}
+  #stage.portrait .contact{font-size:28px;}
+
+  #stage.portrait #road{height:280px;}
 </style>
 </head>
 <body>
@@ -240,15 +288,15 @@
     <div class="trio">
       <div class="stone anim" data-d="0.45">
         <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.6-3 7.8-7 9-4-1.2-7-4.4-7-9V6z"/><path d="M9 12l2 2 4-4.5"/></svg></span>
-        <h3>Segurança</h3><p>Motoristas experientes e veículos revisados.</p>
+        <div class="txt"><h3>Segurança</h3><p>Motoristas experientes e veículos revisados.</p></div>
       </div>
       <div class="stone anim" data-d="0.6">
         <span class="ic"><svg viewBox="0 0 24 24"><path d="M5 11V8a3 3 0 013-3h8a3 3 0 013 3v3"/><path d="M4 12h16a1 1 0 011 1v3a2 2 0 01-2 2H5a2 2 0 01-2-2v-3a1 1 0 011-1z"/><path d="M7 18v2M17 18v2"/></svg></span>
-        <h3>Conforto</h3><p>Uma viagem tranquila, do embarque ao destino.</p>
+        <div class="txt"><h3>Conforto</h3><p>Uma viagem tranquila, do embarque ao destino.</p></div>
       </div>
       <div class="stone anim" data-d="0.75">
         <span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></span>
-        <h3>Pontualidade</h3><p>Presentes na hora certa, sempre.</p>
+        <div class="txt"><h3>Pontualidade</h3><p>Presentes na hora certa, sempre.</p></div>
       </div>
     </div>
   </section>
@@ -331,12 +379,20 @@
   }
   window.__seek = render;
 
-  // ===== Ajuste de escala para visualização =====
-  var recording = /[?&]record=1/.test(location.search);
+  // ===== Formato (retrato/paisagem) e ajuste de escala =====
+  var params = new URLSearchParams(location.search);
+  var recording = params.get('record') === '1';
+  var fmt = params.get('format');
+  if (!fmt) fmt = (window.innerHeight > window.innerWidth) ? 'portrait' : 'landscape';
+  var STW = fmt === 'portrait' ? 1080 : 1920;
+  var STH = fmt === 'portrait' ? 1920 : 1080;
+  if (fmt === 'portrait') stage.classList.add('portrait');
+  stage.style.width = STW + 'px';
+  stage.style.height = STH + 'px';
   if (recording) document.body.classList.add('recording');
   function fit(){
     if (recording){ stage.style.transform = 'scale(1)'; return; }
-    var s = Math.min(window.innerWidth/1920, window.innerHeight/1080);
+    var s = Math.min(window.innerWidth/STW, window.innerHeight/STH);
     stage.style.transform = 'scale(' + s + ')';
   }
   window.addEventListener('resize', fit);
