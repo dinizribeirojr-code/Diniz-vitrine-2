@@ -58,11 +58,11 @@
   #road .b{bottom:20px;background:linear-gradient(90deg,var(--blue-500),var(--blue));opacity:.95;left:-12%;right:-4%;}
 
   /* ===== Persistent brand watermark ===== */
-  #brand{position:absolute;top:44px;left:56px;display:flex;align-items:center;gap:16px;z-index:6;}
-  #brand img{width:76px;height:76px;border-radius:18px;background:#fff;padding:4px;box-shadow:0 10px 30px -12px rgba(10,28,102,.5);}
-  #brand .bt{font-family:var(--font-head);font-weight:800;font-size:26px;letter-spacing:.02em;
+  #brand{position:absolute;top:44px;left:56px;display:flex;align-items:center;gap:18px;z-index:6;}
+  #brand img{width:104px;height:104px;border-radius:22px;background:#fff;padding:6px;box-shadow:0 12px 34px -12px rgba(10,28,102,.55);}
+  #brand .bt{font-family:var(--font-head);font-weight:800;font-size:32px;letter-spacing:.02em;
     background:linear-gradient(90deg,var(--blue),var(--green));-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1;}
-  #brand .bs{font-size:14px;color:#5b6b8c;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin-top:4px;}
+  #brand .bs{font-size:16px;color:#5b6b8c;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin-top:5px;}
 
   /* ===== Progress ===== */
   #pbar{position:absolute;left:0;top:0;height:6px;width:0;z-index:8;
@@ -70,7 +70,7 @@
 
   /* ===== Scenes ===== */
   .scene{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;
-    padding:120px 130px 190px;z-index:5;}
+    padding:172px 130px 140px;z-index:5;}
   .kick{display:inline-flex;align-items:center;gap:14px;font-family:var(--font-head);font-weight:800;
     font-size:22px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-500);margin-bottom:26px;}
   .kick::before{content:"";width:46px;height:5px;border-radius:5px;background:linear-gradient(90deg,var(--blue-500),var(--green));}
@@ -106,14 +106,22 @@
   .stone h3{font-family:var(--font-head);font-weight:800;font-size:44px;margin-bottom:12px;}
   .stone p{font-size:24px;color:#5b6b8c;line-height:1.4;}
 
+  .airport{width:100%;max-width:1320px;flex:none;margin-top:34px;border-radius:32px;overflow:hidden;
+    background:linear-gradient(180deg,#eef5ff,#dfebff);border:1px solid #d3e1ff;
+    box-shadow:0 26px 64px -30px rgba(10,28,102,.5);}
+  .airport svg{display:block;width:100%;height:auto;}
+  #sc-airport h2{font-size:70px;}
+  #sc-airport .lead{margin-top:22px;}
+  #car,#pax{will-change:transform;}
+
   .anim{will-change:transform,opacity;}
 
   /* ===== Intro / outro special ===== */
   .center{align-items:center;text-align:center;justify-content:center;padding:120px;}
-  .bigmark{width:360px;height:360px;border-radius:64px;background:#fff;padding:22px;
+  .bigmark{width:460px;height:460px;border-radius:80px;background:#fff;padding:26px;
     box-shadow:0 40px 100px -40px rgba(10,28,102,.6);display:grid;place-items:center;}
   .bigmark img{width:100%;height:100%;object-fit:contain;}
-  .intro-title{font-family:var(--font-head);font-weight:800;font-size:120px;letter-spacing:-.02em;margin-top:8px;}
+  .intro-title{font-family:var(--font-head);font-weight:800;font-size:130px;letter-spacing:-.02em;margin-top:8px;}
   .intro-title .grad{padding-right:.1em;}
   .tag{font-size:40px;color:#33436a;font-weight:600;max-width:30ch;}
   .chiprow{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;margin-top:16px;}
@@ -143,52 +151,56 @@
   body.recording #controls{display:none;}
 
   /* ===================== MODO RETRATO (celular 1080x1920) ===================== */
-  #stage.portrait #brand{top:40px;left:44px;gap:12px;}
-  #stage.portrait #brand img{width:64px;height:64px;}
-  #stage.portrait #brand .bt{font-size:24px;}
-  #stage.portrait #brand .bs{font-size:12px;}
+  #stage.portrait #brand{top:48px;left:52px;gap:16px;}
+  #stage.portrait #brand img{width:104px;height:104px;}
+  #stage.portrait #brand .bt{font-size:30px;}
+  #stage.portrait #brand .bs{font-size:14px;}
 
-  #stage.portrait .scene{padding:150px 80px 300px;justify-content:center;}
-  #stage.portrait .kick{font-size:20px;margin-bottom:22px;}
-  #stage.portrait .kick::before{width:38px;height:5px;}
-  #stage.portrait .scene h1{font-size:78px;max-width:15ch;}
-  #stage.portrait .scene h2{font-size:64px;max-width:15ch;}
-  #stage.portrait .lead{font-size:34px;max-width:24ch;margin-top:28px;}
-  #stage.portrait .lead.big{font-size:38px;max-width:22ch;}
+  #stage.portrait .scene{padding:220px 84px 190px;justify-content:center;}
+  #stage.portrait .kick{font-size:24px;margin-bottom:26px;}
+  #stage.portrait .kick::before{width:44px;height:6px;}
+  #stage.portrait .scene h1{font-size:96px;max-width:13ch;}
+  #stage.portrait .scene h2{font-size:82px;max-width:13ch;}
+  #stage.portrait .lead{font-size:42px;max-width:22ch;margin-top:36px;}
+  #stage.portrait .lead.big{font-size:46px;max-width:20ch;}
 
-  #stage.portrait .pills{gap:18px;margin-top:38px;}
-  #stage.portrait .pill{font-size:30px;padding:18px 30px;}
+  #stage.portrait .pills{gap:22px;margin-top:52px;}
+  #stage.portrait .pill{font-size:38px;padding:24px 40px;gap:20px;}
+  #stage.portrait .pill .dot{width:26px;height:26px;}
 
-  #stage.portrait .cards{grid-template-columns:repeat(2,1fr);gap:26px;margin-top:46px;max-width:none;}
-  #stage.portrait .card{padding:34px 30px;border-radius:24px;}
-  #stage.portrait .card .ic{width:86px;height:86px;border-radius:22px;margin-bottom:22px;}
-  #stage.portrait .card .ic svg{width:50px;height:50px;}
-  #stage.portrait .card h3{font-size:34px;}
-  #stage.portrait .card p{font-size:24px;}
+  #stage.portrait .cards{grid-template-columns:repeat(2,1fr);gap:32px;margin-top:64px;max-width:none;}
+  #stage.portrait .card{padding:46px 38px;border-radius:30px;}
+  #stage.portrait .card .ic{width:118px;height:118px;border-radius:28px;margin-bottom:30px;}
+  #stage.portrait .card .ic svg{width:66px;height:66px;}
+  #stage.portrait .card h3{font-size:44px;margin-bottom:14px;}
+  #stage.portrait .card p{font-size:30px;}
 
-  #stage.portrait .trio{grid-template-columns:1fr;gap:26px;margin-top:46px;max-width:none;}
-  #stage.portrait .stone{padding:40px 44px;display:flex;align-items:center;gap:34px;text-align:left;}
-  #stage.portrait .stone .ic{width:120px;height:120px;margin:0;flex:none;}
-  #stage.portrait .stone .ic svg{width:64px;height:64px;}
-  #stage.portrait .stone h3{font-size:44px;margin-bottom:6px;}
-  #stage.portrait .stone p{font-size:26px;}
+  #stage.portrait .trio{grid-template-columns:1fr;gap:34px;margin-top:64px;max-width:none;}
+  #stage.portrait .stone{padding:52px 54px;display:flex;align-items:center;gap:44px;text-align:left;}
+  #stage.portrait .stone .ic{width:150px;height:150px;margin:0;flex:none;}
+  #stage.portrait .stone .ic svg{width:82px;height:82px;}
+  #stage.portrait .stone h3{font-size:56px;margin-bottom:8px;}
+  #stage.portrait .stone p{font-size:32px;}
   #stage.portrait .stone .txt{flex:1;}
 
-  #stage.portrait .maproute{flex-direction:column;align-items:flex-start;gap:6px;margin-top:44px;}
-  #stage.portrait .stop{flex-direction:row;align-items:center;gap:26px;}
-  #stage.portrait .stop .mk{width:96px;height:96px;}
-  #stage.portrait .stop span{font-size:40px;}
-  #stage.portrait .dash{flex:none;width:8px;height:46px;min-width:0;margin:0 0 0 44px;
-    background:repeating-linear-gradient(180deg,var(--blue-500) 0 24px,transparent 24px 42px);}
+  #stage.portrait .maproute{flex-direction:column;align-items:flex-start;gap:8px;margin-top:56px;}
+  #stage.portrait .stop{flex-direction:row;align-items:center;gap:32px;}
+  #stage.portrait .stop .mk{width:120px;height:120px;}
+  #stage.portrait .stop .mk svg{width:60px;height:60px;}
+  #stage.portrait .stop span{font-size:50px;}
+  #stage.portrait .dash{flex:none;width:10px;height:56px;min-width:0;margin:0 0 0 55px;
+    background:repeating-linear-gradient(180deg,var(--blue-500) 0 28px,transparent 28px 50px);}
 
-  #stage.portrait .bigmark{width:340px;height:340px;border-radius:60px;}
-  #stage.portrait .intro-title{font-size:96px;}
-  #stage.portrait .tag{font-size:38px;max-width:20ch;}
-  #stage.portrait .chiprow{margin-top:20px;}
-  #stage.portrait .chip{font-size:28px;padding:16px 28px;}
-  #stage.portrait .contact{font-size:28px;}
+  #stage.portrait .airport{margin-top:56px;border-radius:34px;}
 
-  #stage.portrait #road{height:280px;}
+  #stage.portrait .bigmark{width:480px;height:480px;border-radius:84px;padding:30px;}
+  #stage.portrait .intro-title{font-size:124px;}
+  #stage.portrait .tag{font-size:46px;max-width:18ch;}
+  #stage.portrait .chiprow{margin-top:28px;gap:22px;}
+  #stage.portrait .chip{font-size:34px;padding:20px 34px;}
+  #stage.portrait .contact{font-size:38px;margin-top:28px;}
+
+  #stage.portrait #road{height:300px;}
 </style>
 </head>
 <body>
@@ -232,6 +244,63 @@
       <div class="stop anim" data-d="1.1"><span class="mk"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.3-7-11a7 7 0 0114 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span>Jacarepaguá</span></div>
     </div>
     <p class="lead anim" data-d="1.35">Recepção pontual, organizada e acolhedora — sem filas, sem espera, sem preocupação.</p>
+  </section>
+
+  <!-- 3b · EMBARQUE NO AEROPORTO (cena animada) -->
+  <section class="scene" id="sc-airport">
+    <span class="kick anim" data-d="0">No aeroporto</span>
+    <h2 class="anim" data-d="0.12">Recebemos e <span class="grad">embarcamos</span> você</h2>
+    <div class="airport anim" data-d="0.4">
+      <svg viewBox="0 0 1400 380" role="img" aria-label="Carro executivo chegando ao aeroporto e embarcando o cliente">
+        <!-- avião ao fundo -->
+        <g id="plane" fill="#9fb8e6">
+          <path d="M0 30 L96 42 L124 30 L102 48 L124 66 L96 56 L0 66 L34 48 Z"/>
+          <path d="M78 44 L92 22 L100 24 L92 46 Z"/>
+        </g>
+        <!-- terminal -->
+        <g>
+          <rect x="452" y="70" width="20" height="92" fill="#b7cbf7"/>
+          <rect x="444" y="52" width="36" height="24" rx="6" fill="#1a3fd0"/>
+          <rect x="96" y="150" width="384" height="170" rx="12" fill="#cdddfb" stroke="#a9c6ff" stroke-width="3"/>
+          <rect x="150" y="114" width="252" height="42" rx="11" fill="#12b357"/>
+          <text x="276" y="143" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="26" fill="#fff" letter-spacing="2">AEROPORTO</text>
+          <g fill="#a9c6ff">
+            <rect x="120" y="180" width="56" height="42" rx="6"/>
+            <rect x="188" y="180" width="56" height="42" rx="6"/>
+            <rect x="360" y="180" width="56" height="42" rx="6"/>
+          </g>
+          <rect x="250" y="214" width="90" height="106" rx="6" fill="#9fc0ff"/>
+          <line x1="295" y1="214" x2="295" y2="320" stroke="#eef4ff" stroke-width="3"/>
+        </g>
+        <!-- chão / meio-fio / pista -->
+        <rect x="0" y="300" width="1400" height="22" fill="#d0def3"/>
+        <rect x="0" y="322" width="1400" height="58" fill="#33415f"/>
+        <g stroke="#ffd21f" stroke-width="5" stroke-dasharray="48 42"><line x1="0" y1="352" x2="1400" y2="352"/></g>
+
+        <!-- passageiro (sai do terminal e caminha até o carro) -->
+        <g id="pax">
+          <rect x="384" y="258" width="24" height="42" rx="4" fill="#12b357"/>
+          <path d="M397 258 v-9 h9" fill="none" stroke="#0e7d43" stroke-width="4"/>
+          <rect x="350" y="270" width="9" height="30" rx="3" fill="#26324f"/>
+          <rect x="361" y="270" width="9" height="30" rx="3" fill="#26324f"/>
+          <rect x="347" y="228" width="26" height="46" rx="12" fill="#2f6bff"/>
+          <circle cx="360" cy="214" r="15" fill="#eab892"/>
+        </g>
+
+        <!-- carro executivo (entra pela direita, para no meio-fio) -->
+        <g id="car">
+          <ellipse cx="720" cy="322" rx="178" ry="12" fill="#0a1330" opacity="0.12"/>
+          <path d="M556 296 q2 -34 34 -40 l44 -30 q14 -10 34 -10 h120 q22 0 38 16 l30 26 q40 6 44 40 v6 q0 8 -8 8 H564 q-8 0 -8 -8 Z" fill="#101d3d"/>
+          <path d="M648 226 h120 q16 0 28 12 l20 22 H636 l8 -28 q2 -6 4 -6 Z" fill="#1c2c53"/>
+          <path d="M660 244 h96 l16 18 H652 Z" fill="#a9c6ff"/>
+          <rect x="566" y="280" width="300" height="9" rx="4" fill="#2f6bff"/>
+          <rect x="558" y="266" width="15" height="11" rx="3" fill="#ffe14d"/>
+          <circle cx="628" cy="316" r="27" fill="#0a1330"/><circle cx="628" cy="316" r="11" fill="#5b6b8c"/>
+          <circle cx="812" cy="316" r="27" fill="#0a1330"/><circle cx="812" cy="316" r="11" fill="#5b6b8c"/>
+        </g>
+      </svg>
+    </div>
+    <p class="lead anim" data-d="0.55">O carro chega no horário certo e você embarca com tranquilidade — do desembarque até o destino.</p>
   </section>
 
   <!-- 4 · DESTINOS -->
@@ -318,11 +387,10 @@
     <div class="intro-title anim" data-d="0.3" style="font-size:96px;"><span class="grad">Vamos juntos!</span></div>
     <p class="tag anim" data-d="0.6">Conte com a AMV JR Tour para transportar o seu pessoal com segurança e conforto.</p>
     <div class="chiprow anim" data-d="0.9">
-      <span class="chip">📱 WhatsApp</span>
       <span class="chip g">🚐 Frota completa</span>
       <span class="chip">👩‍✈️ Motoristas mulheres</span>
     </div>
-    <p class="contact anim" data-d="1.1">Contato: <span class="edit">(22) 0&nbsp;0000-0000</span> &nbsp;·&nbsp; <span class="edit">email@amvjrtour.com.br</span></p>
+    <p class="contact anim" data-d="1.1">Fale com o <strong>Fernando</strong> &nbsp;·&nbsp; 📱 WhatsApp <strong>(21)&nbsp;97239-3816</strong></p>
   </section>
 
 </div>
@@ -341,7 +409,9 @@
   var bg = document.getElementById('bg');
 
   // Duração de cada cena (segundos)
-  var DUR = [5.2, 5.6, 6.6, 6.4, 6.8, 6.2, 6.4, 6.4, 6.0];
+  // 0 intro · 1 quem somos · 2 aeroportos · 3 embarque(carro) · 4 destinos
+  // 5 frota · 6 motoristas · 7 pilares · 8 parceria · 9 encerramento
+  var DUR = [5.2, 5.6, 6.4, 6.6, 6.4, 6.8, 6.2, 6.4, 6.4, 6.0];
   var FADE_IN = 0.5, FADE_OUT = 0.45;
   var starts = [], acc = 0;
   for (var i=0;i<scenes.length;i++){ starts.push(acc); acc += DUR[i]; }
@@ -350,6 +420,32 @@
 
   function clamp(v,a,b){ return v<a?a:(v>b?b:v); }
   function easeOut(p){ return 1 - Math.pow(1-p, 3); }
+  function easeInOut(p){ return p<0.5 ? 2*p*p : 1 - Math.pow(-2*p+2,2)/2; }
+
+  // ===== Cena animada: carro chegando ao aeroporto e embarque =====
+  var _car, _pax, _plane;
+  function airport(lt){
+    if(!_car){ _car=document.getElementById('car'); _pax=document.getElementById('pax'); _plane=document.getElementById('plane'); }
+    if(!_car) return;
+    // avião cruzando ao fundo (0 -> 3.2s)
+    if(_plane){
+      var pl = clamp(lt/3.2,0,1);
+      _plane.setAttribute('transform','translate('+(1320-1460*pl).toFixed(1)+','+(pl*18).toFixed(1)+')');
+      _plane.style.opacity=(pl<0.85?1:Math.max(0,(1-pl)/0.15)).toFixed(2);
+    }
+    // carro entra pela direita e para no meio-fio (0 -> 2.3s)
+    var carP = easeOut(clamp(lt/2.3,0,1));
+    _car.setAttribute('transform','translate('+(900*(1-carP)).toFixed(1)+',0)');
+    // passageiro sai do terminal e caminha até o carro (2.4 -> 4.3s)
+    var wp = clamp((lt-2.4)/1.9,0,1);
+    var px = 200*easeInOut(wp);
+    var bob = (wp>0 && wp<1) ? Math.sin(wp*Math.PI*7)*4 : 0;
+    var pOp = 1;
+    if(lt<2.05) pOp=0; else if(lt<2.4) pOp=(lt-2.05)/0.35;
+    if(lt>4.35) pOp=Math.max(0,1-(lt-4.35)/0.55);   // "entra" no carro
+    _pax.setAttribute('transform','translate('+px.toFixed(1)+','+bob.toFixed(1)+')');
+    _pax.style.opacity=pOp.toFixed(2);
+  }
 
   function render(t){
     t = clamp(t, 0, TOTAL - 0.0001);
@@ -361,6 +457,7 @@
         if (lt < FADE_IN) o = lt / FADE_IN;
         if (lt > du - FADE_OUT) o = Math.min(o, Math.max(0,(du - lt)/FADE_OUT));
         s.style.opacity = o.toFixed(3);
+        if (s.id === 'sc-airport') airport(lt);
         var els = s.querySelectorAll('.anim');
         for (var j=0;j<els.length;j++){
           var a = els[j], d = parseFloat(a.getAttribute('data-d')||'0');
