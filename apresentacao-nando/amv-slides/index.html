@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AMV JR Tour — Apresentação</title>
+<meta name="description" content="Apresentação em slides da AMV JR Tour — transfer executivo para trabalhadores de offshore em Macaé.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../assets/amv-logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0d2148;--navy-2:#0a1a3a;--blue:#2f6bff;--green:#12b06f;--gold:#e0a13a;
+    --font-display:'Fraunces',Georgia,serif;--font-sans:'Inter',system-ui,sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html,body{height:100%;}
+  body{background:#05102a;color:#fff;font-family:var(--font-sans);overflow:hidden;-webkit-font-smoothing:antialiased;}
+  ul{list-style:none;}
+  h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.1;letter-spacing:-.01em;}
+
+  .deck{position:fixed;inset:0;}
+  .slide{position:absolute;inset:0;display:none;opacity:0;transition:opacity .5s ease;}
+  .slide.is-active{display:block;opacity:1;}
+  @media (prefers-reduced-motion:reduce){.slide{transition:none;}}
+
+  .bg{position:absolute;inset:0;background-size:cover;background-position:center;background-color:var(--navy);}
+  .scrim{position:absolute;inset:0;}
+  .scrim.bottom{background:linear-gradient(180deg,rgba(6,14,34,.28) 0%,rgba(6,14,34,.22) 42%,rgba(6,14,34,.9) 100%);}
+  .scrim.left{background:linear-gradient(90deg,rgba(6,14,34,.9) 0%,rgba(6,14,34,.72) 42%,rgba(6,14,34,.28) 78%,rgba(6,14,34,.08) 100%);}
+  .scrim.full{background:linear-gradient(120deg,rgba(6,14,34,.9),rgba(6,14,34,.66));}
+
+  .content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;
+    padding:clamp(34px,6vw,110px);padding-bottom:clamp(90px,12vh,150px);z-index:3;max-width:1500px;}
+  .content.center{justify-content:center;align-items:flex-start;}
+  .content.mid{justify-content:center;}
+
+  .kicker{display:inline-flex;align-items:center;gap:12px;font-size:clamp(12px,1.4vw,15px);font-weight:700;
+    letter-spacing:.22em;text-transform:uppercase;color:#8fb4ff;margin-bottom:20px;}
+  .kicker::before{content:"";width:34px;height:2px;background:linear-gradient(90deg,#8fb4ff,#5fe0a8);}
+  .slide h1{font-size:clamp(38px,7vw,96px);max-width:16ch;}
+  .slide h2{font-size:clamp(30px,5.2vw,68px);max-width:17ch;}
+  .lead{font-size:clamp(17px,2.2vw,26px);color:rgba(255,255,255,.9);max-width:44ch;margin-top:22px;font-weight:400;line-height:1.5;}
+
+  .chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;}
+  .chip{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.32);border-radius:999px;padding:12px 22px;font-weight:600;
+    font-size:clamp(15px,1.7vw,20px);backdrop-filter:blur(6px);}
+  .chip svg{width:20px;height:20px;fill:none;stroke:#7fe6b3;stroke-width:1.9;}
+
+  .pts{margin-top:26px;display:grid;gap:14px;}
+  .pts li{display:flex;gap:14px;align-items:flex-start;font-size:clamp(16px,1.9vw,22px);color:rgba(255,255,255,.92);}
+  .pts li b{font-weight:600;}
+  .pts li::before{content:"";flex:none;width:30px;height:30px;border-radius:50%;margin-top:2px;
+    background:var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/16px no-repeat;}
+
+  /* cover */
+  .cover-logo{width:clamp(120px,15vw,190px);height:clamp(120px,15vw,190px);border-radius:32px;background:#fff;
+    padding:14px;box-shadow:0 30px 80px -30px rgba(0,0,0,.6);margin-bottom:30px;}
+  .cover-logo img{width:100%;height:100%;object-fit:contain;}
+  .cover h1{font-size:clamp(46px,9vw,120px);}
+  .cover .brandline{font-family:var(--font-display);font-weight:700;font-size:clamp(30px,5vw,64px);
+    background:linear-gradient(90deg,#7fb0ff,#5fe0a8);-webkit-background-clip:text;background-clip:text;color:transparent;}
+
+  /* fleet grid */
+  .fleet{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;
+    padding:clamp(30px,5vw,80px);padding-bottom:clamp(80px,11vh,130px);}
+  .fleet .head{margin-bottom:clamp(18px,2.4vw,30px);}
+  .fleet-grid{flex:1;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.6vw,22px);min-height:0;}
+  .fcell{position:relative;border-radius:18px;overflow:hidden;background:var(--navy-2);box-shadow:0 18px 40px -20px rgba(0,0,0,.6);}
+  .fcell img{width:100%;height:100%;object-fit:cover;}
+  .fcell .cap{position:absolute;left:0;right:0;bottom:0;padding:18px 20px;
+    background:linear-gradient(180deg,transparent,rgba(6,14,34,.9));}
+  .fcell .cap b{font-family:var(--font-display);font-size:clamp(18px,1.8vw,26px);display:block;}
+  .fcell .cap span{font-size:clamp(12px,1.2vw,15px);color:rgba(255,255,255,.8);}
+
+  /* brand watermark */
+  .wm{position:absolute;top:clamp(24px,3vw,40px);left:clamp(28px,4vw,64px);z-index:5;display:flex;align-items:center;gap:12px;}
+  .wm img{width:clamp(48px,5vw,66px);height:clamp(48px,5vw,66px);border-radius:14px;background:#fff;padding:4px;}
+  .wm b{font-family:var(--font-display);font-weight:700;font-size:clamp(16px,1.7vw,22px);}
+  .wm span{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.75);font-weight:600;}
+  .slide.light .wm b{color:#0d2148;} /* not used but safe */
+
+  /* phone contact big */
+  .phone{font-family:var(--font-display);font-weight:700;font-size:clamp(30px,5vw,60px);margin-top:14px;}
+  .contact-row{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:12px;font-size:clamp(16px,1.8vw,22px);color:rgba(255,255,255,.9);}
+
+  /* progress */
+  .pbar{position:absolute;top:0;left:0;height:5px;width:0;z-index:8;
+    background:linear-gradient(90deg,var(--blue),var(--green));transition:width .4s ease;}
+
+  /* HUD */
+  .hud{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:40;display:flex;gap:16px;align-items:center;}
+  .grp{display:flex;align-items:center;gap:6px;background:rgba(6,14,34,.66);border:1px solid rgba(255,255,255,.18);
+    border-radius:999px;padding:7px;backdrop-filter:blur(10px);}
+  .nb{width:42px;height:42px;border:0;border-radius:50%;cursor:pointer;background:rgba(255,255,255,.12);color:#fff;display:grid;place-items:center;transition:background .15s;}
+  .nb:hover{background:rgba(255,255,255,.26);}
+  .nb svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2.3;}
+  .dots{display:flex;gap:7px;padding:0 8px;}
+  .dot{width:9px;height:9px;border-radius:50%;border:0;padding:0;cursor:pointer;background:rgba(255,255,255,.32);transition:transform .15s,background .15s;}
+  .dot.is-active{background:#fff;transform:scale(1.4);}
+  .counter{color:rgba(255,255,255,.9);font-size:13px;font-weight:600;min-width:54px;text-align:center;}
+  .hint{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:40;color:rgba(255,255,255,.82);
+    font-size:12.5px;background:rgba(6,14,34,.6);border:1px solid rgba(255,255,255,.16);padding:6px 14px;border-radius:999px;
+    transition:opacity .6s ease;pointer-events:none;}
+
+  @media (max-width:760px){
+    .fleet-grid{grid-template-columns:repeat(2,1fr);}
+    .content{padding-bottom:96px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hint" id="hint">Use as setas ← →, clique, ou tecla F para tela cheia</div>
+<div class="pbar" id="pbar"></div>
+
+<div class="deck" id="deck">
+
+  <!-- 1 CAPA -->
+  <section class="slide is-active">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1780296269675-169390638617?ixlib=rb-4.1.0&fm=jpg&q=80&fit=crop&w=2000')"></div>
+    <div class="scrim left"></div>
+    <div class="content center">
+      <div class="cover-logo"><img src="../assets/amv-logo.webp" alt="AMV JR Tour"></div>
+      <p class="kicker">Transfer executivo · Macaé e Região dos Lagos</p>
+      <h1 class="cover">Do aeroporto ao seu destino</h1>
+      <p class="lead">Transporte executivo para os trabalhadores de offshore — com <b>segurança</b> e <b>conforto</b>.</p>
+    </div>
+  </section>
+
+  <!-- 2 QUEM SOMOS -->
+  <section class="slide">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1566154845174-67dfe1adee87?ixlib=rb-4.1.0&fm=jpg&q=80&fit=crop&w=1800')"></div>
+    <div class="scrim left"></div>
+    <div class="content mid">
+      <p class="kicker">Quem somos</p>
+      <h2>Recebemos quem faz a energia acontecer</h2>
+      <p class="lead">Especialistas em receber e transportar os profissionais de offshore que chegam para atuar em Macaé e em toda a região — com cuidado em cada detalhe da viagem.</p>
+    </div>
+  </section>
+
+  <!-- 3 AEROPORTOS -->
+  <section class="slide">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1561380263-46623ae537fb?ixlib=rb-4.1.0&fm=jpg&q=80&fit=crop&w=2000')"></div>
+    <div class="scrim bottom"></div>
+    <div class="content">
+      <p class="kicker">Recepção nos aeroportos</p>
+      <h2>Esperamos por você na porta do desembarque</h2>
+      <div class="chips">
+        <span class="chip"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.3-7-11a7 7 0 0114 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Maricá</span>
+        <span class="chip"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.3-7-11a7 7 0 0114 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Macaé</span>
+        <span class="chip"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.3-7-11a7 7 0 0114 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Jacarepaguá</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 EMBARQUE -->
+  <section class="slide">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1637326085317-94673baaa959?ixlib=rb-4.1.0&fm=jpg&q=80&fit=crop&w=1800')"></div>
+    <div class="scrim left"></div>
+    <div class="content mid">
+      <p class="kicker">Embarque</p>
+      <h2>Recebemos e embarcamos você</h2>
+      <p class="lead">O carro chega no horário certo e você embarca com tranquilidade — do desembarque até o destino, sem filas e sem preocupação.</p>
+    </div>
+  </section>
+
+  <!-- 5 FROTA -->
+  <section class="slide">
+    <div class="bg" style="background:linear-gradient(120deg,var(--navy),var(--navy-2));"></div>
+    <div class="fleet">
+      <div class="head">
+        <p class="kicker">Nosso diferencial</p>
+        <h2 style="max-width:24ch;">Uma frota completa para cada necessidade</h2>
+      </div>
+      <div class="fleet-grid">
+        <div class="fcell"><img src="https://images.unsplash.com/photo-1764089859665-7d417664c5de?ixlib=rb-4.1.0&fm=jpg&q=80&fit=crop&w=900" alt="Sedã executivo"><div class="cap"><b>Executivos</b><span>Conforto premium</span></div></div>
+        <div class="fcell"><img src="https://images.unsplash.com/photo-1758223725140-3855ec687a16?ixlib=rb-4.1.0&fm=jpg&q=80&fit=crop&w=900" alt="SUV blindado"><div class="cap"><b>Blindados</b><span>Segurança reforçada</span></div></div>
+        <div class="fcell"><img src="https://images.unsplash.com/photo-1570125909517-53cb21c89ff2?ixlib=rb-4.1.0&fm=jpg&q=80&fit=crop&w=900" alt="Ônibus"><div class="cap"><b>Ônibus</b><span>Equipes inteiras</span></div></div>
+        <div class="fcell"><img src="https://images.unsplash.com/photo-1644949733491-7432ea0c2a98?ixlib=rb-4.1.0&fm=jpg&q=80&fit=crop&w=900" alt="Van"><div class="cap"><b>Vans</b><span>Grupos com agilidade</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 MOTORISTA MULHER -->
+  <section class="slide">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1728891229352-a0209fb7117b?ixlib=rb-4.1.0&fm=jpg&q=80&fit=crop&w=1800')"></div>
+    <div class="scrim left"></div>
+    <div class="content mid">
+      <p class="kicker">Conforto & acolhimento</p>
+      <h2>Motoristas mulheres para as trabalhadoras</h2>
+      <ul class="pts">
+        <li><b>Mais segurança e conforto para elas</b></li>
+        <li>Disponível também no dia a dia, na cidade do Rio de Janeiro</li>
+        <li>Atendimento cordial e discreto</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7 DESTINOS -->
+  <section class="slide">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-4.1.0&fm=jpg&q=80&fit=crop&w=2000')"></div>
+    <div class="scrim left"></div>
+    <div class="content mid">
+      <p class="kicker">Destinos</p>
+      <h2>Levamos a qualquer lugar, por terra</h2>
+      <p class="lead">Do Rio de Janeiro a outros estados, como a Bahia. A solução ideal para quem tem receio de viajar de avião e prefere a segurança do transporte terrestre.</p>
+      <div class="chips">
+        <span class="chip">Todo o estado do RJ</span>
+        <span class="chip">Viagens interestaduais</span>
+        <span class="chip">Porta a porta</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 PILARES -->
+  <section class="slide">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1771293549382-62829fad8f2d?ixlib=rb-4.1.0&fm=jpg&q=80&fit=crop&w=1800')"></div>
+    <div class="scrim full"></div>
+    <div class="content mid">
+      <p class="kicker">Nossos pilares</p>
+      <h2>Cada viagem guiada por três compromissos</h2>
+      <ul class="pts">
+        <li><b>Segurança</b> — motoristas experientes e veículos revisados</li>
+        <li><b>Conforto</b> — uma viagem tranquila do embarque ao destino</li>
+        <li><b>Pontualidade</b> — presentes na hora certa, sempre</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 9 PARCERIA -->
+  <section class="slide">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1561380263-46623ae537fb?ixlib=rb-4.1.0&fm=jpg&q=80&fit=crop&w=2000')"></div>
+    <div class="scrim full"></div>
+    <div class="content mid">
+      <p class="kicker">Parceria com Macaé</p>
+      <h2>Ao lado da Prefeitura, servindo o offshore</h2>
+      <p class="lead">Com o apoio da Prefeitura de Macaé, queremos levar esse serviço às empresas de offshore da região — transporte de qualidade para quem move a economia da nossa cidade.</p>
+    </div>
+  </section>
+
+  <!-- 10 CONTATO -->
+  <section class="slide">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1780296269675-169390638617?ixlib=rb-4.1.0&fm=jpg&q=80&fit=crop&w=2000')"></div>
+    <div class="scrim full"></div>
+    <div class="content center">
+      <div class="cover-logo" style="width:clamp(96px,11vw,140px);height:clamp(96px,11vw,140px);"><img src="../assets/amv-logo.webp" alt="AMV JR Tour"></div>
+      <p class="kicker">Vamos juntos</p>
+      <h2>Conte com a AMV JR Tour</h2>
+      <div class="phone">📱 (21) 97239-3816</div>
+      <div class="contact-row"><span>Fale com o <b>Fernando</b></span><span>WhatsApp &amp; ligações</span></div>
+    </div>
+  </section>
+
+</div>
+
+<div class="hud">
+  <div class="grp">
+    <button class="nb" id="prev" aria-label="Anterior"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+    <div class="dots" id="dots"></div>
+    <span class="counter" id="counter">1 / 10</span>
+    <button class="nb" id="next" aria-label="Próximo"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+    <button class="nb" id="full" aria-label="Tela cheia"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var dotsWrap=document.getElementById('dots'), counter=document.getElementById('counter'),
+      pbar=document.getElementById('pbar'), hint=document.getElementById('hint');
+  var cur=0;
+  slides.forEach(function(_,i){
+    var d=document.createElement('button');
+    d.className='dot'+(i===0?' is-active':'');
+    d.setAttribute('aria-label','Slide '+(i+1));
+    d.addEventListener('click',function(){go(i);});
+    dotsWrap.appendChild(d);
+  });
+  var dots=[].slice.call(dotsWrap.children);
+  function go(i){
+    i=Math.max(0,Math.min(slides.length-1,i));
+    slides[cur].classList.remove('is-active');dots[cur].classList.remove('is-active');
+    cur=i;
+    slides[cur].classList.add('is-active');dots[cur].classList.add('is-active');
+    counter.textContent=(cur+1)+' / '+slides.length;
+    pbar.style.width=((cur+1)/slides.length*100)+'%';
+    history.replaceState(null,'','#'+(cur+1));
+  }
+  function next(){go(cur+1);} function prev(){go(cur-1);}
+  document.getElementById('next').addEventListener('click',next);
+  document.getElementById('prev').addEventListener('click',prev);
+  document.getElementById('full').addEventListener('click',function(){
+    if(!document.fullscreenElement){(document.documentElement.requestFullscreen||function(){}).call(document.documentElement);}
+    else{document.exitFullscreen();}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();next();}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();prev();}
+    else if(e.key==='Home')go(0); else if(e.key==='End')go(slides.length-1);
+    else if(e.key==='f'||e.key==='F')document.getElementById('full').click();
+  });
+  document.getElementById('deck').addEventListener('click',function(e){
+    if(e.target.closest('a,button'))return;
+    if(e.clientX>window.innerWidth*0.5)next();else prev();
+  });
+  // touch swipe
+  var x0=null;
+  document.getElementById('deck').addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
+  document.getElementById('deck').addEventListener('touchend',function(e){
+    if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;
+    if(Math.abs(dx)>50){dx<0?next():prev();}x0=null;
+  },{passive:true});
+  var s=parseInt((location.hash||'').replace('#',''),10);
+  if(s>=1&&s<=slides.length)go(s-1); else go(0);
+  setTimeout(function(){if(hint)hint.style.opacity='0';},5000);
+})();
+</script>
+</body>
+</html>
