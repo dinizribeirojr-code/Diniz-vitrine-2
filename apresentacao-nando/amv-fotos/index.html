@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AMV JR Tour — Transfer Executivo em Macaé</title>
+<meta name="description" content="AMV JR Tour: transporte executivo para trabalhadores de offshore. Recepção nos aeroportos de Maricá, Macaé e Jacarepaguá, frota completa (executivos, blindados, ônibus e vans) e motoristas mulheres — com segurança e conforto.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="AMV JR Tour — Transfer Executivo em Macaé">
+<meta property="og:description" content="Transporte executivo com segurança e conforto, do aeroporto ao seu destino.">
+<meta property="og:type" content="website">
+<link rel="icon" href="../assets/amv-logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0d2148;
+    --navy-2:#0a1a3a;
+    --blue:#1f4fd0;
+    --blue-2:#2f6bff;
+    --green:#0e9f6e;
+    --gold:#e0a13a;
+    --cream:#f7f6f1;
+    --cream-2:#efece3;
+    --paper:#ffffff;
+    --ink:#161c2b;
+    --muted:#5a647d;
+    --line:#e6e2d7;
+    --shadow-soft:0 22px 60px -30px rgba(13,33,72,.45);
+    --shadow-card:0 12px 34px -16px rgba(13,33,72,.35);
+    --font-display:'Fraunces',Georgia,serif;
+    --font-sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+    --max:76rem;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--font-sans);
+    -webkit-font-smoothing:antialiased;line-height:1.6;}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{animation-duration:.001ms!important;transition-duration:.001ms!important;}}
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.12;margin:0;letter-spacing:-.01em;}
+
+  .wrap{max-width:var(--max);margin-inline:auto;padding-inline:22px;}
+  .kicker{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;font-weight:700;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--blue);}
+  .kicker::before{content:"";width:26px;height:2px;background:linear-gradient(90deg,var(--blue),var(--green));}
+  .kicker.light{color:#8fb4ff;}
+  .kicker.light::before{background:linear-gradient(90deg,#8fb4ff,#5fe0a8);}
+  .h-sec{font-size:clamp(30px,4.4vw,50px);color:var(--navy);margin-top:16px;}
+  .sub{font-size:clamp(16px,1.7vw,19px);color:var(--muted);margin-top:16px;max-width:58ch;}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;
+    padding:14px 26px;font-weight:600;font-size:15px;font-family:var(--font-sans);cursor:pointer;
+    border:1px solid transparent;transition:transform .2s ease,box-shadow .2s ease,background .2s ease,color .2s ease;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn svg{width:18px;height:18px;fill:currentColor;}
+  .btn-wa{background:#25d366;color:#fff;box-shadow:0 16px 34px -16px rgba(37,211,102,.7);}
+  .btn-wa:hover{background:#1fb757;}
+  .btn-nv{background:var(--navy);color:#fff;box-shadow:var(--shadow-card);}
+  .btn-nv:hover{background:var(--navy-2);}
+  .btn-out{border-color:rgba(255,255,255,.5);color:#fff;background:rgba(255,255,255,.08);backdrop-filter:blur(6px);}
+  .btn-out:hover{background:rgba(255,255,255,.2);}
+
+  /* ===== Header ===== */
+  header.site{position:sticky;top:0;z-index:50;background:rgba(247,246,241,.86);
+    backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);}
+  .hd{display:flex;align-items:center;justify-content:space-between;height:78px;}
+  .brand{display:flex;align-items:center;gap:13px;}
+  .brand img{width:56px;height:56px;border-radius:14px;background:#fff;padding:3px;box-shadow:var(--shadow-card);}
+  .brand b{font-family:var(--font-display);font-weight:700;font-size:21px;color:var(--navy);line-height:1;}
+  .brand span{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:3px;}
+  nav.main{display:flex;align-items:center;gap:30px;}
+  nav.main a{font-size:15px;font-weight:500;color:var(--ink);}
+  nav.main a:hover{color:var(--blue);}
+  .hd-actions{display:flex;align-items:center;gap:14px;}
+  .nav-toggle{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:12px;background:#fff;cursor:pointer;}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--navy);margin:4px auto;}
+
+  /* ===== Hero ===== */
+  .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden;}
+  .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;background-color:var(--navy);
+    background-image:url("https://images.unsplash.com/photo-1780296269675-169390638617?ixlib=rb-4.1.0&fm=jpg&q=80&fit=crop&w=2000");}
+  .hero-bg::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(8,18,40,.32) 0%,rgba(8,18,40,.28) 40%,rgba(8,18,40,.85) 100%);}
+  .hero-inner{position:relative;z-index:2;color:#fff;padding-block:min(12vh,120px) 64px;}
+  .hero h1{font-size:clamp(38px,6vw,76px);color:#fff;max-width:16ch;}
+  .hero p.lead{font-size:clamp(17px,2.1vw,22px);color:rgba(255,255,255,.9);max-width:52ch;margin-top:22px;}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;}
+  .hero-trust{display:flex;flex-wrap:wrap;gap:12px 26px;margin-top:34px;color:rgba(255,255,255,.9);font-size:15px;font-weight:500;}
+  .hero-trust li{display:flex;align-items:center;gap:9px;}
+  .hero-trust li::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--green);}
+  ul{list-style:none;margin:0;padding:0;}
+
+  section{padding-block:clamp(64px,9vw,116px);}
+  .section-head{max-width:60ch;}
+
+  /* ===== About ===== */
+  .split{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,66px);align-items:center;}
+  .split.rev .media{order:-1;}
+  .media{position:relative;border-radius:22px;overflow:hidden;box-shadow:var(--shadow-soft);background:var(--cream-2);}
+  .media img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;}
+  .media.tall img{aspect-ratio:3/4;}
+  .badge{position:absolute;left:20px;bottom:20px;background:rgba(255,255,255,.94);border-radius:14px;
+    padding:12px 18px;font-weight:600;color:var(--navy);box-shadow:var(--shadow-card);font-size:15px;}
+  .facts{display:flex;gap:30px;margin-top:28px;flex-wrap:wrap;}
+  .fact b{font-family:var(--font-display);font-size:34px;color:var(--blue);display:block;line-height:1;}
+  .fact span{font-size:14px;color:var(--muted);}
+
+  /* airports chips */
+  .airchips{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;}
+  .airchip{display:inline-flex;align-items:center;gap:10px;background:var(--paper);border:1px solid var(--line);
+    border-radius:999px;padding:12px 20px;font-weight:600;color:var(--navy);box-shadow:var(--shadow-card);}
+  .airchip svg{width:18px;height:18px;fill:none;stroke:var(--blue);stroke-width:1.8;}
+
+  /* ===== Frota ===== */
+  .frota-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:46px;}
+  .vcard{background:var(--paper);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-card);
+    transition:transform .25s ease,box-shadow .25s ease;}
+  .vcard:hover{transform:translateY(-6px);box-shadow:var(--shadow-soft);}
+  .vcard img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--cream-2);}
+  .vcard .cap{padding:20px 22px 24px;}
+  .vcard h3{font-size:22px;color:var(--navy);}
+  .vcard p{font-size:14.5px;color:var(--muted);margin-top:6px;}
+  .vcard .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--green);margin-bottom:8px;}
+
+  /* ===== Motorista mulher (destaque) ===== */
+  .feature{background:linear-gradient(120deg,var(--navy),var(--navy-2));color:#fff;border-radius:28px;overflow:hidden;
+    display:grid;grid-template-columns:1fr 1fr;box-shadow:var(--shadow-soft);}
+  .feature .media img{aspect-ratio:auto;height:100%;min-height:420px;border-radius:0;}
+  .feature .media{border-radius:0;box-shadow:none;}
+  .feature .txt{padding:clamp(34px,5vw,64px);}
+  .feature h2{color:#fff;font-size:clamp(28px,3.6vw,44px);}
+  .feature p{color:rgba(255,255,255,.88);margin-top:18px;font-size:17px;}
+  .feature ul.pts{margin-top:24px;display:grid;gap:12px;}
+  .feature ul.pts li{display:flex;gap:12px;align-items:flex-start;color:rgba(255,255,255,.92);}
+  .feature ul.pts li::before{content:"✓";color:#5fe0a8;font-weight:700;}
+
+  /* ===== Pilares ===== */
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:48px;}
+  .pillar{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:36px 30px;box-shadow:var(--shadow-card);text-align:center;}
+  .pillar .ic{width:74px;height:74px;border-radius:50%;margin:0 auto 18px;display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--blue),var(--green));color:#fff;}
+  .pillar .ic svg{width:38px;height:38px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;}
+  .pillar h3{font-size:23px;color:var(--navy);}
+  .pillar p{font-size:15px;color:var(--muted);margin-top:8px;}
+
+  /* ===== Destinos ===== */
+  .destinos{position:relative;border-radius:26px;overflow:hidden;box-shadow:var(--shadow-soft);color:#fff;background:var(--navy);}
+  .destinos img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+  .destinos .ov{position:relative;z-index:2;padding:clamp(40px,6vw,80px);
+    background:linear-gradient(90deg,rgba(8,18,40,.82) 0%,rgba(8,18,40,.5) 55%,rgba(8,18,40,.2) 100%);min-height:440px;
+    display:flex;flex-direction:column;justify-content:center;}
+  .destinos h2{color:#fff;font-size:clamp(28px,3.6vw,44px);max-width:16ch;}
+  .destinos p{color:rgba(255,255,255,.9);margin-top:16px;max-width:44ch;font-size:17px;}
+  .destinos .chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;}
+  .destinos .chips span{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);border-radius:999px;
+    padding:9px 18px;font-weight:600;font-size:14px;backdrop-filter:blur(4px);}
+
+  /* ===== Galeria ===== */
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:16px;margin-top:44px;}
+  .gallery a{position:relative;border-radius:16px;overflow:hidden;box-shadow:var(--shadow-card);background:var(--cream-2);}
+  .gallery img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .gallery a:hover img{transform:scale(1.06);}
+  .gallery .g-wide{grid-column:span 2;}
+  .gallery .g-tall{grid-row:span 2;}
+
+  /* ===== Parceria ===== */
+  .parceria{background:var(--cream-2);border-radius:26px;padding:clamp(38px,5vw,64px);text-align:center;}
+  .parceria .h-sec{margin-inline:auto;}
+  .parceria .sub{margin-inline:auto;}
+
+  /* ===== CTA ===== */
+  .cta{background:linear-gradient(120deg,var(--navy),var(--navy-2));color:#fff;border-radius:28px;
+    padding:clamp(40px,6vw,72px);text-align:center;box-shadow:var(--shadow-soft);}
+  .cta h2{color:#fff;font-size:clamp(28px,4vw,46px);}
+  .cta p{color:rgba(255,255,255,.86);margin:16px auto 0;max-width:46ch;font-size:17px;}
+  .cta .phone{font-family:var(--font-display);font-size:clamp(26px,3.4vw,40px);color:#fff;margin-top:8px;}
+  .cta-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:30px;}
+
+  /* ===== Footer ===== */
+  footer.site{background:var(--navy-2);color:rgba(255,255,255,.8);padding-block:52px 34px;margin-top:80px;}
+  footer .cols{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-start;}
+  footer .brand b{color:#fff;}
+  footer .brand span{color:rgba(255,255,255,.6);}
+  footer a:hover{color:#fff;}
+  footer .fnav{display:flex;flex-wrap:wrap;gap:8px 22px;}
+  footer .fnav a{color:rgba(255,255,255,.8);font-size:15px;}
+  footer .base{margin-top:30px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.55);}
+  footer .base a{text-decoration:underline;}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1);}
+  .reveal.in{opacity:1;transform:none;}
+
+  .wa-float{position:fixed;right:20px;bottom:20px;z-index:60;width:60px;height:60px;border-radius:50%;
+    background:#25d366;display:grid;place-items:center;box-shadow:0 14px 30px -8px rgba(37,211,102,.7);}
+  .wa-float svg{width:32px;height:32px;fill:#fff;}
+  .wa-float:hover{transform:scale(1.06);}
+
+  @media (max-width:900px){
+    nav.main{position:fixed;inset:78px 0 auto 0;background:var(--cream);flex-direction:column;gap:0;
+      padding:8px 22px 20px;border-bottom:1px solid var(--line);transform:translateY(-140%);transition:transform .3s ease;}
+    nav.main.open{transform:none;}
+    nav.main a{width:100%;padding:14px 0;border-bottom:1px solid var(--line);}
+    .nav-toggle{display:block;}
+    .hd-actions .btn-wa{display:none;}
+    .split,.feature,.frota-grid{grid-template-columns:1fr;}
+    .split.rev .media{order:0;}
+    .feature .media img{min-height:300px;}
+    .pillars{grid-template-columns:1fr;}
+    .frota-grid{grid-template-columns:repeat(2,1fr);}
+    .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px;}
+  }
+  @media (max-width:520px){
+    .frota-grid{grid-template-columns:1fr;}
+    .facts{gap:20px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap hd">
+    <a class="brand" href="#topo" aria-label="AMV JR Tour">
+      <img src="../assets/amv-logo.webp" alt="AMV JR Tour">
+      <span><b>AMV JR Tour</b><span>Transfer Executivo</span></span>
+    </a>
+    <nav class="main" id="nav">
+      <a href="#servico">Serviço</a>
+      <a href="#frota">Frota</a>
+      <a href="#motorista">Motoristas mulheres</a>
+      <a href="#destinos">Destinos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="hd-actions">
+      <a class="btn btn-wa" href="https://wa.me/5521972393816?text=Ol%C3%A1!%20Vi%20a%20apresenta%C3%A7%C3%A3o%20da%20AMV%20JR%20Tour%20e%20quero%20saber%20mais." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.6 1.4 5.1L2 22l5-1.3c1.4.8 3.1 1.2 4.9 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+        WhatsApp
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="topo">
+
+  <!-- HERO -->
+  <section class="hero" style="padding:0;">
+    <div class="hero-bg"></div>
+    <div class="wrap hero-inner">
+      <p class="kicker light">Transfer executivo · Macaé e Região dos Lagos</p>
+      <h1>Do aeroporto ao seu destino, com segurança e conforto.</h1>
+      <p class="lead">A AMV JR Tour recebe e transporta os trabalhadores das plataformas de offshore — recepção pontual, frota completa e atendimento humano do embarque ao destino.</p>
+      <div class="hero-actions">
+        <a class="btn btn-wa" href="https://wa.me/5521972393816?text=Ol%C3%A1!%20Quero%20um%20transfer%20executivo%20com%20a%20AMV%20JR%20Tour." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.6 1.4 5.1L2 22l5-1.3c1.4.8 3.1 1.2 4.9 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+          Solicitar transfer
+        </a>
+        <a class="btn btn-out" href="#frota">Ver a frota</a>
+      </div>
+      <ul class="hero-trust">
+        <li>Recepção nos aeroportos</li>
+        <li>Frota executiva e blindada</li>
+        <li>Motoristas mulheres</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- QUEM SOMOS -->
+  <section id="quem">
+    <div class="wrap split">
+      <div class="reveal">
+        <p class="kicker">Quem somos</p>
+        <h2 class="h-sec">Recebemos quem faz a energia acontecer</h2>
+        <p class="sub">Somos especialistas em receber e transportar os profissionais de offshore que chegam para atuar em Macaé e em toda a região. Cuidamos de cada detalhe da viagem para que o trabalhador chegue tranquilo, seguro e no horário.</p>
+        <div class="facts">
+          <div class="fact"><b>3</b><span>aeroportos atendidos</span></div>
+          <div class="fact"><b>24h</b><span>disponibilidade</span></div>
+          <div class="fact"><b>RJ+</b><span>e outros estados</span></div>
+        </div>
+      </div>
+      <div class="media reveal">
+        <img src="https://images.unsplash.com/photo-1566154845174-67dfe1adee87?ixlib=rb-4.1.0&fm=jpg&q=80&fit=crop&w=1200" alt="Motorista recebendo o cliente ao lado do veículo executivo" loading="lazy">
+        <span class="badge">Recepção personalizada</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇO / AEROPORTOS -->
+  <section id="servico" style="background:var(--paper);">
+    <div class="wrap split rev">
+      <div class="media reveal">
+        <img src="https://images.unsplash.com/photo-1561380263-46623ae537fb?ixlib=rb-4.1.0&fm=jpg&q=80&fit=crop&w=1400" alt="Veículos na frente do terminal do aeroporto" loading="lazy">
+        <span class="badge">Assim que o avião pousa</span>
+      </div>
+      <div class="reveal">
+        <p class="kicker">Recepção nos aeroportos</p>
+        <h2 class="h-sec">Esperamos por você na porta do desembarque</h2>
+        <p class="sub">Nossa equipe recebe os profissionais direto nos principais aeroportos que atendem a região — recepção organizada, sem filas e sem preocupação.</p>
+        <div class="airchips">
+          <span class="airchip"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.3-7-11a7 7 0 0114 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Maricá</span>
+          <span class="airchip"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.3-7-11a7 7 0 0114 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Macaé</span>
+          <span class="airchip"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.3-7-11a7 7 0 0114 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Jacarepaguá</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FROTA -->
+  <section id="frota">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Nosso diferencial</p>
+        <h2 class="h-sec">Uma frota completa para cada necessidade</h2>
+        <p class="sub">Para cada trajeto, o veículo certo — sempre com o máximo de conforto e segurança.</p>
+      </div>
+      <div class="frota-grid">
+        <article class="vcard reveal">
+          <img src="https://images.unsplash.com/photo-1764089859665-7d417664c5de?ixlib=rb-4.1.0&fm=jpg&q=80&fit=crop&w=1000" alt="Carro executivo preto" loading="lazy">
+          <div class="cap"><span class="tag">Executivos</span><h3>Sedãs executivos</h3><p>Conforto premium para o dia a dia e viagens curtas.</p></div>
+        </article>
+        <article class="vcard reveal">
+          <img src="https://images.unsplash.com/photo-1758223725140-3855ec687a16?ixlib=rb-4.1.0&fm=jpg&q=80&fit=crop&w=1000" alt="SUV blindado preto" loading="lazy">
+          <div class="cap"><span class="tag">Blindados</span><h3>Veículos blindados</h3><p>Segurança reforçada para quem precisa de proteção extra.</p></div>
+        </article>
+        <article class="vcard reveal">
+          <img src="https://images.unsplash.com/photo-1570125909517-53cb21c89ff2?ixlib=rb-4.1.0&fm=jpg&q=80&fit=crop&w=1000" alt="Ônibus de turismo" loading="lazy">
+          <div class="cap"><span class="tag">Ônibus</span><h3>Ônibus</h3><p>Para transportar equipes inteiras com conforto.</p></div>
+        </article>
+        <article class="vcard reveal">
+          <img src="https://images.unsplash.com/photo-1644949733491-7432ea0c2a98?ixlib=rb-4.1.0&fm=jpg&q=80&fit=crop&w=1000" alt="Van executiva" loading="lazy">
+          <div class="cap"><span class="tag">Vans</span><h3>Vans</h3><p>Grupos com agilidade, espaço e economia.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOTORISTA MULHER -->
+  <section id="motorista" style="background:var(--paper);">
+    <div class="wrap">
+      <div class="feature reveal">
+        <div class="media">
+          <img src="https://images.unsplash.com/photo-1728891229352-a0209fb7117b?ixlib=rb-4.1.0&fm=jpg&q=80&fit=crop&w=1400" alt="Motorista mulher dirigindo com passageiro no banco de trás" loading="lazy">
+        </div>
+        <div class="txt">
+          <p class="kicker light">Conforto & acolhimento</p>
+          <h2>Motoristas mulheres para as trabalhadoras</h2>
+          <p>Pensando no bem-estar das profissionais, oferecemos motoristas mulheres — mais tranquilidade, respeito e comodidade em cada trajeto.</p>
+          <ul class="pts">
+            <li>Mais segurança e conforto para elas</li>
+            <li>Disponível também no dia a dia, na cidade do Rio de Janeiro</li>
+            <li>Atendimento cordial e discreto</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTINOS -->
+  <section id="destinos">
+    <div class="wrap">
+      <div class="destinos reveal">
+        <img src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-4.1.0&fm=jpg&q=80&fit=crop&w=1800" alt="Rio de Janeiro" loading="lazy">
+        <div class="ov">
+          <p class="kicker light">Destinos</p>
+          <h2>Levamos a qualquer lugar, por terra</h2>
+          <p>Do Rio de Janeiro a outros estados, como a Bahia. A solução ideal para quem tem receio de viajar de avião e prefere a segurança e o conforto do transporte terrestre.</p>
+          <div class="chips"><span>Todo o estado do RJ</span><span>Viagens interestaduais</span><span>Porta a porta</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILARES -->
+  <section style="background:var(--paper);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Nossos pilares</p>
+        <h2 class="h-sec">Cada viagem guiada por três compromissos</h2>
+      </div>
+      <div class="pillars">
+        <div class="pillar reveal">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.6-3 7.8-7 9-4-1.2-7-4.4-7-9V6z"/><path d="M9 12l2 2 4-4.5"/></svg></span>
+          <h3>Segurança</h3><p>Motoristas experientes e veículos sempre revisados.</p>
+        </div>
+        <div class="pillar reveal">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M5 11V8a3 3 0 013-3h8a3 3 0 013 3v3"/><path d="M4 12h16a1 1 0 011 1v3a2 2 0 01-2 2H5a2 2 0 01-2-2v-3a1 1 0 011-1z"/><path d="M7 18v2M17 18v2"/></svg></span>
+          <h3>Conforto</h3><p>Uma viagem tranquila, do embarque ao destino.</p>
+        </div>
+        <div class="pillar reveal">
+          <span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></span>
+          <h3>Pontualidade</h3><p>Presentes na hora certa, sempre.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Embarque com a gente</p>
+        <h2 class="h-sec">Do aeroporto e do hotel até o seu destino</h2>
+        <p class="sub">Recepção e embarque na porta do aeroporto e do hotel — com pontualidade e cuidado em cada detalhe.</p>
+      </div>
+      <div class="gallery reveal">
+        <a class="g-wide g-tall" href="#contato"><img src="https://images.unsplash.com/photo-1637326085317-94673baaa959?ixlib=rb-4.1.0&fm=jpg&q=80&fit=crop&w=1200" alt="Cliente embarcando na van com a mala" loading="lazy"></a>
+        <a href="#contato"><img src="https://images.unsplash.com/photo-1771293549382-62829fad8f2d?ixlib=rb-4.1.0&fm=jpg&q=80&fit=crop&w=900" alt="Embarque na frente do hotel" loading="lazy"></a>
+        <a href="#contato"><img src="https://images.unsplash.com/photo-1566154845174-67dfe1adee87?ixlib=rb-4.1.0&fm=jpg&q=80&fit=crop&w=900" alt="Recepção ao lado do carro executivo" loading="lazy"></a>
+        <a class="g-wide" href="#contato"><img src="https://images.unsplash.com/photo-1561380263-46623ae537fb?ixlib=rb-4.1.0&fm=jpg&q=80&fit=crop&w=1200" alt="Veículos na frente do aeroporto" loading="lazy"></a>
+        <a href="#contato"><img src="https://images.unsplash.com/photo-1518639192441-8fce0a366e2e?ixlib=rb-4.1.0&fm=jpg&q=80&fit=crop&w=900" alt="Rio de Janeiro" loading="lazy"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARCERIA MACAÉ -->
+  <section>
+    <div class="wrap">
+      <div class="parceria reveal">
+        <p class="kicker" style="justify-content:center;">Parceria com Macaé</p>
+        <h2 class="h-sec">Ao lado da Prefeitura, servindo o offshore</h2>
+        <p class="sub">Com o apoio da Prefeitura de Macaé, queremos levar esse serviço às empresas de offshore da região — transporte de qualidade para quem move a economia da nossa cidade, gerando empregos locais e mais profissionalismo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contato">
+    <div class="wrap">
+      <div class="cta reveal">
+        <p class="kicker light" style="justify-content:center;">Vamos juntos</p>
+        <h2>Conte com a AMV JR Tour</h2>
+        <p>Fale com o Fernando e solicite seu transfer executivo com segurança e conforto.</p>
+        <div class="phone">📱 (21) 97239-3816</div>
+        <div class="cta-actions">
+          <a class="btn btn-wa" href="https://wa.me/5521972393816?text=Ol%C3%A1%20Fernando!%20Quero%20contratar%20o%20transfer%20da%20AMV%20JR%20Tour." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.6 1.4 5.1L2 22l5-1.3c1.4.8 3.1 1.2 4.9 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+            Falar no WhatsApp
+          </a>
+          <a class="btn btn-out" href="tel:+5521972393816">Ligar agora</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <a class="brand" href="#topo">
+        <img src="../assets/amv-logo.webp" alt="AMV JR Tour" style="width:52px;height:52px;">
+        <span><b>AMV JR Tour</b><span>Transfer Executivo</span></span>
+      </a>
+      <nav class="fnav">
+        <a href="#servico">Serviço</a><a href="#frota">Frota</a><a href="#motorista">Motoristas mulheres</a>
+        <a href="#destinos">Destinos</a><a href="#contato">Contato</a>
+      </nav>
+      <div>
+        <a href="https://wa.me/5521972393816" target="_blank" rel="noopener" style="color:#fff;font-weight:600;">WhatsApp: (21) 97239-3816</a>
+      </div>
+    </div>
+    <div class="base">
+      <span>&copy; <span id="ano">2026</span> AMV JR Tour · Transfer executivo em Macaé e Região dos Lagos.</span>
+      <span>Fotos: <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a> (imagens ilustrativas — ver CREDITOS.md).</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5521972393816?text=Ol%C3%A1!%20Quero%20falar%20com%20a%20AMV%20JR%20Tour." target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.6 1.4 5.1L2 22l5-1.3c1.4.8 3.1 1.2 4.9 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+</a>
+
+<script>
+  document.getElementById('ano').textContent = new Date().getFullYear();
+  var nav = document.getElementById('nav'), tgl = document.getElementById('navToggle');
+  tgl.addEventListener('click', function(){ nav.classList.toggle('open'); });
+  nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ nav.classList.remove('open'); }); });
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>
