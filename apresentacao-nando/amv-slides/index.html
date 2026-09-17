@@ -109,25 +109,33 @@
     font-size:12.5px;background:rgba(6,14,34,.6);border:1px solid rgba(255,255,255,.16);padding:6px 14px;border-radius:999px;
     transition:opacity .6s ease;pointer-events:none;}
 
-  /* ===== Camada animada (avião, helicóptero, faixa) ===== */
+  /* ===== Camada animada (helicóptero com faixa) ===== */
   .fx{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden;}
-  .plane{position:absolute;top:6%;left:0;width:clamp(88px,10vw,150px);height:auto;
-    filter:drop-shadow(0 12px 18px rgba(0,0,0,.35));animation:fly 17s linear infinite;}
-  @keyframes fly{0%{transform:translateX(-32vw) translateY(0) rotate(-1deg);}
-    50%{transform:translateX(52vw) translateY(-2.2vh) rotate(-1deg);}
-    100%{transform:translateX(132vw) translateY(0) rotate(-1deg);}}
 
-  .heli-rig{position:absolute;top:15%;left:0;display:flex;align-items:center;gap:0;animation:fly2 30s linear infinite;animation-delay:5s;}
-  @keyframes fly2{0%{transform:translateX(-70vw);}100%{transform:translateX(135vw);}}
-  .heli-rig .banner{position:relative;background:linear-gradient(180deg,#f4c15a,var(--gold));
-    color:#0d2148;font-weight:700;font-family:var(--font-sans);font-size:clamp(12px,1.4vw,17px);
-    padding:10px 20px;border-radius:8px;white-space:nowrap;box-shadow:0 10px 22px -10px rgba(0,0,0,.5);
+  .heli-rig{position:absolute;top:9%;left:0;display:flex;align-items:center;gap:0;
+    animation:fly2 26s linear infinite backwards;animation-delay:1.5s;}
+  @keyframes fly2{0%{transform:translateX(-92vw);}100%{transform:translateX(140vw);}}
+  .heli-rig .banner{position:relative;display:flex;align-items:center;gap:14px;
+    background:#fff;color:#0a1a3a;font-weight:800;font-family:var(--font-sans);
+    font-size:clamp(18px,2.1vw,28px);padding:14px 30px 14px 14px;border-radius:12px;white-space:nowrap;
+    box-shadow:0 16px 34px -12px rgba(0,0,0,.6);border:3px solid var(--gold);
     transform-origin:right center;animation:wave 2.2s ease-in-out infinite;}
-  .heli-rig .banner::after{content:"";position:absolute;left:100%;top:50%;width:34px;height:2px;background:rgba(255,255,255,.7);transform:translateY(-50%);}
-  @keyframes wave{0%,100%{transform:skewY(-1.4deg) translateY(0)}50%{transform:skewY(1.4deg) translateY(-2px)}}
-  .heli-rig svg{width:clamp(96px,11vw,150px);height:auto;margin-left:32px;filter:drop-shadow(0 12px 18px rgba(0,0,0,.4));}
+  .heli-rig .banner img{width:44px;height:44px;border-radius:9px;flex:none;background:#fff;}
+  .heli-rig .banner::after{content:"";position:absolute;left:100%;top:50%;width:46px;height:3px;background:rgba(255,255,255,.85);transform:translateY(-50%);}
+  @keyframes wave{0%,100%{transform:skewY(-1deg) translateY(0)}50%{transform:skewY(1deg) translateY(-3px)}}
+  .heli-rig svg{width:clamp(150px,17vw,240px);height:auto;margin-left:46px;filter:drop-shadow(0 16px 24px rgba(0,0,0,.45));}
   .rotor{transform-origin:66px 15px;animation:rotor .3s linear infinite;}
   @keyframes rotor{0%,100%{transform:scaleX(1)}50%{transform:scaleX(.12)}}
+
+  /* ===== Marca d'água persistente (logo em todos os slides) ===== */
+  .wm-fixed{position:fixed;z-index:30;top:clamp(20px,3vw,36px);left:clamp(20px,3.5vw,56px);
+    display:flex;align-items:center;gap:12px;background:rgba(6,14,34,.5);backdrop-filter:blur(8px);
+    border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:8px 18px 8px 8px;
+    transition:opacity .4s ease;}
+  .wm-fixed.is-hidden{opacity:0;pointer-events:none;}
+  .wm-fixed img{width:clamp(38px,4vw,48px);height:clamp(38px,4vw,48px);border-radius:10px;background:#fff;padding:3px;}
+  .wm-fixed b{font-family:var(--font-display);font-weight:700;font-size:clamp(15px,1.6vw,19px);color:#fff;line-height:1;display:block;}
+  .wm-fixed span{display:block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.75);font-weight:600;margin-top:3px;}
 
   /* carro chegando + passageiro com cartaz (slide embarque) */
   .carfx{position:absolute;right:3%;bottom:9%;width:min(48vw,640px);z-index:2;pointer-events:none;}
@@ -153,21 +161,20 @@
 <div class="hint" id="hint">Use as setas ← →, clique, ou tecla F para tela cheia</div>
 <div class="pbar" id="pbar"></div>
 
+<div class="wm-fixed" id="wmFixed">
+  <img src="../assets/amv-logo.webp" alt="AMV JR Tour">
+  <div><b>AMV JR Tour</b><span>Transfer Executivo</span></div>
+</div>
+
 <div class="deck" id="deck">
 
-  <!-- Camada animada global: avião + helicóptero com faixa -->
+  <!-- Camada animada global: helicóptero puxando faixa com o logo -->
   <div class="fx" aria-hidden="true">
-    <svg class="plane" viewBox="0 0 120 48">
-      <g fill="#eef4ff">
-        <path d="M6 24 Q6 19 20 18 L86 15 Q101 14 117 22 Q119 23 117 25 L86 27 Q60 30 20 29 Q6 29 6 24 Z"/>
-        <path d="M46 19 L37 5 L45 5 L62 18 Z"/>
-        <path d="M42 27 L29 41 L41 41 L62 28 Z"/>
-      </g>
-      <g fill="#9fc0ff"><circle cx="98" cy="21" r="1.5"/><circle cx="90" cy="21.4" r="1.5"/><circle cx="82" cy="21.8" r="1.5"/></g>
-    </svg>
-
     <div class="heli-rig">
-      <div class="banner">AMV JR Tour · Segurança e conforto</div>
+      <div class="banner">
+        <img src="../assets/amv-logo.webp" alt="">
+        <span>AMV JR Tour · Segurança e conforto</span>
+      </div>
       <svg viewBox="0 0 120 62">
         <path d="M40 42 L2 46 L2 40 L38 35 Z" fill="#0d2148"/>
         <rect x="0" y="30" width="4" height="14" rx="2" fill="#0d2148"/>
@@ -372,6 +379,7 @@
     dotsWrap.appendChild(d);
   });
   var dots=[].slice.call(dotsWrap.children);
+  var wmFixed=document.getElementById('wmFixed');
   function go(i){
     i=Math.max(0,Math.min(slides.length-1,i));
     slides[cur].classList.remove('is-active');dots[cur].classList.remove('is-active');
@@ -380,6 +388,8 @@
     counter.textContent=(cur+1)+' / '+slides.length;
     pbar.style.width=((cur+1)/slides.length*100)+'%';
     history.replaceState(null,'','#'+(cur+1));
+    // esconde a marca d'água fixa na capa e no encerramento (já mostram o logo grande)
+    if(wmFixed) wmFixed.classList.toggle('is-hidden', cur===0 || cur===slides.length-1);
     schedule();
   }
   function next(){go(cur+1);} function prev(){go(cur-1);}
