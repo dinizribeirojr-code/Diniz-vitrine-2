@@ -27,8 +27,10 @@
   .slide.is-active{display:block;opacity:1;}
   @media (prefers-reduced-motion:reduce){.slide{transition:none;}}
 
-  .bg{position:absolute;inset:0;background-size:cover;background-position:center;background-color:var(--navy);}
-  .scrim{position:absolute;inset:0;}
+  .bg{position:absolute;inset:0;background-size:cover;background-position:center;background-color:var(--navy);z-index:0;transform:scale(1.03);}
+  .slide.is-active .bg{animation:ken 7s ease-out both;}
+  @keyframes ken{from{transform:scale(1.03)}to{transform:scale(1.13) translate(-1.5%,-1.2%)}}
+  .scrim{position:absolute;inset:0;z-index:1;}
   .scrim.bottom{background:linear-gradient(180deg,rgba(6,14,34,.28) 0%,rgba(6,14,34,.22) 42%,rgba(6,14,34,.9) 100%);}
   .scrim.left{background:linear-gradient(90deg,rgba(6,14,34,.9) 0%,rgba(6,14,34,.72) 42%,rgba(6,14,34,.28) 78%,rgba(6,14,34,.08) 100%);}
   .scrim.full{background:linear-gradient(120deg,rgba(6,14,34,.9),rgba(6,14,34,.66));}
@@ -107,9 +109,42 @@
     font-size:12.5px;background:rgba(6,14,34,.6);border:1px solid rgba(255,255,255,.16);padding:6px 14px;border-radius:999px;
     transition:opacity .6s ease;pointer-events:none;}
 
+  /* ===== Camada animada (avião, helicóptero, faixa) ===== */
+  .fx{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden;}
+  .plane{position:absolute;top:6%;left:0;width:clamp(88px,10vw,150px);height:auto;
+    filter:drop-shadow(0 12px 18px rgba(0,0,0,.35));animation:fly 17s linear infinite;}
+  @keyframes fly{0%{transform:translateX(-32vw) translateY(0) rotate(-1deg);}
+    50%{transform:translateX(52vw) translateY(-2.2vh) rotate(-1deg);}
+    100%{transform:translateX(132vw) translateY(0) rotate(-1deg);}}
+
+  .heli-rig{position:absolute;top:15%;left:0;display:flex;align-items:center;gap:0;animation:fly2 30s linear infinite;animation-delay:5s;}
+  @keyframes fly2{0%{transform:translateX(-70vw);}100%{transform:translateX(135vw);}}
+  .heli-rig .banner{position:relative;background:linear-gradient(180deg,#f4c15a,var(--gold));
+    color:#0d2148;font-weight:700;font-family:var(--font-sans);font-size:clamp(12px,1.4vw,17px);
+    padding:10px 20px;border-radius:8px;white-space:nowrap;box-shadow:0 10px 22px -10px rgba(0,0,0,.5);
+    transform-origin:right center;animation:wave 2.2s ease-in-out infinite;}
+  .heli-rig .banner::after{content:"";position:absolute;left:100%;top:50%;width:34px;height:2px;background:rgba(255,255,255,.7);transform:translateY(-50%);}
+  @keyframes wave{0%,100%{transform:skewY(-1.4deg) translateY(0)}50%{transform:skewY(1.4deg) translateY(-2px)}}
+  .heli-rig svg{width:clamp(96px,11vw,150px);height:auto;margin-left:32px;filter:drop-shadow(0 12px 18px rgba(0,0,0,.4));}
+  .rotor{transform-origin:66px 15px;animation:rotor .3s linear infinite;}
+  @keyframes rotor{0%,100%{transform:scaleX(1)}50%{transform:scaleX(.12)}}
+
+  /* carro chegando + passageiro com cartaz (slide embarque) */
+  .carfx{position:absolute;right:3%;bottom:9%;width:min(48vw,640px);z-index:2;pointer-events:none;}
+  .carfx svg{width:100%;height:auto;display:block;}
+  .slide.is-active .cscar{animation:carin 2.3s cubic-bezier(.22,1,.36,1) both;}
+  @keyframes carin{from{transform:translateX(380px)}to{transform:translateX(0)}}
+  .slide.is-active .cspax{animation:paxin .7s ease both;animation-delay:2.2s;}
+  @keyframes paxin{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  .slide.is-active .placard{animation:raise .7s cubic-bezier(.22,1,.36,1) both;animation-delay:2.5s;transform-origin:118px 150px;}
+  @keyframes raise{from{transform:rotate(-10deg)}to{transform:rotate(0)}}
+  .cspax{opacity:0;}
+  .slide:not(.is-active) .cscar{transform:translateX(380px);}
+
   @media (max-width:760px){
     .fleet-grid{grid-template-columns:repeat(2,1fr);}
     .content{padding-bottom:96px;}
+    .carfx{width:70vw;right:2%;bottom:16%;}
   }
 </style>
 </head>
@@ -119,6 +154,33 @@
 <div class="pbar" id="pbar"></div>
 
 <div class="deck" id="deck">
+
+  <!-- Camada animada global: avião + helicóptero com faixa -->
+  <div class="fx" aria-hidden="true">
+    <svg class="plane" viewBox="0 0 120 48">
+      <g fill="#eef4ff">
+        <path d="M6 24 Q6 19 20 18 L86 15 Q101 14 117 22 Q119 23 117 25 L86 27 Q60 30 20 29 Q6 29 6 24 Z"/>
+        <path d="M46 19 L37 5 L45 5 L62 18 Z"/>
+        <path d="M42 27 L29 41 L41 41 L62 28 Z"/>
+      </g>
+      <g fill="#9fc0ff"><circle cx="98" cy="21" r="1.5"/><circle cx="90" cy="21.4" r="1.5"/><circle cx="82" cy="21.8" r="1.5"/></g>
+    </svg>
+
+    <div class="heli-rig">
+      <div class="banner">AMV JR Tour · Segurança e conforto</div>
+      <svg viewBox="0 0 120 62">
+        <path d="M40 42 L2 46 L2 40 L38 35 Z" fill="#0d2148"/>
+        <rect x="0" y="30" width="4" height="14" rx="2" fill="#0d2148"/>
+        <ellipse cx="72" cy="40" rx="36" ry="16" fill="#0d2148"/>
+        <circle cx="84" cy="41" r="7" fill="#7fb0ff"/>
+        <rect x="62" y="16" width="6" height="12" fill="#0d2148"/>
+        <rect class="rotor" x="24" y="13" width="84" height="4" rx="2" fill="#25314f"/>
+        <path d="M54 56 h40" stroke="#0d2148" stroke-width="3" stroke-linecap="round"/>
+        <path d="M60 52 v4 M86 52 v4" stroke="#0d2148" stroke-width="3"/>
+      </svg>
+    </div>
+  </div>
+
 
   <!-- 1 CAPA -->
   <section class="slide is-active">
@@ -166,6 +228,33 @@
       <p class="kicker">Embarque</p>
       <h2>Recebemos e embarcamos você</h2>
       <p class="lead">O carro chega no horário certo e você embarca com tranquilidade — do desembarque até o destino, sem filas e sem preocupação.</p>
+    </div>
+    <div class="carfx" aria-hidden="true">
+      <svg viewBox="0 0 560 240">
+        <ellipse cx="300" cy="214" rx="230" ry="12" fill="rgba(0,0,0,.28)"/>
+        <!-- passageiro com cartaz -->
+        <g class="cspax">
+          <g class="placard">
+            <rect x="58" y="58" width="174" height="66" rx="8" fill="#fff" stroke="#0d2148" stroke-width="3"/>
+            <text x="145" y="99" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="25" fill="#0d2148">BEM-VINDO!</text>
+            <rect x="142" y="120" width="6" height="70" fill="#8a6a3a"/>
+          </g>
+          <rect x="150" y="150" width="34" height="48" rx="14" fill="#2f6bff"/>
+          <circle cx="167" cy="132" r="15" fill="#eab892"/>
+          <rect x="156" y="196" width="9" height="26" rx="3" fill="#26324f"/>
+          <rect x="168" y="196" width="9" height="26" rx="3" fill="#26324f"/>
+        </g>
+        <!-- carro executivo entra pela direita -->
+        <g class="cscar">
+          <path d="M300 206 q3 -40 40 -46 l46 -30 q16 -10 38 -10 h128 q26 0 44 18 l32 28 q42 6 46 44 v8 q0 9 -9 9 H309 q-9 0 -9 -9 Z" fill="#101d3d"/>
+          <path d="M392 156 h128 q18 0 30 14 l24 26 H378 l10 -32 q2 -8 4 -8 Z" fill="#1c2c53"/>
+          <path d="M406 178 h104 l18 20 H398 Z" fill="#a9c6ff"/>
+          <rect x="312" y="188" width="300" height="10" rx="5" fill="#2f6bff"/>
+          <rect x="304" y="172" width="16" height="12" rx="3" fill="#ffe14d"/>
+          <circle cx="372" cy="212" r="28" fill="#0a1330"/><circle cx="372" cy="212" r="11" fill="#5b6b8c"/>
+          <circle cx="560" cy="212" r="28" fill="#0a1330"/><circle cx="560" cy="212" r="11" fill="#5b6b8c"/>
+        </g>
+      </svg>
     </div>
   </section>
 
@@ -264,6 +353,7 @@
     <div class="dots" id="dots"></div>
     <span class="counter" id="counter">1 / 10</span>
     <button class="nb" id="next" aria-label="Próximo"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+    <button class="nb" id="play" aria-label="Pausar/continuar"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg></button>
     <button class="nb" id="full" aria-label="Tela cheia"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
   </div>
 </div>
@@ -290,8 +380,21 @@
     counter.textContent=(cur+1)+' / '+slides.length;
     pbar.style.width=((cur+1)/slides.length*100)+'%';
     history.replaceState(null,'','#'+(cur+1));
+    schedule();
   }
   function next(){go(cur+1);} function prev(){go(cur-1);}
+
+  // ===== Autoplay 5s =====
+  var AUTO=5000, timer=null, playing=true;
+  function schedule(){ clearTimeout(timer); if(playing){ timer=setTimeout(function(){ go((cur+1)%slides.length); }, AUTO); } }
+  function setPlayIcon(){
+    document.querySelector('#play svg').innerHTML = playing
+      ? '<path d="M6 5h4v14H6zM14 5h4v14h-4z"/>'
+      : '<path d="M8 5v14l11-7z"/>';
+  }
+  document.getElementById('play').addEventListener('click',function(){
+    playing=!playing; setPlayIcon(); schedule();
+  });
   document.getElementById('next').addEventListener('click',next);
   document.getElementById('prev').addEventListener('click',prev);
   document.getElementById('full').addEventListener('click',function(){
