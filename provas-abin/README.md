@@ -1,114 +1,81 @@
 # Provas da ABIN — Concursos Públicos (por ano)
 
-> **Índice das provas oficiais dos concursos da Agência Brasileira de Inteligência (ABIN)**, organizado por ano.
-> As provas de concurso público são **documentos públicos** divulgados pelas bancas organizadoras
-> (CESPE / CEBRASPE — Centro de Seleção e de Promoção de Eventos da UnB).
+> Índice e script para baixar as **provas oficiais da ABIN com gabaritos**, organizadas por ano.
+> Provas e gabaritos de concurso público são **documentos públicos** das bancas (CESPE / CEBRASPE).
 
-## ⚠️ Sobre o download automático neste ambiente
+## Nível médio x nível superior
 
-Este projeto roda em um ambiente de nuvem cuja **política de rede da organização bloqueia o acesso
-de saída** aos sites das bancas e agregadores (CEBRASPE, CESPE/UnB, PCI Concursos, QConcursos,
-Gabarite etc.). As tentativas de download retornaram `connect_rejected` (bloqueio de política, não
-erro temporário), e as regras do ambiente proíbem contornar esse bloqueio.
+Na ABIN, **nível médio só existiu no concurso de 2010**, no cargo **Agente Técnico de Inteligência**
+(áreas: Administração, Contabilidade, Construção Civil/Edificações, Eletrônica, Tecnologia da
+Informação). Os concursos de **2018** e **2023/2024** foram **todos de nível superior**
+(Oficial de Inteligência / Oficial Técnico / Agente de Inteligência).
 
-**Por isso os PDFs não puderam ser baixados automaticamente aqui.** Em vez disso, esta pasta contém:
+## ⚠️ Download automático neste ambiente de nuvem
 
-1. Um **índice completo e verificado** dos links oficiais de cada concurso (abaixo);
-2. As pastas por ano já criadas (`2004/`, `2008/`, `2010/`, `2018/`, `2024/`);
-3. O script [`baixar_provas_abin.sh`](./baixar_provas_abin.sh), que você roda **na sua máquina**
-   (onde não há esse bloqueio) e ele cria as pastas por ano e baixa os PDFs diretos.
+A política de rede desta sessão na nuvem **bloqueia** o acesso aos sites das bancas e agregadores
+(CEBRASPE, CESPE/UnB, PCI Concursos, QConcursos). Por isso os PDFs **não são baixados aqui** — o
+script foi feito para rodar **na sua máquina ou no Termux (Android)**, onde a internet é aberta.
 
-### Como baixar tudo na sua máquina
+## Como baixar (Termux / Android)
 
-```bash
-cd provas-abin
-bash baixar_provas_abin.sh
-```
+1. Setup (uma vez):
+   ```bash
+   pkg update -y && pkg install curl grep coreutils -y
+   termux-setup-storage
+   ```
+2. Rode o script (baixa **nível médio** por padrão):
+   ```bash
+   bash baixar_provas_abin.sh          # nivel medio (Agente Tecnico 2010)
+   bash baixar_provas_abin.sh superior # nivel superior
+   bash baixar_provas_abin.sh tudo     # os dois
+   ```
+3. Os arquivos vão para **`Download/provas-abin/<ano>/`**, visível no gerenciador de arquivos.
+   Cada arquivo é nomeado por área e tipo, ex.:
+   `administracao__PROVA__....pdf` e `administracao__GABARITO__....pdf`.
 
-O script baixa os PDFs de link direto e imprime a lista de páginas (PCI/QConcursos) em que os
-demais cadernos, por área, devem ser baixados manualmente pelo navegador.
+> **Atalho na tela inicial:** no Solid Explorer (ou Meus Arquivos/Samsung), segure a pasta
+> `provas-abin` → **Adicionar à tela inicial**.
+
+### Em um computador (Linux/macOS)
+
+Se rodar fora do Termux, o script salva na própria pasta `provas-abin/`. Requer `curl`.
+
+## Como o script funciona
+
+- Ele acessa a página da ABIN no PCI Concursos, **descobre sozinho as áreas** de cada cargo e baixa,
+  de cada uma, a **prova** e o **gabarito** (os dois PDFs oficiais da página).
+- Se a listagem mudar de formato, ele usa uma lista de áreas já confirmadas como fallback.
+- Valida cada arquivo (checa se é PDF de verdade) e descarta páginas de erro.
+
+## Questões comentadas
+
+Gabarito oficial = grátis e público (o script pega). Já as **questões/provas comentadas** costumam ser
+**conteúdo pago** e sem PDF de download direto — por isso **não entram no download automático**.
+Onde procurar:
+
+- QConcursos: <https://www.qconcursos.com/questoes-de-concursos/provas?fardo%5B%5D=ABIN>
+- TEC Concursos: <https://www.tecconcursos.com.br/orgaos/abin>
+- Gran Cursos / Estratégia (PDFs de "prova comentada", geralmente pagos)
 
 ---
 
 ## Concursos da ABIN — visão geral
 
-| Ano | Banca | Cargos | Aplicação |
-|-----|-------|--------|-----------|
-| 2004 | CESPE/UnB | Analista de Informações | 2004 |
-| 2008 | CESPE/UnB | Oficial de Inteligência; Agente de Inteligência | out/2008 |
-| 2010 | CESPE/UnB | Oficial Técnico de Inteligência; Agente Técnico de Inteligência | nov/2010 |
-| 2018 | CEBRASPE (`abin_17`) | Oficial de Inteligência; Oficial Técnico de Inteligência; Agente de Inteligência | nov/2018 |
-| 2023/2024 | CEBRASPE | Oficial de Inteligência; Oficial Técnico de Inteligência | fev/2024 (mais recente) |
+| Ano | Banca | Nível | Cargos |
+|-----|-------|-------|--------|
+| 2004 | CESPE/UnB | superior | Analista de Informações |
+| 2008 | CESPE/UnB | superior | Oficial de Inteligência; Agente de Inteligência |
+| 2010 | CESPE/UnB | **médio** + superior | **Agente Técnico de Inteligência (médio)**; Oficial Técnico de Inteligência (superior) |
+| 2018 | CEBRASPE | superior | Oficial de Inteligência; Oficial Técnico; Agente de Inteligência |
+| 2023/2024 | CEBRASPE | superior | Oficial de Inteligência; Oficial Técnico de Inteligência |
+
+## Páginas oficiais das bancas
+
+- **2024/2018 (CEBRASPE):** <https://www.cebraspe.org.br/concursos/abin_17>
+- **2010 (CESPE):** <http://www.cespe.unb.br/concursos/abin2010/>
+- **2008 (CESPE):** <http://www.cespe.unb.br/concursos/ABIN2008/>
+- **Agregador (todas as provas da ABIN):** <https://www.pciconcursos.com.br/provas/abin>
 
 ---
 
-## 2024 — concurso mais recente (edital 2023, aplicação fev/2024) — CEBRASPE
-
-- Página oficial CEBRASPE: <https://www.cebraspe.org.br/concursos/abin_17>
-- Padrão de respostas definitivo (Cargo 1 — Oficial de Inteligência):
-  <https://cdn.cebraspe.org.br/concursos/abin_17/arquivos/ABIN_17_PADR__O_DEFINITIVO_CARGO_1.PDF>
-- Padrão de respostas definitivo (Cargo 2 — Oficial Técnico de Inteligência):
-  <https://cdn.cebraspe.org.br/concursos/abin_17/arquivos/ABIN_17_PADR__O_DEFINITIVO_CARGO_2.PDF>
-- Agregadores (cadernos por área — download manual):
-  - PCI Concursos: <https://www.pciconcursos.com.br/provas/abin>
-  - QConcursos: <https://www.qconcursos.com/questoes-de-concursos/provas?fardo%5B%5D=ABIN>
-  - JC Concursos: <https://jcconcursos.com.br/provas/por-orgao/abin>
-
-> Observação: confirme na página oficial do CEBRASPE o caminho exato dos cadernos de prova de 2024,
-> pois a banca reutiliza o diretório `abin_17` para materiais correlatos.
-
-## 2018 — CEBRASPE (`abin_17`)
-
-- Página oficial CEBRASPE: <https://www.cebraspe.org.br/concursos/abin_17>
-- Prova discursiva (link direto): <https://cdn.cebraspe.org.br/concursos/abin_17/arquivos/378_ABIN_DISC_001_02_ADAPTADA.PDF>
-- Prova — Agente de Inteligência (link direto):
-  <https://arquivos.qconcursos.com/prova/arquivo_prova/56596/cespe-2018-abin-agente-de-inteligencia-prova.pdf>
-- Downloads por cargo/área (PCI Concursos):
-  - Oficial de Inteligência – Área 1: <https://www.pciconcursos.com.br/provas/download/oficial-de-inteligencia-area-1-abin-cespe-2018>
-  - Oficial Técnico de Inteligência – Área 8: <https://www.pciconcursos.com.br/provas/download/oficial-tecnico-de-inteligencia-area-8-abin-cespe-2018>
-  - Agente de Inteligência: <https://www.pciconcursos.com.br/provas/download/agente-de-inteligencia-abin-cespe-2018>
-- QConcursos (provas com gabarito):
-  - Oficial de Inteligência – Área 1: <https://www.qconcursos.com/questoes-de-concursos/provas/cespe-2018-abin-oficial-de-inteligencia-area-1>
-  - Agente de Inteligência: <https://www.qconcursos.com/questoes-de-concursos/provas/cespe-2018-abin-agente-de-inteligencia>
-- Estuda Grátis: <https://www.estudegratis.com.br/provas/prova-agente-de-inteligencia-abin-2018>
-
-## 2010 — CESPE/UnB
-
-- Página oficial CESPE: <http://www.cespe.unb.br/concursos/abin2010/>
-- Edital (ABT): <http://www.cespe.unb.br/concursos/abin2010/arquivos/ED_1_2010_ABIN_ABT_FINAL___03.09.2010.PDF>
-- Downloads por cargo/área (PCI Concursos):
-  - Agente Técnico de Inteligência – Administração: <https://www.pciconcursos.com.br/provas/download/agente-tecnico-de-inteligencia-administracao-abin-cespe-2010>
-  - Agente Técnico de Inteligência – Tecnologia da Informação: <https://www.pciconcursos.com.br/provas/download/agente-tecnico-de-inteligencia-tecnologia-da-informacao-abin-cespe-2010>
-  - Oficial Técnico de Inteligência – Engenharia Civil: <https://www.pciconcursos.com.br/provas/download/oficial-tecnico-de-inteligencia-engenharia-civil-abin-cespe-2010>
-- QConcursos:
-  - Agente Técnico de Inteligência – Tecnologia da Informação: <https://www.qconcursos.com/questoes-de-concursos/provas/cespe-2010-abin-agente-tecnico-de-inteligencia-area-de-tecnologia-da-informacao>
-  - Oficial Técnico de Inteligência – Direito: <https://www.qconcursos.com/questoes-de-concursos/provas/cespe-2010-abin-oficial-tecnico-de-inteligencia-area-de-direito>
-
-## 2008 — CESPE/UnB
-
-- Página oficial CESPE: <http://www.cespe.unb.br/concursos/ABIN2008/>
-- Edital: <http://www.cespe.unb.br/concursos/ABIN2008/arquivos/ED_1_2008_ABIN_ABT.PDF>
-- Downloads (PCI Concursos):
-  - Oficial de Inteligência: <https://www.pciconcursos.com.br/provas/download/oficial-de-inteligencia-abin-cespe-2008>
-  - Agente de Inteligência: <https://www.pciconcursos.com.br/provas/download/agente-de-inteligecia-abin-cespe-2008>
-- QConcursos: <https://www.qconcursos.com/questoes-de-concursos/provas/cespe-2008-abin-oficial-de-inteligencia>
-
-## 2004 — CESPE/UnB
-
-- Downloads (PCI Concursos):
-  - Analista de Informações: <https://www.pciconcursos.com.br/provas/download/analista-de-informacoes-abin-cespe-2004>
-- Agregadores gerais da ABIN:
-  - PCI Concursos (todas as provas): <https://www.pciconcursos.com.br/provas/abin>
-  - Gabarite: <https://gabarite.com.br/provas-de-concursos/orgao/abin>
-  - Provas Brasil: <https://www.provasbrasil.com.br/provas-anteriores/abin/>
-
----
-
-## Fontes e observações
-
-- As bancas oficiais (CESPE até 2013; **CEBRASPE** a partir de então) são a fonte primária dos
-  cadernos e gabaritos.
-- Os agregadores (PCI Concursos, QConcursos, Gabarite, Estuda Grátis, JC Concursos) reúnem os mesmos
-  cadernos por cargo/área e costumam oferecer também os gabaritos.
-- Todos os links acima foram levantados por busca na web (Google, sites de concursos e páginas
-  oficiais das bancas) em setembro de 2026.
+_Links levantados por busca na web (páginas oficiais das bancas e agregadores de concursos), 2026._
