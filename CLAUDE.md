@@ -163,6 +163,17 @@ sai. Para ligar, basta preencher os identificadores — não mexa no resto.
 Quando for ligado, a página passa a usar cookie do Google Analytics. Vale colocar
 uma linha sobre isso no rodapé para ficar em dia com a LGPD.
 
+## Assistente virtual (OmniRoute)
+
+O botão de chat acima do WhatsApp fala com `/api/chat`, uma Netlify Function em
+`netlify/functions/chat.mjs` que repassa a conversa ao OmniRoute (gateway de IA
+compatível com a API da OpenAI). A chave nunca vai para o navegador, e o prompt de
+sistema do assistente mora na function, não no front.
+
+Configuração nas variáveis de ambiente do Netlify: `OMNIROUTE_BASE_URL` (URL pública
+com `/v1`), `OMNIROUTE_API_KEY` e `OMNIROUTE_MODEL` (padrão `auto`). Sem
+`OMNIROUTE_BASE_URL`, o chat responde que o assistente está indisponível.
+
 ## Contato e SEO
 
 O WhatsApp `5521996816846` aparece em ~9 links, cada um com mensagem pré-preenchida
